@@ -60,7 +60,7 @@ class Kwalify::BaseParser
 
 
   def peep(n=1)
-    return @scanner.peep(n)
+    return @scanner.peek(n)
   end
 
 
