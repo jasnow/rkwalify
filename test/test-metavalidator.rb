@@ -13,16 +13,16 @@ class MetaValidatorTest < Test::Unit::TestCase
   filename = __FILE__.sub(/\.rb$/, '.yaml')
   load_yaml_documents(filename) do |ydoc|
     name = ydoc['name']
+    kvydoc = ydoc.dup
     ydoc.each do |key, val|
-      ydoc[$1] = val['ruby'] if key =~ /(.*)\*$/
+      kvydoc[$1] = val['ruby'] if key =~ /(.*)\*$/
     end
     s = <<-END
          def test_meta_#{name}
-            @name    = #{ydoc['name'].inspect}
-            @desc    = #{ydoc['desc'].inspect}
-            @schema  = #{ydoc['schema'].inspect}
-            @meta_msg = #{ydoc['meta-msg'].inspect}
-            # @rule_msg = #{ydoc['rule-msg'].inspect}
+            @name    = #{kvydoc['name'].inspect}
+            @desc    = #{kvydoc['desc'].inspect}
+            @schema  = #{kvydoc['schema'].inspect}
+            @meta_msg = #{kvydoc['meta-msg'].inspect}
             @test_type = :meta
             _test
          end
@@ -30,11 +30,10 @@ class MetaValidatorTest < Test::Unit::TestCase
     module_eval s if ydoc['meta-msg']
     s = <<-END
          def test_rule_#{name}
-            @name    = #{ydoc['name'].inspect}
-            @desc    = #{ydoc['desc'].inspect}
-            @schema  = #{ydoc['schema'].inspect}
-            # @meta_msg = #{ydoc['meta-msg'].inspect}
-            @rule_msg = #{ydoc['rule-msg'].inspect}
+            @name    = #{kvydoc['name'].inspect}
+            @desc    = #{kvydoc['desc'].inspect}
+            @schema  = #{kvydoc['schema'].inspect}
+            @rule_msg = #{kvydoc['rule-msg'].inspect}
             @test_type = :rule
             _test
          end

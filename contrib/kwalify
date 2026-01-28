@@ -4010,7 +4010,7 @@ module Kwalify
           end
         else
           i = 0
-          YAML.load_documents(input) do |ydoc|
+          YAML.load_stream(input) do |ydoc|
             errors = validator.validate(ydoc)
             _show_errors(filename, i, ydoc, errors)
             i += 1

@@ -38,7 +38,6 @@ require 'kwalify/util'
 require 'kwalify/util/assert-text-equal'
 require 'kwalify/util/testcase-helper'
 
-
 if $0 == __FILE__
 
   require 'test-parser-yaml.rb'

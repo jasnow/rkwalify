@@ -31,8 +31,7 @@ class ActionTest < Test::Unit::TestCase
 
 
   ## temporary directory
-  @@tmpdir = "tmp.dir"
-  Dir.mkdir(@@tmpdir) unless test(?d, @@tmpdir)
+  @@tmpdir ||= Dir.mktmpdir("tmp.dir")
 
 
   def _test
@@ -42,15 +41,17 @@ class ActionTest < Test::Unit::TestCase
     end
     return if $target && $target != @name
     raise "*** #{@name}: args is required."    unless @args
-    raise "*** #{@name}: expected is require." unless @expected
+    raise "*** #{@name}: expected is required." unless @expected
     #
-    File.open("#{@name}.schema", 'w')   { |f| f.write(@schema)   } if @schema
-    File.open("#{@name}.document", 'w') { |f| f.write(@document) } if @document
+    File.open(File.join(@@tmpdir, "#{@name}.schema"), 'w')   { |f| f.write(@schema)   } if @schema
+    File.open(File.join(@@tmpdir, "#{@name}.document"), 'w') { |f| f.write(@document) } if @document
     #
     begin
       main = Kwalify::Main.new("kwalify")
       $stdout = StringWriter.new
-      main.execute(@args)
+      Dir.chdir(@@tmpdir) do
+        main.execute(@args)
+      end
       actual = $stdout;  $stdout = STDOUT
       if @output_files
         if @output_message
@@ -59,18 +60,12 @@ class ActionTest < Test::Unit::TestCase
           assert(actual.nil? || actual=='')
         end
         @output_files.each do |filename|
-          actual = File.read(filename)
+          actual = File.read(File.join(@@tmpdir, filename))
           assert_text_equal(@expected[filename], actual)
         end
       else
         assert_text_equal(@expected, actual)
       end
-    ensure
-      File.move("#{@name}.schema",   @@tmpdir) if @schema
-      File.move("#{@name}.document", @@tmpdir) if @document
-      @output_files.each do |filename|
-        File.move(filename, @@tmpdir) if test(?f, filename)
-      end if @output_files
     end
   end
 

@@ -31,8 +31,7 @@ class MainTest < Test::Unit::TestCase
 
 
   ## temporary directory
-  @@tmpdir = "tmp.dir"
-  Dir.mkdir(@@tmpdir) unless test(?d, @@tmpdir)
+  @@tmpdir ||= Dir.mktmpdir("tmp.dir")
 
 
   def _test
@@ -71,28 +70,27 @@ class MainTest < Test::Unit::TestCase
     #
     begin
       #
-      File.open(schema_filename,  'w') { |f| f.write(@schema) }
-      File.open(valid_filename,   'w') { |f| f.write(@valid) }
-      File.open(invalid_filename, 'w') { |f| f.write(@invalid) }
+      File.open(File.join(@@tmpdir, schema_filename),  'w') { |f| f.write(@schema) }
+      File.open(File.join(@@tmpdir, valid_filename),   'w') { |f| f.write(@valid) }
+      File.open(File.join(@@tmpdir, invalid_filename), 'w') { |f| f.write(@invalid) }
       #
       $stdout = StringWriter.new
       main = Kwalify::Main.new('kwalify')
       args = [ "-lf", schema_filename, valid_filename ]
-      main.execute(args)
+      Dir.chdir(@@tmpdir) do
+        main.execute(args)
+      end
       output = $stdout;  $stdout = STDOUT
       assert_text_equal(@valid_out, output)
       #
       $stdout = StringWriter.new
       main = Kwalify::Main.new('kwalify')
       args = [ "-lf", schema_filename, invalid_filename ]
-      main.execute(args)
+      Dir.chdir(@@tmpdir) do
+        main.execute(args)
+      end
       output = $stdout;  $stdout = STDOUT
       assert_text_equal(@invalid_out, output)
-      #
-    ensure
-      File.move(schema_filename,  @@tmpdir)
-      File.move(valid_filename,   @@tmpdir)
-      File.move(invalid_filename, @@tmpdir)
     end
   end
 
@@ -103,27 +101,28 @@ class MainTest < Test::Unit::TestCase
     raise "*** #{@name}: args is required."    unless @args
     raise "*** #{@name}: expected is require." unless @expected
     #
-    File.open("#{@name}.schema", 'w')   { |f| f.write(@schema)   } if @schema
-    File.open("#{@name}.document", 'w') { |f| f.write(@document) } if @document
+    File.open(File.join(@@tmpdir, "#{@name}.schema"), 'w')   { |f| f.write(@schema)   } if @schema
+    File.open(File.join(@@tmpdir, "#{@name}.document"), 'w') { |f| f.write(@document) } if @document
     #
     begin
       main = Kwalify::Main.new("kwalify")
       if @exception_class
         $stdout = StringWriter.new
         ex = assert_raise(@exception_class) do
-          main.execute(@args)
+          Dir.chdir(@@tmpdir) do
+            main.execute(@args)
+          end
         end
         assert_text_equal(@errormsg, ex.message) if @errormsg
         $stdout = STDOUT
       else
         $stdout = StringWriter.new
-        main.execute(@args)
+        Dir.chdir(@@tmpdir) do
+          main.execute(@args)
+        end
         actual = $stdout;  $stdout = STDOUT
         assert_text_equal(@expected, actual)
       end
-    ensure
-      File.move("#{@name}.schema",   @@tmpdir) if @schema
-      File.move("#{@name}.document", @@tmpdir) if @document
     end
   end
 

@@ -14,7 +14,7 @@ class DataBindingTest < Test::Unit::TestCase
   filename = __FILE__.sub(/\.rb$/, '.yaml')
   input = Kwalify::Util.untabify(File.read(filename))
   TESTDATA1 = {}
-  YAML.load_documents(input) do |ydoc|
+  YAML.load_stream(input) do |ydoc|
     hash_list = ydoc
     hash_list.each do |hash|
       for key in hash.keys()

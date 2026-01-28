@@ -296,7 +296,7 @@ module Kwalify
           end
         else
           i = 0
-          YAML.load_documents(input) do |ydoc|
+          YAML.load_stream(input) do |ydoc|
             errors = validator.validate(ydoc)
             _show_errors(filename, i, ydoc, errors)
             i += 1
@@ -431,7 +431,7 @@ module Kwalify
 
 
     def _domain_type?(doc)
-      klass = defined?(YAML::DomainType) ? YAML::DomainType : YAML::Syck::DomainType
+      klass = YAML::DomainType
       return doc.is_a?(klass)
     end
 

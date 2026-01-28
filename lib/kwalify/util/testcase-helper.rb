@@ -33,7 +33,7 @@ class Test::Unit::TestCase   # :nodoc:
     identkey = options[:identkey] || 'name'
     list = []
     table = {}
-    YAML.load_documents(str) do |ydoc|
+    YAML.load_stream(str) do |ydoc|
       if ydoc.is_a?(Hash)
         list << ydoc
       elsif ydoc.is_a?(Array)

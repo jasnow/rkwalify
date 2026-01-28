@@ -414,7 +414,7 @@
 		     - type:  map
 		       class: Column
 		       mapping: *column
-  document: &action_document3 |
+  document: &action_document2 |
 	columns:
 	  - name:	id
 	    type:	int

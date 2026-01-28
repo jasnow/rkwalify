@@ -8,10 +8,10 @@
 
    .* bugfix:
 
-      .- Fix a bug that kwalify command raised error when YAML document is empty (thanks to Nuttall).
+      .- Fix a bug that kwalify command raised error when YAML
+         document is empty (thanks to Nuttall).
 
       .- Fix a bug that Kwalify::Util.untabify() removed tailing empty strings.
-         
 
 .: Release 0.7.1 (2008-01-28)
 
@@ -176,7 +176,8 @@
 
    .* enhances:
 
-      .- add new command-line option '-E' which show errors in emacs-compatible style.
+      .- add new command-line option '-E' which show errors in
+         emacs-compatible style.
 
 
 .: Release 0.5.0 (2005-12-17)

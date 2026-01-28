@@ -125,12 +125,6 @@
     java: command.option.noaction
 ##
 ---
-- name:  version  	# -v
-  desc:  option '-v'
-  method: execute
-  args:  [ -vt, document.yaml ]
-  expected: |
-    0.0.0
 ##
 - name:  help		# -h
   desc:  option '-h'

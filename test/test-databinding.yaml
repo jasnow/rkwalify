@@ -51,20 +51,20 @@
     ruby: |
 	[#<My1::Address:0x001
 	  @age=15,
-	  @birth=#<Date: 4895785/2,0,2299161>,
+	  @birth=#<Date: 1990-01-01 ((2447893j,0s,0n),+0s,2299161j)>,
 	  @blood="A",
 	  @email="foo@mail.com",
 	  @name="Foo",
 	  @tel="012-345-7777">,
 	 #<My1::Address:0x002
 	  @age=14,
-	  @birth=#<Date: 4896517/2,0,2299161>,
+	  @birth=#<Date: 1991-01-02 ((2448259j,0s,0n),+0s,2299161j)>,
 	  @email="bar@mail.org",
 	  @name="Bar",
 	  @tel="012-345-8889">,
 	 #<My1::Address:0x003
 	  @age=13,
-	  @birth=#<Date: 4897249/2,0,2299161>,
+	  @birth=#<Date: 1992-01-03 ((2448625j,0s,0n),+0s,2299161j)>,
 	  @blood="AB",
 	  @email="baz@mail.net",
 	  @name="Foo",

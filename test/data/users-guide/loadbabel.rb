@@ -1,5 +1,5 @@
 require 'kwalify'
-require 'models'
+require_relative 'models'
 
 ## load schema definition
 schema = Kwalify::Yaml.load_file('BABEL.schema.yaml',

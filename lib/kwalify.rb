@@ -4,13 +4,7 @@
 ### copyright(c) 2006 kuwata-lab.com all rights reserved.
 ###
 
-
-module Kwalify
-
-  RELEASE = ("$Release: 0.7.2 $" =~ /[.\d]+/) && $&
-
-end
-
+require 'kwalify/version'
 require 'kwalify/types'
 require 'kwalify/messages'
 require 'kwalify/errors'

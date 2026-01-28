@@ -2,8 +2,9 @@ require File.expand_path(File.dirname(__FILE__) + '/../test/test.rb')
 
 class UsersGuideTest < Test::Unit::TestCase
 
-  DATA_DIR = 'data/users-guide'
+  DATA_DIR = 'test/data/users-guide'
   CURR_DIR = Dir.pwd
+  puts "CURR DIR is #{CURR_DIR}"
   for item in Dir.glob("#{DATA_DIR}/*.result").sort()
     filename = File.basename(item)
     name = (filename =~ /(.*)\.\w+$/) && $1.gsub(/[^\w]/, '_')

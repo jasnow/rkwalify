@@ -18,7 +18,7 @@ module Kwalify
   ##   schema = YAML.load_file('schema.yaml')
   ##   validator = Kwalify::Validator.new(schema)
   ##   document = YAML.load_file('document.yaml')
-  ##   erros = validator.validate(document)
+  ##   errors = validator.validate(document)
   ##   if errors && !errors.empty?
   ##     errors.each do |err|
   ##       puts "- [#{err.path}] #{err.message}"

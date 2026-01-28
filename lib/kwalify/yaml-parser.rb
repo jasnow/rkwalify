@@ -34,7 +34,7 @@ module Kwalify
 
 
     def initialize(yaml_str)
-      @lines = yaml_str.to_a()
+      @lines = yaml_str.split("\n")
       @line  = nil
       @linenum = 0
       @anchors = {}
