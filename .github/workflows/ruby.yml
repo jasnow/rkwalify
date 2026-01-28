@@ -1,4 +1,4 @@
-name: Easy "Ruby on Rails CI"
+name: Easy "Ruby CI"
 
 on:
   push:
@@ -22,9 +22,6 @@ jobs:
         with:
           ruby-version: "4.0.1"
           bundler-cache: true
-
-      - name:
-        run: bin/rails db:schema:load
 
       - name:
         run: COVERAGE="yes" bin/rake
