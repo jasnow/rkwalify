@@ -24,7 +24,7 @@ jobs:
           bundler-cache: true
 
       - name:
-        run: COVERAGE="yes" bin/rake
+        run: COVERAGE="yes" rake
 
   lint:
     runs-on: ubuntu-latest
