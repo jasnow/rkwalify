@@ -1,8 +1,12 @@
 .=title:          ChangeLog
-.?release:        $Release: 0.7.2 $
+.?release:        $Release: 0.7.3 $
 .?lastupdate:     $Date$
 .?version:        $Rev$
 
+
+.: Release 0.7.3 (2026-xx-xx)
+
+   .* Copied original Kwalify-1.7.2 code then dc-kwalify's code into repo.
 
 .: Release 0.7.2 (2010-07-18)
 
