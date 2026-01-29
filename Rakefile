@@ -4,4 +4,8 @@ task :test do
   ruby "test/test.rb"
 end
 
-task default: %i[test]
+require "rubocop/rake_task"
+
+RuboCop::RakeTask.new
+
+task default: %i[rubocop test]
