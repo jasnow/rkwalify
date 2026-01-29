@@ -4,7 +4,7 @@
 .?version:        $Rev$
 
 
-.: Release 0.7.3 (2026-xx-xx)
+.: Release 0.7.3 (2026-01-29)
 
    .* Copied original Kwalify-1.7.2 code then dc-kwalify's code into repo.
 
