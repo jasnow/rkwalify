@@ -6,9 +6,5 @@ gemspec
 
 gem 'rubocop', require: false
 gem 'rubocop-rake', require: false
-
-group :development, optional: true do
-  gem 'simplecov', require: false, group: :test
-
-  gem 'test-unit'
-end
+gem 'simplecov', require: false, group: :test
+gem 'test-unit'
