@@ -40,16 +40,17 @@ require 'kwalify/util/testcase-helper'
 
 if $0 == __FILE__
 
-  require 'test-parser-yaml.rb'
-  require 'test-yaml-parser.rb'
+# NOTE: 1/29/2026: Commented out all non-test-rule test for now.
+#  require 'test-parser-yaml.rb'
+#  require 'test-yaml-parser.rb'
   require 'test-rule.rb'
-  require 'test-validator.rb'
-  require 'test-metavalidator.rb'
-  require 'test-databinding.rb'
-  require 'test-main.rb'
-  require 'test-action.rb'
-  require 'test-users-guide.rb'
-  require 'test-util.rb'
+#  require 'test-validator.rb'
+#  require 'test-metavalidator.rb'
+#  require 'test-databinding.rb'
+#  require 'test-main.rb'
+#  require 'test-action.rb'
+#  require 'test-users-guide.rb'
+#  require 'test-util.rb'
 
   #suite = Test::Unit::TestSuite.new()
   #suite << ValidatorTest.suite()

@@ -1,53 +1,34 @@
-# kwalify26
+# rkwalify
 
-release::	0.7.2
+release::	0.7.3
 lastupdate::	$Date$
 copyright::	copyright(c) 2005-2010 kuwata-lab all rights reserved.
 
-== Introduction
+## Introduction
 
-Updated version of 
-"Kwalify is a parser, schema validator, and data binding tool for YAML and JSON"
+Updated version of "Kwalify is a parser, schema validator,
+and data binding tool for YAML and JSON"
 
-See doc/users-guide.html for details.
+See [documentation](doc/users-guide.html) for details.
 
-== Installation
+## 📦 Installation
 
-If you have installed RubyGems, just type 'gem install kwalify' 
+Add this line to your application's Gemfile:
 
-  $ sudo gem install kwalify
-   
-Else if you can be root user, use 'setup.rb' as following:
+ * gem "rwkwalify"
 
-  $ tar xjf kwalify-0.7.2.tar.bz2
-  $ cd kwalify-0.7.2/
-  $ sudo ruby setup.rb install
+Or install directyly with "gem install rkwalify".
 
-Else copy script and libraries to proper directory.
+== To Contribute
 
-  $ tar xjf kwalify-0.7.2.tar.bz2
-  $ cd kwalify-0.7.2/
-  $ mkdir -p $HOME/bin
-  $ cp -a bin/* $HOME/bin
-  $ export PATH=$PATH:$HOME/bin
-  $ mkdir -p $HOME/lib/ruby
-  $ cp -a lib/* $HOME/lib/ruby
-  $ export RUBYLIB=$HOME/lib/ruby
+To create Gemfile.lock file, run "bundle install".
 
-(Optional) 'contrib/inline-require' script to concatenate all script
-and libraries into a file.
-  
-  $ tar xjf kwalify-0.7.2.tar.bz2
-  $ cd kwalify-0.7.2/
-  $ unset RUBYLIB
-  $ ruby contrib/inline-require -I ./lib bin/kwalify > contrib/kwalify
-  $ chmod a+x contrib/kwalify
-  $ mv contrib/kwalify $HOME/bin
+To run the tests, type "rake".
 
 == License
 
-   MIT License
+[MIT License](MIT-LICENSE)
 
 == Copyright
 
-   copyright(c) 2005-2010 kuwata-lab all rights reserved.
+copyright(c) 2005-2010 kuwata-lab all rights reserved.
