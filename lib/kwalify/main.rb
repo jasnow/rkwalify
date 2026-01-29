@@ -169,7 +169,7 @@ module Kwalify
     def apply_template(template_filename, hash)
       template = File.read(template_filename)
       trim_mode = 1
-      erb = ERB.new(template, nil, trim_mode)
+      erb = ERB.new(template, trim_mode: trim_mode)
       context = Object.new
       hash.each do |key, val|
         context.instance_variable_set("@#{key}", val)

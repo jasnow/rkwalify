@@ -377,7 +377,7 @@ class Kwalify::Yaml::Parser < Kwalify::BaseParser
           obj = hash
           hash = {}
           obj.instance_variables.each do |name|
-            key = name[1..-1]  # '@foo' => 'foo'
+            key = name[1..]  # '@foo' => 'foo'
             val = obj.instane_variable_get(name)
             hash[key] = val
           end
@@ -516,7 +516,7 @@ class Kwalify::Yaml::Parser < Kwalify::BaseParser
       end
       scan(/.*?\n/)
       if indicator == '|'
-        s << spaces[indent..-1] if spaces.length >= indent
+        s << spaces[indent..] if spaces.length >= indent
         s << text << nl
       else  # indicator == '>'
         if !text.empty? && spaces.length == indent
@@ -529,7 +529,7 @@ class Kwalify::Yaml::Parser < Kwalify::BaseParser
           is_folded = true
         else
           is_folded = false
-          s << spaces[indent..-1] if spaces.length > indent
+          s << spaces[indent..] if spaces.length > indent
         end
         s << text << nl
       end

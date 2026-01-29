@@ -1288,7 +1288,7 @@ class Installer
     if /\Aruby/ =~ File.basename(old.cmd)
       Shebang.new(config('rubypath'), old.args)
     elsif File.basename(old.cmd) == 'env' and old.args.first == 'ruby'
-      Shebang.new(config('rubypath'), old.args[1..-1])
+      Shebang.new(config('rubypath'), old.args[1..])
     else
       return old unless config('shebang') == 'all'
       Shebang.new(config('rubypath'))

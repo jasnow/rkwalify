@@ -175,7 +175,7 @@ module Kwalify
     end
 
     def getlabel
-      if @sbuf[@index..-1] =~ /\A\w[-\w]*/
+      if @sbuf[@index..] =~ /\A\w[-\w]*/
         label = $&
         @index += label.length
       else

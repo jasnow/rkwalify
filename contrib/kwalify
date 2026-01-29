@@ -2004,7 +2004,7 @@ class Kwalify::Yaml::Parser < Kwalify::BaseParser
           obj = hash
           hash = {}
           obj.instance_variables.each do |name|
-            key = name[1..-1]  # '@foo' => 'foo'
+            key = name[1..]  # '@foo' => 'foo'
             val = obj.instane_variable_get(name)
             hash[key] = val
           end
@@ -2143,7 +2143,7 @@ class Kwalify::Yaml::Parser < Kwalify::BaseParser
       end
       scan(/.*?\n/)
       if indicator == '|'
-        s << spaces[indent..-1] if spaces.length >= indent
+        s << spaces[indent..] if spaces.length >= indent
         s << text << nl
       else  # indicator == '>'
         if !text.empty? && spaces.length == indent
@@ -2156,7 +2156,7 @@ class Kwalify::Yaml::Parser < Kwalify::BaseParser
           is_folded = true
         else
           is_folded = false
-          s << spaces[indent..-1] if spaces.length > indent
+          s << spaces[indent..] if spaces.length > indent
         end
         s << text << nl
       end
@@ -2911,7 +2911,7 @@ module Kwalify
     end
 
     def getlabel
-      if @sbuf[@index..-1] =~ /\A\w[-\w]*/
+      if @sbuf[@index..] =~ /\A\w[-\w]*/
         label = $&
         @index += label.length
       else
@@ -3883,7 +3883,7 @@ module Kwalify
     def apply_template(template_filename, hash)
       template = File.read(template_filename)
       trim_mode = 1
-      erb = ERB.new(template, nil, trim_mode)
+      erb = ERB.new(template, trim_mode: trim_mode)
       context = Object.new
       hash.each do |key, val|
         context.instance_variable_set("@#{key}", val)
