@@ -7,5 +7,7 @@ gemspec
 gem 'rubocop', require: false
 
 group :development, optional: true do
+  gem 'simplecov', require: false, group: :test
+
   gem 'test-unit'
 end

@@ -4,6 +4,14 @@
 ### copyright(c) 2005-2010 kuwata-lab all rights reserved.
 ###
 
+require 'simplecov'
+if ENV["COVERAGE"]
+  SimpleCov.start 'rails' do
+    enable_coverage :branch
+    primary_coverage :branch
+  end
+end
+
 unless defined?(TESTDIR)
   TESTDIR = File.dirname(__FILE__)
   #libdir  = TESTDIR == '.' ? '../lib' : File.dirname(TESTDIR) + "/lib"
