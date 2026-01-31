@@ -3,13 +3,13 @@
 ### $Release: 0.7.2 $
 ### copyright(c) 2005-2010 kuwata-lab all rights reserved.
 ###
+# frozen_string_literal: false
 
 require 'yaml'
 require 'erb'
 require 'kwalify'
 require 'kwalify/util'
 require 'kwalify/util/ordered-hash'
-
 
 module Kwalify
 
