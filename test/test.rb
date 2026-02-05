@@ -15,7 +15,6 @@ end
 
 unless defined?(TESTDIR)
   TESTDIR = File.dirname(__FILE__)
-  #libdir  = TESTDIR == '.' ? '../lib' : File.dirname(TESTDIR) + "/lib"
   libdir  = TESTDIR == '.' ? File.expand_path('../lib') : File.dirname(TESTDIR) + "/lib"
   $LOAD_PATH << libdir << TESTDIR
 end
@@ -50,16 +49,17 @@ require 'kwalify/util/testcase-helper'
 if $0 == __FILE__
 
 # NOTE: 1/29/2026: Commented out all non-test-rule test for now.
-#  require 'test-parser-yaml.rb'
-#  require 'test-yaml-parser.rb'
   require 'test-rule.rb'
-#  require 'test-validator.rb'
-#  require 'test-metavalidator.rb'
-#  require 'test-databinding.rb'
-#  require 'test-main.rb'
-#  require 'test-action.rb'
-#  require 'test-users-guide.rb'
-#  require 'test-util.rb'
+  require 'test-databinding.rb'
+  require 'test-util.rb'
+
+#  require 'test-main.rb'         # 37 tests,  49 assertions,  2 failures, 0 errors
+#  require 'test-action.rb'       # 22 tests,  26 assertions,  0 failures, 6 ERRORS
+#  require 'test-parser-yaml.rb'  # 91 tests, 913 assertions,  7 failures, 0 error
+#  require 'test-yaml-parser.rb'  # 89 tests, 249 assertions, 17 failures, 0 errors
+#  require 'test-validator.rb'    # 37 tests,  72 assertions, 20 failures, 0 errors
+#  require 'test-users-guide.rb'  # 48 tests,  55 assertions, 29 failures, 0 errors
+#  require 'test-metavalidator.rb' # 161 tests, 321 assertions, 4 failures, 0 errors
 
   #suite = Test::Unit::TestSuite.new()
   #suite << ValidatorTest.suite()
