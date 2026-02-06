@@ -1,3 +1,9 @@
+###
+### $Rev$
+### $Release: 0.7.2 $
+### copyright(c) 2005-2010 kuwata-lab all rights reserved.
+###
+
 require File.expand_path(File.dirname(__FILE__) + '/../test/test.rb')
 
 class UsersGuideTest < Test::Unit::TestCase
