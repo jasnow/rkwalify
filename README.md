@@ -25,7 +25,7 @@ To create Gemfile.lock file, run "bundle install".
 
 To run the tests, type "rake".
 
-To run the tests with coverage, type "COVERAGE='yes' rake".
+To run the tests with (simplecov) coverage, type "COVERAGE='yes' rake".
 Then open **coverage/index.html** in a browser.
 
 == License
