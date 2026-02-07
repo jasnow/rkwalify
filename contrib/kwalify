@@ -415,14 +415,14 @@ module Kwalify
 
   class SchemaError < BaseError
     def initialize(message="", path=nil, rule=nil, value=nil, error_symbol=nil)
-      super(message, path, rule, value, error_symbol)
+      super
     end
   end
 
 
   class ValidationError < BaseError
     def initialize(message="", path=nil, rule=nil, value=nil, error_symbol=nil)
-      super(message, path, rule, value, error_symbol)
+      super
     end
   end
 
@@ -471,7 +471,7 @@ module Kwalify
       msg = Kwalify.msg(message_key)
       assert_error("message_key=#{message_key.inspect}") unless msg
       msg = msg % args if args
-      msg = "'#{val.to_s.gsub(/\n/, '\n')}': #{msg}" if !val.nil? && Types.scalar?(val)
+      msg = "'#{val.to_s.gsub("\n", '\n')}': #{msg}" if !val.nil? && Types.scalar?(val)
       return msg;
     end
     module_function :_build_message
@@ -561,7 +561,7 @@ module Kwalify
     keys = %w[type name desc required pattern enum assert range length
               ident unique default sequence mapping class]
     #table = keys.inject({}) {|h, k| h[k.intern] = "_init_#{k}_value".intern; h }
-    table = {}; keys.each {|k| table[k.intern] = "_init_#{k}_value".intern }
+    table = {}; keys.each {|k| table[k.intern] = :"_init_#{k}_value" }
     @@dispatch_table = table
 
 
@@ -957,23 +957,23 @@ module Kwalify
 
     def _inspect(str="", level=0, done={})
       done[self.__id__] = true
-      str << "  " * level << "name:    #{@name}\n"         unless @name.nil?
-      str << "  " * level << "desc:    #{@desc}\n"         unless @desc.nil?
-      str << "  " * level << "type:    #{@type}\n"         unless @type.nil?
-      str << "  " * level << "klass:    #{@type_class.name}\n"  unless @type_class.nil?
-      str << "  " * level << "required:  #{@required}\n"      unless @required.nil?
-      str << "  " * level << "pattern:  #{@regexp.inspect}\n"  unless @pattern.nil?
-      str << "  " * level << "assert:   #{@assert}\n"        unless @assert.nil?
-      str << "  " * level << "ident:    #{@ident}\n"        unless @ident.nil?
-      str << "  " * level << "unique:   #{@unique}\n"        unless @unique.nil?
+      str << ("  " * level) << "name:    #{@name}\n"         unless @name.nil?
+      str << ("  " * level) << "desc:    #{@desc}\n"         unless @desc.nil?
+      str << ("  " * level) << "type:    #{@type}\n"         unless @type.nil?
+      str << ("  " * level) << "klass:    #{@type_class.name}\n"  unless @type_class.nil?
+      str << ("  " * level) << "required:  #{@required}\n"      unless @required.nil?
+      str << ("  " * level) << "pattern:  #{@regexp.inspect}\n"  unless @pattern.nil?
+      str << ("  " * level) << "assert:   #{@assert}\n"        unless @assert.nil?
+      str << ("  " * level) << "ident:    #{@ident}\n"        unless @ident.nil?
+      str << ("  " * level) << "unique:   #{@unique}\n"        unless @unique.nil?
       if !@enum.nil?
-        str << "  " * level << "enum:\n"
+        str << ("  " * level) << "enum:\n"
         @enum.each do |item|
-          str << "  " * (level+1) << "- #{item}\n"
+          str << ("  " * (level+1)) << "- #{item}\n"
         end
       end
       if !@range.nil?
-        str << "  " * level
+        str << ("  " * level)
         str << "range:    { "
         colon = ""
         %w[max max-ex min min-ex].each do |key|
@@ -986,7 +986,7 @@ module Kwalify
         str << " }\n"
       end
       if !@length.nil?
-        str << "  " * level
+        str << ("  " * level)
         str << "length:    { "
         colon = ""
         %w[max max-ex min min-ex].each do |key|
@@ -1000,17 +1000,17 @@ module Kwalify
       end
       @sequence.each do |rule|
         if done[rule.__id__]
-          str << "  " * (level+1) << "- ...\n"
+          str << ("  " * (level+1)) << "- ...\n"
         else
-          str << "  " * (level+1) << "- \n"
+          str << ("  " * (level+1)) << "- \n"
           rule._inspect(str, level+2, done)
         end
       end if @sequence
       @mapping.each do |key, rule|
         if done[rule.__id__]
-          str << '  ' * (level+1) << '"' << key << "\": ...\n"
+          str << ('  ' * (level+1)) << '"' << key << "\": ...\n"
         else
-          str << '  ' * (level+1) << '"' << key << "\":\n"
+          str << ('  ' * (level+1)) << '"' << key << "\":\n"
           rule._inspect(str, level+2, done)
         end
       end if @mapping
@@ -1367,7 +1367,7 @@ module Kwalify
     ##
     def untabify(str, width=8)
       return str if str.nil?
-      list = str.split(/\t/, -1)   # if 2nd arg is negative then split() doesn't remove tailing empty strings
+      list = str.split("\t", -1)   # if 2nd arg is negative then split() doesn't remove tailing empty strings
       last = list.pop
       sb = ''
       list.each do |s|
@@ -1390,20 +1390,20 @@ module Kwalify
     ##       rulehash['class'] = 'MyModule::' + rulehash['class']
     ##     end
     ##   end
-    def traverse_schema(schema, &block)  #:yield: rulehash
+    def traverse_schema(schema, &)  #:yield: rulehash
       hash = schema
       _done = {}
-      _traverse_schema(hash, _done, &block)
+      _traverse_schema(hash, _done, &)
     end
 
-    def _traverse_schema(hash, _done={}, &block)
+    def _traverse_schema(hash, _done={}, &)
       return if _done.key?(hash.__id__)
       _done[hash.__id__] = hash
       yield hash
       if hash['mapping']
-        hash['mapping'].each {|k, v| _traverse_schema(v, _done, &block) }
+        hash['mapping'].each {|k, v| _traverse_schema(v, _done, &) }
       elsif hash['sequence']
-        _traverse_schema(hash['sequence'][0], _done, &block)
+        _traverse_schema(hash['sequence'][0], _done, &)
       end
     end
     private :_traverse_schema
@@ -1417,21 +1417,21 @@ module Kwalify
     ##   Kwalify::Util.traverse_rule(validator) do |rule|
     ##     p rule if rule.classname
     ##   end
-    def traverse_rule(validator, &block)  #:yield: rule
+    def traverse_rule(validator, &)  #:yield: rule
       rule = validator.is_a?(Rule) ? validator : validator.rule
       _done = {}
-      _traverse_rule(rule, _done, &block)
+      _traverse_rule(rule, _done, &)
     end
 
-    def _traverse_rule(rule, _done={}, &block)
+    def _traverse_rule(rule, _done={}, &)
        return if _done.key?(rule.__id__)
        _done[rule.__id__] = rule
        yield rule
        rule.sequence.each do |seq_rule|
-          _traverse_rule(seq_rule, _done, &block)
+          _traverse_rule(seq_rule, _done, &)
        end if rule.sequence
        rule.mapping.each do |name, map_rule|
-          _traverse_rule(map_rule, _done, &block)
+          _traverse_rule(map_rule, _done, &)
        end if rule.mapping
     end
     private :_traverse_rule
@@ -1714,7 +1714,7 @@ class Kwalify::Yaml::Parser < Kwalify::BaseParser
 #  private :_validate_error
 
 
-  def _set_error_info(linenum=@linenum, column=@column, &block)
+  def _set_error_info(linenum=@linenum, column=@column, &)
     len = @errors.length
     yield
     n = @errors.length - len
@@ -1790,7 +1790,7 @@ class Kwalify::Yaml::Parser < Kwalify::BaseParser
   end
 
 
-  def parse_stream(input, opts={}, &block)
+  def parse_stream(input, opts={}, &)
     reset_scanner(input, opts[:filename], opts[:untabify])
     ydocs = block_given? ? nil : []
     while true
@@ -1972,7 +1972,7 @@ class Kwalify::Yaml::Parser < Kwalify::BaseParser
     end
     #
     if key == '='      # default
-      val = level ? parse_block_value(level, nil, path, uniq_table, map) \
+      val = level ? parse_block_value(level, nil, path, uniq_table, map)
                   : parse_flow_value(nil, path, uniq_table, map)
       map.default = val
     elsif key == '<<'  # merge
@@ -1983,7 +1983,7 @@ class Kwalify::Yaml::Parser < Kwalify::BaseParser
         map_rule.classname = nil
         map_rule.classobj = nil
       end
-      val = level ? parse_block_value(level, map_rule, path, uniq_table, map) \
+      val = level ? parse_block_value(level, map_rule, path, uniq_table, map)
                   : parse_flow_value(map_rule, path, uniq_table, map)
       if val.is_a?(Array)
         val.each_with_index do |v, i|
@@ -2022,7 +2022,7 @@ class Kwalify::Yaml::Parser < Kwalify::BaseParser
     else               # other
       rule = map_rule ? map_rule.mapping[key] : nil                        #*V
       utable = uniq_table ? uniq_table[key] : nil                          #*V
-      val = level ? parse_block_value(level, rule, path, utable, map) \
+      val = level ? parse_block_value(level, rule, path, utable, map)
                   : parse_flow_value(rule, path, utable, map)
       _validate_map_value(map, map_rule, rule, path, utable, key, val,     #*V
                        _linenum, _column)                                  #*V
@@ -2223,9 +2223,9 @@ class Kwalify::Yaml::Parser < Kwalify::BaseParser
 
   def parse_flow_seq(seq, seq_rule, path, uniq_table)
     #scan(/\[\s*/)
-    scan(/\[/)
+    scan('[')
     skip_spaces_and_comments()
-    if scan(/\]/)
+    if scan(']')
       nil
     else
       rule = seq_rule ? seq_rule.sequence[0] : nil                         #*V
@@ -2249,7 +2249,7 @@ class Kwalify::Yaml::Parser < Kwalify::BaseParser
         end
       end
       path.pop()
-      unless scan(/\]/)
+      unless scan(']')
         raise _syntax_error("flow sequence is not closed by ']'.", path)
       end
     end
@@ -2262,9 +2262,9 @@ class Kwalify::Yaml::Parser < Kwalify::BaseParser
     #scan(/\{\s*/)  # not work?
     _start_linenum = @linenum                                              #*V
     _start_column  = @column                                               #*V
-    scan(/\{/)
+    scan('{')
     skip_spaces_and_comments()
-    if scan(/\}/)
+    if scan('}')
       nil
     else
       path.push(nil)
@@ -2285,7 +2285,7 @@ class Kwalify::Yaml::Parser < Kwalify::BaseParser
         break unless scan(/,\s+/)
       end
       path.pop()
-      unless scan(/\}/)
+      unless scan('}')
         raise _syntax_error("flow mapping is not closed by '}'.", path)
       end
     end
@@ -2409,7 +2409,7 @@ class Kwalify::Yaml::Parser < Kwalify::BaseParser
 
   def _getclass(classname)
     mod = Object
-    classname.split(/::/).each do |modname|
+    classname.split('::').each do |modname|
       mod = mod.const_get(modname)   # raises NameError when module not found
     end
     return mod
@@ -2496,7 +2496,7 @@ module Kwalify
       return @instance
     end
 
-    def initialize(schema, &block)
+    def initialize(schema, &)
       super
     end
 
@@ -3493,7 +3493,7 @@ module Kwalify
     end
 
     def parse()
-      @doc = super()
+      @doc = super
       return @doc
     end
 
@@ -3597,7 +3597,7 @@ module Kwalify
   ## alias of YamlParser class
   class Parser < YamlParser
     def initialize(yaml_str)
-      super(yaml_str)
+      super
       #warn "*** class Kwalify::Parser is obsolete. Please use Kwalify::YamlParser instead."
     end
   end
@@ -3677,7 +3677,7 @@ module Kwalify
 
     class OrderedHash < Hash
 
-      def initialize(*args, &block)
+      def initialize(*args, &)
         super
         @_keys = []
       end
@@ -3869,7 +3869,7 @@ module Kwalify
       template_filename = action + '.eruby'
       unless test(?f, template_filename)
         pathlist = []
-        pathlist.concat(@options[:tpath].split(/,/)) if @options[:tpath]
+        pathlist.concat(@options[:tpath].split(',')) if @options[:tpath]
         pathlist.concat(@template_path)
         tpath = pathlist.find {|path| test(?f, "#{path}/#{template_filename}") }
         #* key=:command_option_notemplate  msg="%s: invalid action (template not found).\n"
@@ -4110,7 +4110,7 @@ module Kwalify
             raise option_error(:command_property_invalid, optstr)
           end
           prop_name = $1;  prop_value = $2
-          key  = prop_name.gsub(/-/, '_').intern
+          key  = prop_name.gsub('-', '_').intern
           value = prop_value.nil? ? true : _to_value(prop_value)
           @properties[key] = value
         ## option

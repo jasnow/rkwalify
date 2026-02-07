@@ -68,7 +68,7 @@ class MetaValidatorTest < Test::Unit::TestCase
     actual = ''
     errors.each do |error|
       raise error if error.is_a?(Kwalify::AssertionError)
-      actual << "%-20s: [%s] %s\n" % [error.error_symbol.inspect, error.path, error.message]
+      actual << ("%-20s: [%s] %s\n" % [error.error_symbol.inspect, error.path, error.message])
     end
     if $print
       print actual

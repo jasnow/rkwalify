@@ -125,7 +125,7 @@ class CommandOptionParser
         end
         prop_name = $1;  prop_value = $2
         if auto_convert
-          key   = prop_name.gsub(/-/, '_').intern
+          key   = prop_name.gsub('-', '_').intern
           value = prop_value.nil? ? true : CommandOptionParser.to_value(prop_value)
           properties[key] = value
         else

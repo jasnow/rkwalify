@@ -15,7 +15,7 @@ class YamlParserTest < Test::Unit::TestCase
 
   def _test()
     if @exception
-      @error_class = @exception.split(/::/).inject(Kernel) { |c,s| c = c.const_get(s) }
+      @error_class = @exception.split('::').inject(Kernel) { |c,s| c = c.const_get(s) }
     end
     parser = Kwalify::Yaml::Parser.new()
     @testopts ||= {}
@@ -34,8 +34,8 @@ class YamlParserTest < Test::Unit::TestCase
         actual = doc.inspect + "\n"
       end
       if $log
-        File.open("#{@name}.expected", 'w') { |f| f.write(@expected) }
-        File.open("#{@name}.actual", 'w') { |f| f.write(actual) }
+        File.write("#{@name}.expected", @expected)
+        File.write("#{@name}.actual", actual)
       end
       if $print
         print actual

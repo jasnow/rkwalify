@@ -14,7 +14,7 @@ class ParserTest < Test::Unit::TestCase
 
   def _test()
     if @exception
-      @error_class = @exception.split(/::/).inject(Kernel) { |k,s| k = k.const_get(s) }
+      @error_class = @exception.split('::').inject(Kernel) { |k,s| k = k.const_get(s) }
       #@error_class = Kwalify::YamlSyntaxError if @error_class == Kwalify::SyntaxError
     end
     parser = Kwalify::YamlParser.new(@input)
@@ -33,8 +33,8 @@ class ParserTest < Test::Unit::TestCase
         actual = doc.inspect + "\n"
       end
       if $log
-        File.open("#{@name}.expected", 'w') { |f| f.write(@expected) }
-        File.open("#{@name}.actual", 'w') { |f| f.write(actual) }
+        File.write("#{@name}.expected", @expected)
+        File.write("#{@name}.actual", actual)
       end
       if $print
         print actual

@@ -758,7 +758,7 @@ module Kwalify
     end
 
     def parse()
-      @doc = super()
+      @doc = super
       return @doc
     end
 
@@ -862,7 +862,7 @@ module Kwalify
   ## alias of YamlParser class
   class Parser < YamlParser
     def initialize(yaml_str)
-      super(yaml_str)
+      super
       #warn "*** class Kwalify::Parser is obsolete. Please use Kwalify::YamlParser instead."
     end
   end

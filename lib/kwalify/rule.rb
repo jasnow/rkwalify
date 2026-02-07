@@ -77,7 +77,7 @@ module Kwalify
     keys = %w[type name desc required pattern enum assert range length
               ident unique default sequence mapping class]
     #table = keys.inject({}) {|h, k| h[k.intern] = "_init_#{k}_value".intern; h }
-    table = {}; keys.each {|k| table[k.intern] = "_init_#{k}_value".intern }
+    table = {}; keys.each {|k| table[k.intern] = :"_init_#{k}_value" }
     @@dispatch_table = table
 
 
@@ -473,23 +473,23 @@ module Kwalify
 
     def _inspect(str="", level=0, done={})
       done[self.__id__] = true
-      str << "  " * level << "name:    #{@name}\n"         unless @name.nil?
-      str << "  " * level << "desc:    #{@desc}\n"         unless @desc.nil?
-      str << "  " * level << "type:    #{@type}\n"         unless @type.nil?
-      str << "  " * level << "klass:    #{@type_class.name}\n"  unless @type_class.nil?
-      str << "  " * level << "required:  #{@required}\n"      unless @required.nil?
-      str << "  " * level << "pattern:  #{@regexp.inspect}\n"  unless @pattern.nil?
-      str << "  " * level << "assert:   #{@assert}\n"        unless @assert.nil?
-      str << "  " * level << "ident:    #{@ident}\n"        unless @ident.nil?
-      str << "  " * level << "unique:   #{@unique}\n"        unless @unique.nil?
+      str << ("  " * level) << "name:    #{@name}\n"         unless @name.nil?
+      str << ("  " * level) << "desc:    #{@desc}\n"         unless @desc.nil?
+      str << ("  " * level) << "type:    #{@type}\n"         unless @type.nil?
+      str << ("  " * level) << "klass:    #{@type_class.name}\n"  unless @type_class.nil?
+      str << ("  " * level) << "required:  #{@required}\n"      unless @required.nil?
+      str << ("  " * level) << "pattern:  #{@regexp.inspect}\n"  unless @pattern.nil?
+      str << ("  " * level) << "assert:   #{@assert}\n"        unless @assert.nil?
+      str << ("  " * level) << "ident:    #{@ident}\n"        unless @ident.nil?
+      str << ("  " * level) << "unique:   #{@unique}\n"        unless @unique.nil?
       if !@enum.nil?
-        str << "  " * level << "enum:\n"
+        str << ("  " * level) << "enum:\n"
         @enum.each do |item|
-          str << "  " * (level+1) << "- #{item}\n"
+          str << ("  " * (level+1)) << "- #{item}\n"
         end
       end
       if !@range.nil?
-        str << "  " * level
+        str << ("  " * level)
         str << "range:    { "
         colon = ""
         %w[max max-ex min min-ex].each do |key|
@@ -502,7 +502,7 @@ module Kwalify
         str << " }\n"
       end
       if !@length.nil?
-        str << "  " * level
+        str << ("  " * level)
         str << "length:    { "
         colon = ""
         %w[max max-ex min min-ex].each do |key|
@@ -516,17 +516,17 @@ module Kwalify
       end
       @sequence.each do |rule|
         if done[rule.__id__]
-          str << "  " * (level+1) << "- ...\n"
+          str << ("  " * (level+1)) << "- ...\n"
         else
-          str << "  " * (level+1) << "- \n"
+          str << ("  " * (level+1)) << "- \n"
           rule._inspect(str, level+2, done)
         end
       end if @sequence
       @mapping.each do |key, rule|
         if done[rule.__id__]
-          str << '  ' * (level+1) << '"' << key << "\": ...\n"
+          str << ('  ' * (level+1)) << '"' << key << "\": ...\n"
         else
-          str << '  ' * (level+1) << '"' << key << "\":\n"
+          str << ('  ' * (level+1)) << '"' << key << "\":\n"
           rule._inspect(str, level+2, done)
         end
       end if @mapping

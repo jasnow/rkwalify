@@ -10,7 +10,7 @@ module Kwalify
 
     class OrderedHash < Hash
 
-      def initialize(*args, &block)
+      def initialize(*args, &)
         super
         @_keys = []
       end

@@ -43,8 +43,8 @@ class ActionTest < Test::Unit::TestCase
     raise "*** #{@name}: args is required."    unless @args
     raise "*** #{@name}: expected is required." unless @expected
     #
-    File.open(File.join(@@tmpdir, "#{@name}.schema"), 'w')   { |f| f.write(@schema)   } if @schema
-    File.open(File.join(@@tmpdir, "#{@name}.document"), 'w') { |f| f.write(@document) } if @document
+    File.write(File.join(@@tmpdir, "#{@name}.schema"), @schema) if @schema
+    File.write(File.join(@@tmpdir, "#{@name}.document"), @document) if @document
     #
     begin
       main = Kwalify::Main.new("kwalify")

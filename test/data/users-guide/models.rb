@@ -5,6 +5,7 @@ module Babel
   ## 
   class Team
     include Kwalify::Util::HashLike
+
     attr_accessor :name             # str
     attr_accessor :desc             # str
     attr_accessor :chief            # map
@@ -14,6 +15,7 @@ module Babel
   ## 
   class Member
     include Kwalify::Util::HashLike
+
     attr_accessor :name             # str
     attr_accessor :desc             # str
     attr_accessor :team             # map

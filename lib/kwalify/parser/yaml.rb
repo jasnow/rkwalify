@@ -87,7 +87,7 @@ class Kwalify::Yaml::Parser < Kwalify::BaseParser
 #  private :_validate_error
 
 
-  def _set_error_info(linenum=@linenum, column=@column, &block)
+  def _set_error_info(linenum=@linenum, column=@column, &)
     len = @errors.length
     yield
     n = @errors.length - len
@@ -163,7 +163,7 @@ class Kwalify::Yaml::Parser < Kwalify::BaseParser
   end
 
 
-  def parse_stream(input, opts={}, &block)
+  def parse_stream(input, opts={}, &)
     reset_scanner(input, opts[:filename], opts[:untabify])
     ydocs = block_given? ? nil : []
     while true
@@ -345,7 +345,7 @@ class Kwalify::Yaml::Parser < Kwalify::BaseParser
     end
     #
     if key == '='      # default
-      val = level ? parse_block_value(level, nil, path, uniq_table, map) \
+      val = level ? parse_block_value(level, nil, path, uniq_table, map)
                   : parse_flow_value(nil, path, uniq_table, map)
       map.default = val
     elsif key == '<<'  # merge
@@ -356,7 +356,7 @@ class Kwalify::Yaml::Parser < Kwalify::BaseParser
         map_rule.classname = nil
         map_rule.classobj = nil
       end
-      val = level ? parse_block_value(level, map_rule, path, uniq_table, map) \
+      val = level ? parse_block_value(level, map_rule, path, uniq_table, map)
                   : parse_flow_value(map_rule, path, uniq_table, map)
       if val.is_a?(Array)
         val.each_with_index do |v, i|
@@ -395,7 +395,7 @@ class Kwalify::Yaml::Parser < Kwalify::BaseParser
     else               # other
       rule = map_rule ? map_rule.mapping[key] : nil                        #*V
       utable = uniq_table ? uniq_table[key] : nil                          #*V
-      val = level ? parse_block_value(level, rule, path, utable, map) \
+      val = level ? parse_block_value(level, rule, path, utable, map)
                   : parse_flow_value(rule, path, utable, map)
       _validate_map_value(map, map_rule, rule, path, utable, key, val,     #*V
                        _linenum, _column)                                  #*V
@@ -596,9 +596,9 @@ class Kwalify::Yaml::Parser < Kwalify::BaseParser
 
   def parse_flow_seq(seq, seq_rule, path, uniq_table)
     #scan(/\[\s*/)
-    scan(/\[/)
+    scan('[')
     skip_spaces_and_comments()
-    if scan(/\]/)
+    if scan(']')
       nil
     else
       rule = seq_rule ? seq_rule.sequence[0] : nil                         #*V
@@ -622,7 +622,7 @@ class Kwalify::Yaml::Parser < Kwalify::BaseParser
         end
       end
       path.pop()
-      unless scan(/\]/)
+      unless scan(']')
         raise _syntax_error("flow sequence is not closed by ']'.", path)
       end
     end
@@ -635,9 +635,9 @@ class Kwalify::Yaml::Parser < Kwalify::BaseParser
     #scan(/\{\s*/)  # not work?
     _start_linenum = @linenum                                              #*V
     _start_column  = @column                                               #*V
-    scan(/\{/)
+    scan('{')
     skip_spaces_and_comments()
-    if scan(/\}/)
+    if scan('}')
       nil
     else
       path.push(nil)
@@ -658,7 +658,7 @@ class Kwalify::Yaml::Parser < Kwalify::BaseParser
         break unless scan(/,\s+/)
       end
       path.pop()
-      unless scan(/\}/)
+      unless scan('}')
         raise _syntax_error("flow mapping is not closed by '}'.", path)
       end
     end
@@ -782,7 +782,7 @@ class Kwalify::Yaml::Parser < Kwalify::BaseParser
 
   def _getclass(classname)
     mod = Object
-    classname.split(/::/).each do |modname|
+    classname.split('::').each do |modname|
       mod = mod.const_get(modname)   # raises NameError when module not found
     end
     return mod

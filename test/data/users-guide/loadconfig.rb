@@ -2,6 +2,7 @@
 require 'kwalify/util/hashlike'
 class Config
   include Kwalify::Util::HashLike  # defines [], []=, and keys?
+
   attr_accessor :host, :posrt, :user, :pass
 end
 ## create validator object

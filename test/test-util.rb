@@ -74,7 +74,7 @@ END
         rules << rule
       end
       assert_equal 4, rules.length
-      assert_text_equal <<'END', rules[0].send(:_inspect)
+      assert_text_equal <<END, rules[0].send(:_inspect)
 type:    seq
 klass:    Array
   - 
@@ -89,7 +89,7 @@ klass:    Array
         klass:    Integer
         required:  false
 END
-      assert_text_equal <<'END', rules[1].send(:_inspect)
+      assert_text_equal <<END, rules[1].send(:_inspect)
 type:    map
 klass:    Hash
   "name":
@@ -101,12 +101,12 @@ klass:    Hash
     klass:    Integer
     required:  false
 END
-      assert_text_equal <<'END', rules[2].send(:_inspect)
+      assert_text_equal <<END, rules[2].send(:_inspect)
 type:    str
 klass:    String
 required:  true
 END
-      assert_text_equal <<'END', rules[3].send(:_inspect)
+      assert_text_equal <<END, rules[3].send(:_inspect)
 type:    int
 klass:    Integer
 required:  false

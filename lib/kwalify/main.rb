@@ -155,7 +155,7 @@ module Kwalify
       template_filename = action + '.eruby'
       unless test(?f, template_filename)
         pathlist = []
-        pathlist.concat(@options[:tpath].split(/,/)) if @options[:tpath]
+        pathlist.concat(@options[:tpath].split(',')) if @options[:tpath]
         pathlist.concat(@template_path)
         tpath = pathlist.find {|path| test(?f, "#{path}/#{template_filename}") }
         #* key=:command_option_notemplate  msg="%s: invalid action (template not found).\n"
@@ -396,7 +396,7 @@ module Kwalify
             raise option_error(:command_property_invalid, optstr)
           end
           prop_name = $1;  prop_value = $2
-          key  = prop_name.gsub(/-/, '_').intern
+          key  = prop_name.gsub('-', '_').intern
           value = prop_value.nil? ? true : _to_value(prop_value)
           @properties[key] = value
         ## option

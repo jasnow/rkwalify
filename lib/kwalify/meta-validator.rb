@@ -37,7 +37,7 @@ module Kwalify
       return @instance
     end
 
-    def initialize(schema, &block)
+    def initialize(schema, &)
       super
     end
 

@@ -19,7 +19,7 @@ module Kwalify
     ##
     def untabify(str, width=8)
       return str if str.nil?
-      list = str.split(/\t/, -1)   # if 2nd arg is negative then split() doesn't remove tailing empty strings
+      list = str.split("\t", -1)   # if 2nd arg is negative then split() doesn't remove tailing empty strings
       last = list.pop
       sb = ''
       list.each do |s|
@@ -42,20 +42,20 @@ module Kwalify
     ##       rulehash['class'] = 'MyModule::' + rulehash['class']
     ##     end
     ##   end
-    def traverse_schema(schema, &block)  #:yield: rulehash
+    def traverse_schema(schema, &)  #:yield: rulehash
       hash = schema
       _done = {}
-      _traverse_schema(hash, _done, &block)
+      _traverse_schema(hash, _done, &)
     end
 
-    def _traverse_schema(hash, _done={}, &block)
+    def _traverse_schema(hash, _done={}, &)
       return if _done.key?(hash.__id__)
       _done[hash.__id__] = hash
       yield hash
       if hash['mapping']
-        hash['mapping'].each {|k, v| _traverse_schema(v, _done, &block) }
+        hash['mapping'].each {|k, v| _traverse_schema(v, _done, &) }
       elsif hash['sequence']
-        _traverse_schema(hash['sequence'][0], _done, &block)
+        _traverse_schema(hash['sequence'][0], _done, &)
       end
     end
     private :_traverse_schema
@@ -69,21 +69,21 @@ module Kwalify
     ##   Kwalify::Util.traverse_rule(validator) do |rule|
     ##     p rule if rule.classname
     ##   end
-    def traverse_rule(validator, &block)  #:yield: rule
+    def traverse_rule(validator, &)  #:yield: rule
       rule = validator.is_a?(Rule) ? validator : validator.rule
       _done = {}
-      _traverse_rule(rule, _done, &block)
+      _traverse_rule(rule, _done, &)
     end
 
-    def _traverse_rule(rule, _done={}, &block)
+    def _traverse_rule(rule, _done={}, &)
        return if _done.key?(rule.__id__)
        _done[rule.__id__] = rule
        yield rule
        rule.sequence.each do |seq_rule|
-          _traverse_rule(seq_rule, _done, &block)
+          _traverse_rule(seq_rule, _done, &)
        end if rule.sequence
        rule.mapping.each do |name, map_rule|
-          _traverse_rule(map_rule, _done, &block)
+          _traverse_rule(map_rule, _done, &)
        end if rule.mapping
     end
     private :_traverse_rule

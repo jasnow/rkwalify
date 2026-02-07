@@ -1,0 +1,54 @@
+Inspecting 51 files
+......W.......C.WC..........W.................F....
+
+Offenses:
+
+contrib/kwalify:693:24: C: Style/DocumentDynamicEvalDefinition: Add a 
+comment block showing its appearance if interpolated.
+        @assert_proc = eval "proc { |val| #{val} }"
+                       ^^^^
+contrib/kwalify:2336:5: W: Lint/DuplicateBranch: Duplicate branch 
+body detected.
+    when /\A(null|~)\z/     ;  val = nil
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+contrib/kwalify:2338:5: W: Lint/DuplicateBranch: Duplicate branch 
+body detected.
+    when /\A'(.*)'\z/       ;  val = $1
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+contrib/kwalify:2553:11: C: Style/DocumentDynamicEvalDefinition: Add 
+a comment block showing its appearance if interpolated.
+          eval "proc { |val| #{val} }"
+          ^^^^
+contrib/kwalify:3418:7: W: Lint/DuplicateBranch: Duplicate branch 
+body detected.
+      when /^'(.*)'([ \t]*\#.*$)?/    ; return $1
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+lib/kwalify/meta-validator.rb:94:11: C: 
+Style/DocumentDynamicEvalDefinition: Add a comment block showing its 
+appearance if interpolated.
+          eval "proc { |val| #{val} }"
+          ^^^^
+lib/kwalify/parser/yaml.rb:709:5: W: Lint/DuplicateBranch: Duplicate 
+branch body detected.
+    when /\A(null|~)\z/     ;  val = nil
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+lib/kwalify/parser/yaml.rb:711:5: W: Lint/DuplicateBranch: Duplicate 
+branch body detected.
+    when /\A'(.*)'\z/       ;  val = $1
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+lib/kwalify/rule.rb:209:24: C: Style/DocumentDynamicEvalDefinition: 
+Add a comment block showing its appearance if interpolated.
+        @assert_proc = eval "proc { |val| #{val} }"
+                       ^^^^
+lib/kwalify/yaml-parser.rb:683:7: W: Lint/DuplicateBranch: Duplicate 
+branch body detected.
+      when /^'(.*)'([ \t]*\#.*$)?/    ; return $1
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+test/test-users-guide.rb:14:47: F: Lint/Syntax: unexpected '('; 
+expected a 'do', newline, or ';' after the 'for' loop collection
+(Using Ruby 3.4 parser; configure using TargetRubyVersion parameter, 
+under AllCops)
+  for item in Dir.glob("#{DATA_DIR}/*.result")()
+                                              ^
+
+51 files inspected, 11 offenses detected

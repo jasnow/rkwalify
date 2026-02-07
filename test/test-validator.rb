@@ -47,7 +47,7 @@ class ValidatorTest < Test::Unit::TestCase
     error_list.each do |error|
       e = error
       args = [e.error_symbol.inspect, e.linenum, e.path, e.message]
-      actual << "%-20s: (line %d)[%s] %s\n" % args
+      actual << ("%-20s: (line %d)[%s] %s\n" % args)
     end
     if $print
       print actual
@@ -67,7 +67,7 @@ class ValidatorTest < Test::Unit::TestCase
       e = error
       args = [e.error_symbol.inspect, e.linenum, e.column, e.path, e.message]
       #actual << "%-20s: (line %d)[%s] %s\n" % args
-      actual << "%-20s: %d:%d:[%s] %s\n" % args
+      actual << ("%-20s: %d:%d:[%s] %s\n" % args)
     end
     if $print
       print actual

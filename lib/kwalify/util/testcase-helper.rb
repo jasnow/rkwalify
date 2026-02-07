@@ -15,7 +15,7 @@ class Test::Unit::TestCase   # :nodoc:
     sb = []
     str.scan(/(.*?)\t/m) do |s, |
       len = (n = s.rindex(?\n)) ? s.length - n - 1 : s.length
-      sb << s << (" " * (width - len % width))
+      sb << s << (" " * (width - (len % width)))
     end
     str = (sb << $').join if $'
     return str

@@ -57,7 +57,7 @@ class InlineRequire
 
          ## find 'require "foo"' and expand it to inline code
          flag_inline = false
-         pattern = expand_indented ? /^[ \t]*require ['"](.*)["']\s*$/ \
+         pattern = expand_indented ? /^[ \t]*require ['"](.*)["']\s*$/
                                    :       /^require ['"](.*)["']\s*$/
          if line =~ pattern
             libname = $1
@@ -149,7 +149,7 @@ if __FILE__ == $0
       end
 
       if options[:libpath]
-         rubylib_paths = options[:libpath].split(/,/)
+         rubylib_paths = options[:libpath].split(',')
       else
          rubylib_paths = []
       end

@@ -59,14 +59,14 @@ module Kwalify
 
   class SchemaError < BaseError
     def initialize(message="", path=nil, rule=nil, value=nil, error_symbol=nil)
-      super(message, path, rule, value, error_symbol)
+      super
     end
   end
 
 
   class ValidationError < BaseError
     def initialize(message="", path=nil, rule=nil, value=nil, error_symbol=nil)
-      super(message, path, rule, value, error_symbol)
+      super
     end
   end
 
@@ -115,7 +115,7 @@ module Kwalify
       msg = Kwalify.msg(message_key)
       assert_error("message_key=#{message_key.inspect}") unless msg
       msg = msg % args if args
-      msg = "'#{val.to_s.gsub(/\n/, '\n')}': #{msg}" if !val.nil? && Types.scalar?(val)
+      msg = "'#{val.to_s.gsub("\n", '\n')}': #{msg}" if !val.nil? && Types.scalar?(val)
       return msg;
     end
     module_function :_build_message
