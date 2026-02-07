@@ -11,7 +11,7 @@ class UsersGuideTest < Test::Unit::TestCase
   DATA_DIR = 'test/data/users-guide'
   CURR_DIR = Dir.pwd
   puts "CURR DIR is #{CURR_DIR}"
-  for item in Dir.glob("#{DATA_DIR}/*.result")()
+  for item in Dir.glob("#{DATA_DIR}/*.result")
     filename = File.basename(item)
     name = (filename =~ /(.*)\.\w+$/) && $1.gsub(/[^\w]/, '_')
     s = <<-END

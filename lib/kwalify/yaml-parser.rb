@@ -679,8 +679,8 @@ module Kwalify
 
     def to_scalar(str)
       case str
-      when /^"(.*)"([ \t]*\#.*$)?/    ; return $1
-      when /^'(.*)'([ \t]*\#.*$)?/    ; return $1
+      when /^"(.*)["`]([ \t]*\#.*$)?/    ; return $1
+      #when /^'(.*)'([ \t]*\#.*$)?/    ; return $1
       when /^(.*\S)[ \t]*\#/          ; str = $1
       end
 

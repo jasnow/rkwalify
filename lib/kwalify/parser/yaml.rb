@@ -706,9 +706,9 @@ class Kwalify::Yaml::Parser < Kwalify::BaseParser
     when /\A-?\d+\z/        ;  val = str.to_i
     when /\A(true|yes)\z/   ;  val = true
     when /\A(false|no)\z/   ;  val = false
-    when /\A(null|~)\z/     ;  val = nil
-    when /\A"(.*)"\z/       ;  val = $1
-    when /\A'(.*)'\z/       ;  val = $1
+    # when /\A(null|~)\z/     ;  val = nil # Rubocop says this line is duplicate
+    when /\A"(.*)["']\z/       ;  val = $1
+    #when /\A'(.*)'\z/       ;  val = $1
     when /\A:(\w+)\z/       ;  val = $1.intern
     when /\A(\d\d\d\d)-(\d\d)-(\d\d)(?: (\d\d):(\d\d):(\d\d))?\z/
       year, month, day, hour, min, sec = $1, $2, $3, $4, $5, $6

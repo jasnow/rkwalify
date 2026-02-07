@@ -206,7 +206,9 @@ module Kwalify
         raise schema_error(:assert_noval, rule, path, val)
       end
       begin
-        @assert_proc = eval "proc { |val| #{val} }"
+        # WAS: @assert_proc = eval "proc { |val| #{val} }"
+        @assert_proc = ->(val, expr) { binding.local_variable_set(:val, val); eval(expr) }
+        # OR: @assert_proc = ->(val, &block) { block.call(val) }
       rescue ::SyntaxError => ex
         #* key=:assert_syntaxerr  msg="expression syntax error."
         raise schema_error(:assert_syntaxerr, rule, path, val)
