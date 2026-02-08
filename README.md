@@ -23,7 +23,7 @@ To run the tests, type "rake".
 To run the tests with (simplecov) coverage, type "COVERAGE='yes' rake".
 Then open **coverage/index.html** in a browser.
 
-## 📦 Installation
+## Installation
 
 Add this line to your application's Gemfile:
 
