@@ -13,13 +13,13 @@
 ### copyright(c) 2006 kuwata-lab.com all rights reserved.
 ###
 
-#--begin of require 'kwalify/version'
-### copyright(c) 2006 kuwata-lab.com all rights reserved.
 
 module Kwalify
-  RELEASE = '0.7.3' # Same as in the gemspec file.
+
+  RELEASE = ("$Release: 0.7.2 $" =~ /[.\d]+/) && $&
+
 end
-#--end of require 'kwalify/version'
+
 #--begin of require 'kwalify/types'
 ###
 ### $Rev$
@@ -488,7 +488,6 @@ end
 ### $Release: 0.7.2 $
 ### copyright(c) 2005-2010 kuwata-lab all rights reserved.
 ###
-# frozen_string_literal: false
 
 #--already included require 'kwalify/messages'
 #--already included require 'kwalify/errors'
@@ -691,9 +690,7 @@ module Kwalify
         raise schema_error(:assert_noval, rule, path, val)
       end
       begin
-        # WAS: @assert_proc = eval "proc { |val| #{val} }"
-        @assert_proc = ->(val, expr) { binding.local_variable_set(:val, val); eval(expr) }
-        # OR: @assert_proc = ->(val, &block) { block.call(val) }
+        @assert_proc = eval "proc { |val| #{val} }"
       rescue ::SyntaxError => ex
         #* key=:assert_syntaxerr  msg="expression syntax error."
         raise schema_error(:assert_syntaxerr, rule, path, val)
@@ -1067,7 +1064,7 @@ module Kwalify
   ##   schema = YAML.load_file('schema.yaml')
   ##   validator = Kwalify::Validator.new(schema)
   ##   document = YAML.load_file('document.yaml')
-  ##   errors = validator.validate(document)
+  ##   erros = validator.validate(document)
   ##   if errors && !errors.empty?
   ##     errors.each do |err|
   ##       puts "- [#{err.path}] #{err.message}"
@@ -1355,7 +1352,6 @@ end
 ### $Release: 0.7.2 $
 ### copyright(c) 2005-2010 kuwata-lab all rights reserved.
 ###
-# frozen_string_literal: false
 
 module Kwalify
 
@@ -1516,7 +1512,6 @@ end
 ### $Release: 0.7.2 $
 ### copyright(c) 2005-2010 kuwata-lab all rights reserved.
 ###
-# frozen_string_literal: false
 
 require 'strscan'
 #--already included require 'kwalify/errors'
@@ -2338,9 +2333,9 @@ class Kwalify::Yaml::Parser < Kwalify::BaseParser
     when /\A-?\d+\z/        ;  val = str.to_i
     when /\A(true|yes)\z/   ;  val = true
     when /\A(false|no)\z/   ;  val = false
-    # when /\A(null|~)\z/     ;  val = nil # Rubocop says this line is duplicate
-    when /\A"(.*)["']\z/       ;  val = $1
-    #when /\A'(.*)'\z/       ;  val = $1
+    when /\A(null|~)\z/     ;  val = nil
+    when /\A"(.*)"\z/       ;  val = $1
+    when /\A'(.*)'\z/       ;  val = $1
     when /\A:(\w+)\z/       ;  val = $1.intern
     when /\A(\d\d\d\d)-(\d\d)-(\d\d)(?: (\d\d):(\d\d):(\d\d))?\z/
       year, month, day, hour, min, sec = $1, $2, $3, $4, $5, $6
@@ -2555,8 +2550,7 @@ module Kwalify
         val =  hash['assert']
         #val =~ /\bval\b/ or errors << validate_error(:assert_noval, rule, "#{path}/assert", val)
         begin
-          # WAS: eval "proc { |val| #{val} }"
-          eval "proc { |val| #{val} }" #   proc { |val| val > 10 }
+          eval "proc { |val| #{val} }"
         rescue ::SyntaxError => ex
           errors << validate_error(:assert_syntaxerr, rule, "#{path}/assert", val)
         end
@@ -2745,7 +2739,6 @@ end
 ### $Release: 0.7.2 $
 ### copyright(c) 2005-2010 kuwata-lab all rights reserved.
 ###
-# frozen_string_literal: false
 
 #--already included require 'kwalify/messages'
 #--already included require 'kwalify/errors'
@@ -2777,7 +2770,7 @@ module Kwalify
 
 
     def initialize(yaml_str)
-      @lines = yaml_str.split("\n")
+      @lines = yaml_str.to_a()
       @line  = nil
       @linenum = 0
       @anchors = {}
@@ -3421,8 +3414,8 @@ module Kwalify
 
     def to_scalar(str)
       case str
-      when /^"(.*)["`]([ \t]*\#.*$)?/    ; return $1
-      #when /^'(.*)'([ \t]*\#.*$)?/    ; return $1
+      when /^"(.*)"([ \t]*\#.*$)?/    ; return $1
+      when /^'(.*)'([ \t]*\#.*$)?/    ; return $1
       when /^(.*\S)[ \t]*\#/          ; str = $1
       end
 
@@ -3666,7 +3659,6 @@ end
 ### $Release: 0.7.2 $
 ### copyright(c) 2005-2010 kuwata-lab all rights reserved.
 ###
-# frozen_string_literal: false
 
 require 'yaml'
 require 'erb'
@@ -3731,6 +3723,7 @@ module Kwalify
 
 end
 #--end of require 'kwalify/util/ordered-hash'
+
 
 module Kwalify
 
@@ -4152,7 +4145,7 @@ module Kwalify
 
 
     def _domain_type?(doc)
-      klass = YAML::DomainType
+      klass = defined?(YAML::DomainType) ? YAML::DomainType : YAML::Syck::DomainType
       return doc.is_a?(klass)
     end
 

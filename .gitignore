@@ -12,6 +12,8 @@
 o_r
 o_r~
 bin/runtests
+*.java
+*.class
 
 # Used by dotenv library to load environment variables.
 # .env

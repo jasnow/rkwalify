@@ -31,6 +31,16 @@ Add this line to your application's Gemfile:
 
 Or install directly with "gem install rkwalify".
 
+The 'contrib/inline-require' script to concatenate all scripts
+and libraries into a file.
+
+  $ cd rkwalify/
+  $ unset RUBYLIB
+  $ ruby contrib/inline-require -I ./lib bin/rkwalify > contrib/rkwalify
+  $ chmod a+x contrib/rkwalify
+  $ cp lib/kwalify/kwalify.schema.yaml $HOME/bin
+  $ mv contrib/rkwalify                $HOME/bin
+
 # License
 
 [MIT License](MIT-LICENSE)
