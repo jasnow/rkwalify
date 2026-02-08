@@ -83,51 +83,31 @@
 </table>
 <h2>Introduction</h2>
 <p>
-<a href="../../classes/Kwalify.html">Kwalify</a> is a parser, schema
+<a href="../../classes/RKwalify.html">Rkwalify</a> is a parser, schema
 validator, and data binding tool for YAML and JSON.
 </p>
 <p>
-See doc/users-guide.html for details.
+See [documentation](doc/users-guide.html) for details.
+<h2>Getting Started</h2>
+<br>
+TBD
 </p>
+<h2>Contributing</h2>
+
+To create Gemfile.lock file, run "bundle install".
+
+To run the tests, type "rake".
+
+To run the tests with (simplecov) coverage, type "COVERAGE='yes' rake".
+Then open **coverage/index.html** in a browser.
+
 <h2>Installation</h2>
-<p>
-If you have installed RubyGems, just type &#8216;gem install kwalify&#8216;
-</p>
-<pre>
-  $ sudo gem install kwalify
-</pre>
-<p>
-Else if you can be root user, use &#8216;setup.rb&#8217; as following:
-</p>
-<pre>
-  $ tar xjf kwalify-0.7.2.tar.bz2
-  $ cd kwalify-0.7.2/
-  $ sudo ruby setup.rb install
-</pre>
-<p>
-Else copy script and libraries to proper directory.
-</p>
-<pre>
-  $ tar xjf kwalify-0.7.2.tar.bz2
-  $ cd kwalify-0.7.2/
-  $ mkdir -p $HOME/bin
-  $ cp -a bin/* $HOME/bin
-  $ export PATH=$PATH:$HOME/bin
-  $ mkdir -p $HOME/lib/ruby
-  $ cp -a lib/* $HOME/lib/ruby
-  $ export RUBYLIB=$HOME/lib/ruby
-</pre>
-<p>
-(Optional) &#8216;contrib/inline-require&#8217; script to concatenate all
-script and libraries into a file.
-</p>
-<pre>
-  $ tar xjf kwalify-0.7.2.tar.bz2
-  $ cd kwalify-0.7.2/
-  $ unset RUBYLIB
-  $ ruby contrib/inline-require -I ./lib bin/kwalify &gt; contrib/kwalify
-  $ chmod a+x contrib/kwalify
-  $ mv contrib/kwalify $HOME/bin
+
+Add this line to your application's Gemfile:
+
+ * gem "rkwalify"
+
+Or install direcly with "gem install rkwalify".
 </pre>
 <h2>License</h2>
 <pre>
@@ -136,6 +116,7 @@ script and libraries into a file.
 <h2>Copyright</h2>
 <pre>
    copyright(c) 2005-2010 kuwata-lab all rights reserved.
+   copyright(c) 2026 Al Snow all rights reserved.
 </pre>
 
     </div>

@@ -724,7 +724,7 @@ sequence:
      "family-name": <strong>*name</strong>
      "post":
         type: str
-        enum: [exective, manager, clerk]
+        enum: [executive, manager, clerk]
      "supervisor":  <strong>*employee</strong>
 </pre>
 <p>Anchor and alias is also available in YAML document.
@@ -735,7 +735,7 @@ sequence:
 <pre class="program">- <strong>&amp;foo</strong>
   given-name:    foo
   family-name:   Foo
-  post:          exective
+  post:          executive
 - <strong>&amp;bar</strong>
   given-name:    bar
   family-name:   Bar
@@ -982,7 +982,7 @@ end
 The schema definition is placed at 'kwalify/kwalify.schema.yaml'.
 </p>
 <p>Kwalify also provides Kwalify::MetaValidator class which validates
-schema defition.
+schema definition.
 </p>
 <pre class="program">require 'kwalify'
 
@@ -1170,9 +1170,9 @@ result</div>
 <a name="howto-databinding"></a>
 <h3 class="section2">Data Binding</h3>
 <p>From version 0.7, Kwalify supports data binding.
-* To enable data binding, set Kwlaify::Yaml::Parser#data_binding to true.
+* To enable data binding, set Kwalify::Yaml::Parser#data_binding to true.
 * It is required to specify class name in schema definition.
-  (Notice that 'class:' constraint is avaialbe only with rule which type is 'map'.)
+  (Notice that 'class:' constraint is available only with rule which type is 'map'.)
 * Also instance methods '[]', '[]=', and 'keys?' must be defined in the classes.
   (Including Kwalify::Util::HashLike modules is easy way to define them.)
 </p>
@@ -1259,7 +1259,7 @@ members:
     team:   *thechildren
 </pre>
 <p>Here is the schema definition.
-(Notice that 'class:' constraint is avaialbe only with rule which type is 'map'.)
+(Notice that 'class:' constraint is available only with rule which type is 'map'.)
 </p>
 <a name="BABEL.schema.yaml"></a>
 <div class="program_caption">
@@ -1697,7 +1697,7 @@ result</div>
   @name="Sakura",
   @phone="012-345-6789"&gt;]
 </pre>
-<p>Command-line option '<code>-h -a genclass-ruby</code>' shows the commpand-line properties that template can accept.
+<p>Command-line option '<code>-h -a genclass-ruby</code>' shows the command-line properties that template can accept.
 </p>
 <a name="option_ha.result"></a>
 <div class="terminal_caption">
@@ -1936,7 +1936,7 @@ person blood: null
 person birth: null
 
 </pre>
-<p>Command-line option '<code>-h -a genclass-java</code>' shows the commpand-line properties that template can accept.
+<p>Command-line option '<code>-h -a genclass-java</code>' shows the command-line properties that template can accept.
 </p>
 <a name="option_ha_genclass_java.result"></a>
 <div class="terminal_caption">

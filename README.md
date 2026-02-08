@@ -6,7 +6,7 @@ copyright::	copyright(c) 2005-2010 kuwata-lab all rights reserved.
 
 ## Introduction
 
-Updated version of "Kwalify is a parser, schema validator,
+Updated version of "RKwalify is a parser, schema validator,
 and data binding tool for YAML and JSON"
 
 See [documentation](doc/users-guide.html) for details.
@@ -27,9 +27,9 @@ Then open **coverage/index.html** in a browser.
 
 Add this line to your application's Gemfile:
 
- * gem "rwkwalify"
+ * gem "rkwalify"
 
-Or install directyly with "gem install rkwalify".
+Or install directly with "gem install rkwalify".
 
 # License
 

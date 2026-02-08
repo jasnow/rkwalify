@@ -1,0 +1,52 @@
+# spec/my_cli_tool_spec.rb
+require 'spec_helper'
+
+describe 'My CLI Tool' do
+  context 'when run with a specific argument' do
+    let(:command) { 'my-cli-tool --version' }
+
+    before(:each) do
+      run_command_and_stop(command)
+    end
+
+    it 'outputs the correct version to stdout' do
+      expect(all_stdout).to include('1.7.3')
+    end
+
+    it 'exits with a status of 0' do
+      expect(last_command_started).to have_exit_status(0)
+    end
+  end
+
+  context 'when an error occurs' do
+    let(:command) { 'my-cli-tool --invalid-option' }
+
+    before(:each) do
+      run_command_and_stop(command)
+    end
+
+    it 'outputs an error message to stderr' do
+      expect(all_stderr).to include('Invalid option')
+    end
+
+    it 'exits with a non-zero status' do
+      expect(last_command_started).to have_exit_status(1) # Assuming a non-zero exit for errors
+    end
+  end
+
+  context 'when it creates a file' do
+    let(:command) { 'my-cli-tool create-file my_file.txt' }
+
+    before(:each) do
+      run_command_and_stop(command)
+    end
+
+    it 'creates the specified file' do
+      expect('my_file.txt').to be_an_existing_file
+    end
+
+    it 'writes the expected content to the file' do
+      expect(file_content('my_file.txt')).to eq("File created successfully.\n")
+    end
+  end
+end
