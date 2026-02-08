@@ -9,14 +9,14 @@ Gem::Specification.new do |spec|
 
   spec.summary       = 'rKwalify is a parser, schema validator, and data binding tool for YAML and JSON.'
   spec.description   = spec.summary
-  spec.homepage      = 'https://github.com/jasnow/rkwalify'
+  spec.homepage      = 'https://github.com/jasnow/rkwalify/blob/main/README.md'
   spec.license       = 'MIT'
   spec.required_ruby_version = '>= 3.4.7'
 
   spec.metadata['allowed_push_host'] = 'https://rubygems.org'
 
   spec.metadata['homepage_uri'] = spec.homepage
-  spec.metadata['source_code_uri'] = spec.homepage
+  spec.metadata['source_code_uri'] = 'https://github.com/jasnow/rkwalify'
   spec.metadata['rubygems_mfa_required'] = 'true'
 
   spec.files = File.read("Manifest.txt").split

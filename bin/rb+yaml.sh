@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 echo -n "yaml::::::" ; find . -name "*.yaml" -type f |wc
 echo -n "rb::::::::" ; find . -name "*.rb"   -type f |wc
 echo -n "copyright:" ; git grep -i copyright         |wc
