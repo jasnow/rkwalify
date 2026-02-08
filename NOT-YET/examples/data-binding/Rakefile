@@ -1,4 +1,4 @@
-task :default => 'main'
+task default: 'main'
 
 task 'main' => ['models.rb'] do
   sh "ruby main.rb"

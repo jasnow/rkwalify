@@ -7,4 +7,3 @@ AllCops:
     - 'db/schema.rb'
     - 'vendor/**/*'
     - 'Attic/setup.rb'
-    - 'contrib/kwalify'

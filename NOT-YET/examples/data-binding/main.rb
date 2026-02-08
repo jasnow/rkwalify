@@ -3,14 +3,12 @@ require 'models'
 
 ## load schema definition
 schema = Kwalify::Yaml.load_file('BABEL.schema.yaml',
-                                 :untabify=>true,
-                                 :preceding_alias=>true)
+                                 untabify: true,
+                                 preceding_alias: true)
 
 ## add module name to 'class:'
 Kwalify::Util.traverse_schema(schema) do |rulehash|
-  if rulehash['class']
-    rulehash['class'] = 'Babel::' + rulehash['class']
-  end
+  rulehash['class'] = 'Babel::' + rulehash['class'] if rulehash['class']
 end
 
 ## create validator
@@ -20,7 +18,7 @@ validator = Kwalify::Validator.new(schema)
 parser = Kwalify::Yaml::Parser.new(validator)
 parser.preceding_alias = true
 parser.data_binding = true
-ydoc = parser.parse_file('BABEL.data.yaml', :untabify=>true)
+ydoc = parser.parse_file('BABEL.data.yaml', untabify: true)
 
 ## show document
 require 'pp'
