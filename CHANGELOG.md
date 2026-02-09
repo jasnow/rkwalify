@@ -14,7 +14,7 @@
 
  * See commit history for more details.
 
-## Release 0.7.2 (2010-07-18)
+## Release 1.4.0-preview1 (2010-07-18)
 
    .* bugfix:
 

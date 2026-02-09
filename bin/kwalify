@@ -2,14 +2,14 @@
 
 ###
 ### $Rev$
-### $Release: 0.7.2 $
+### $Release: 1.4.0-preview1 $
 ### copyright(c) 2005-2010 kuwata-lab all rights reserved.
 ###
 
 #--begin of require 'kwalify'
 ###
 ### $Rev$
-### $Release: 0.7.2 $
+### $Release: 1.4.0-preview1 $
 ### copyright(c) 2006 kuwata-lab.com all rights reserved.
 ###
 
@@ -23,7 +23,7 @@ end
 #--begin of require 'kwalify/types'
 ###
 ### $Rev$
-### $Release: 0.7.2 $
+### $Release: 1.4.0-preview1 $
 ### copyright(c) 2005-2010 kuwata-lab all rights reserved.
 ###
 
@@ -181,7 +181,7 @@ end
 #--begin of require 'kwalify/messages'
 ###
 ### $Rev$
-### $Release: 0.7.2 $
+### $Release: 1.4.0-preview1 $
 ### copyright(c) 2005-2010 kuwata-lab all rights reserved.
 ###
 
@@ -356,7 +356,7 @@ end
 #--begin of require 'kwalify/errors'
 ###
 ### $Rev$
-### $Release: 0.7.2 $
+### $Release: 1.4.0-preview1 $
 ### copyright(c) 2005-2010 kuwata-lab all rights reserved.
 ###
 
@@ -485,7 +485,7 @@ end
 #--begin of require 'kwalify/rule'
 ###
 ### $Rev$
-### $Release: 0.7.2 $
+### $Release: 1.4.0-preview1 $
 ### copyright(c) 2005-2010 kuwata-lab all rights reserved.
 ###
 # frozen_string_literal: false
@@ -1049,7 +1049,7 @@ end
 #--begin of require 'kwalify/validator'
 ###
 ### $Rev$
-### $Release: 0.7.2 $
+### $Release: 1.4.0-preview1 $
 ### copyright(c) 2005-2010 kuwata-lab all rights reserved.
 ###
 
@@ -1333,7 +1333,7 @@ end
 #--begin of require 'kwalify/meta-validator'
 ###
 ### $Rev$
-### $Release: 0.7.2 $
+### $Release: 1.4.0-preview1 $
 ### copyright(c) 2005-2010 kuwata-lab all rights reserved.
 ###
 
@@ -1343,7 +1343,7 @@ end
 #--begin of require 'kwalify/parser/yaml'
 ###
 ### $Rev$
-### $Release: 0.7.2 $
+### $Release: 1.4.0-preview1 $
 ### copyright(c) 2005-2010 kuwata-lab all rights reserved.
 ###
 
@@ -1352,7 +1352,7 @@ end
 #--begin of require 'kwalify/util'
 ###
 ### $Rev$
-### $Release: 0.7.2 $
+### $Release: 1.4.0-preview1 $
 ### copyright(c) 2005-2010 kuwata-lab all rights reserved.
 ###
 # frozen_string_literal: false
@@ -1513,7 +1513,7 @@ end
 #--begin of require 'kwalify/parser/base'
 ###
 ### $Rev$
-### $Release: 0.7.2 $
+### $Release: 1.4.0-preview1 $
 ### copyright(c) 2005-2010 kuwata-lab all rights reserved.
 ###
 # frozen_string_literal: false
@@ -2742,7 +2742,7 @@ end
 #--begin of require 'kwalify/yaml-parser'
 ###
 ### $Rev$
-### $Release: 0.7.2 $
+### $Release: 1.4.0-preview1 $
 ### copyright(c) 2005-2010 kuwata-lab all rights reserved.
 ###
 # frozen_string_literal: false
@@ -3663,7 +3663,7 @@ end
 #--begin of require 'kwalify/main'
 ###
 ### $Rev$
-### $Release: 0.7.2 $
+### $Release: 1.4.0-preview1 $
 ### copyright(c) 2005-2010 kuwata-lab all rights reserved.
 ###
 # frozen_string_literal: false
@@ -3675,7 +3675,7 @@ require 'erb'
 #--begin of require 'kwalify/util/ordered-hash'
 ###
 ### $Rev$
-### 0.7.2
+### 1.4.0-preview1
 ### $COPYRIGHT$
 ###
 
