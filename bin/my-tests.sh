@@ -1,9 +1,9 @@
 TDU="test/data/users-guide"
-#
 ######################################################################
 #YAML/YAML
 echo ; echo "2.1"
 ./bin/kwalify -lf ${TDU}/schema01.yaml ${TDU}/document01a.yaml
+#
 echo ; echo "2.2"
 ./bin/kwalify -lf ${TDU}/schema01.yaml ${TDU}/document01b.yaml
 #
@@ -59,20 +59,18 @@ echo ; echo "14.2"
 #RUBY
 PATH="./bin:${PATH}"
 echo ; echo "14.3"
-echo "BROKEN: ruby test/data/users-guide/validate08.rb"
+echo "BROKEN: Can't find answers-schema.yaml"
+#ruby -I lib:${TDU} ${TDU}/validate08.rb
+
+echo ; echo "15.1 (schema.yaml unknown so changed to kwalify.schema.yaml//SKIPPED"
+echo ; echo "15.2 (schema.yaml unknown so changed to kwalify.schema.yaml//SKIPPED"
 #
-echo ; echo "15.1"
-echo "BROKEN: ruby TBD"
-echo ; echo "15.2"
-echo "BROKEN: ruby TBD"
-#
-echo ; echo "16.1"
-echo "FYI: NOT FULL EX: ./bin/kwalify -m ${TDU}/schema1.yaml
-#    ${TDU}/schema2.yaml..."
+echo ; echo "16.1: NOT FULL EXAMPLE/SKIPPED"
+#./bin/kwalify -m ${TDU}/schema1.yaml ${TDU}/schema2.yaml"
 #
 echo ; echo "17.1"
-echo "BROKEN: Can't find kwalify - ruby ${TDU}/answers-validator.rb
-#    ${TDU}/document07a.yaml"
+echo "BROKEN: Can't find ${TDU}/answers-schema.yaml"
+#ruby -I lib:${TDU} ${TDU}/answers-validator.rb ${TDU}/document07a.yaml
 #
 echo ; echo "18.1"
 echo "BROKEN: Can't find kwalify - ruby ${TDU}/howto3.rb"
@@ -84,10 +82,10 @@ echo ; echo "20.1"
 echo "BROKEN: Can't find lib/kwalify/util/hashlike.rb"
 #./bin/kwalify -a ./lib/kwalify/templates/genclass-ruby -P \
 #    -f ${TDU}/BABEL.schema.yaml \
-#    --hashlike --initialize=false --module=Babel
+#    --hashlike --initialize=false --module=Babel -l lib:lib/kwalify/util
 #
 echo ; echo "21.1"
-echo "BROKEN: Can't find kwalify - ruby ${TDU}/loadbabel.rb"
+echo "BROKEN: Can't find BABEL.schema.yaml - ruby -I lib:${TDU} ${TDU}/loadbabel.rb"
 #
 echo ; echo "25.1"
 echo "BROKEN: Can't find kwalify/util/ordered-hash"
@@ -95,14 +93,15 @@ echo "BROKEN: Can't find kwalify/util/ordered-hash"
 #    -tf ${TDU}/address_book.schema.yaml > address_book.rb
 #
 echo ; echo "26.1"
-echo "BROKEN: Can't find address_book.yaml "
-#ruby ${TDU}/example_address_book.rb
+echo "BROKEN: Can't find address_book.yaml"
+#ruby -I lib:${TDU} ${TDU}/example_address_book.rb
 #
 echo ; echo "27.1 (WORKED 1st TIME)"
 ./bin/kwalify -ha ./lib/kwalify/templates/genclass-ruby
+
 echo ; echo "27.2"
-echo "BROKEN: Getting 'schema filename is not specified.'"
-#./bin/kwalify -a ./lib/kwalify/templates/genclass-ruby --module=My --hashlike
+./bin/kwalify -ha ./lib/kwalify/templates/genclass-ruby --module=My --hashlike
+
 #
 echo ; echo "27.3 (WORKED 1st TIME)"
 ./bin/kwalify -a ./lib/kwalify/templates/genclass-java \
@@ -113,17 +112,17 @@ echo ; echo "30.1.1"
 #    set(int,E) as a member of the raw type List
 #List<Group> seq = new ArrayList<>();
 #List<Person> seq = new ArrayList<>();
-javac -classpath '.:kwalify.jar' *.java
+javac -nowarn -classpath '.:kwalify.jar' *.java
 
 echo ; echo "30.1.2"
-echo "BROKEN: UNCLEAR WHY: javac -classpath '.:kwalify.jar'
-#  ${TDU}/ExampleAddressBook"
+echo "SKIPPED: No jar file - javac -classpath '.:kwalify.jar' ${TDU}/ExampleAddressBook"
 #
 echo ; echo "31.1 (WORKED 1st TIME)"
 ./bin/kwalify -ha ./lib/kwalify/templates/genclass-java
 #
 echo ; echo "31.2"
 echo 'BROKEN: Getting: "schema filename is not specified."'
-#./bin/kwalify -a ./lib/kwalify/templates/genclass-java \
-#    --package=com.example.my --implements=Serializable --basedir=src
+./bin/kwalify -a ./lib/kwalify/templates/genclass-java \
+    --package=com.example.my --implements=Serializable --basedir=src
+#
 #EOF

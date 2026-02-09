@@ -1,3 +1,4 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
@@ -914,9 +915,9 @@ document15b.yaml#0: INVALID
 #require 'yaml'
 
 ## load schema data
-schema = Kwalify::Yaml.load_file('schema.yaml')
+schema = Kwalify::Yaml.load_file('kwalify.schema.yaml')
 ## or
-#schema = YAML.load_file('schema.yaml')
+#schema = YAML.load_file('kwalify.schema.yaml')
 
 ## create validator
 validator = Kwalify::Validator.new(schema)
@@ -948,16 +949,16 @@ end
 #require 'yaml'
 
 ## load schema data
-schema = Kwalify::Yaml.load_file('schema.yaml')
+schema = Kwalify::Yaml.load_file('kwalify.schema.yaml')
 ## or
-#schema = YAML.load_file('schema.yaml')
+#schema = YAML.load_file('kwalify.schema.yaml')
 
 ## create validator
 validator = Kwalify::Validator.new(schema)
 
 ## create parser with validator
 ## (if validator is ommitted, no validation executed.)
-parser = Kwalify:::Yaml::Parser.new(validator)
+parser = Kwalify::Yaml::Parser.new(validator)
 
 ## parse document with validation
 filename = 'document.yaml'
@@ -991,7 +992,7 @@ metavalidator = Kwalify::MetaValidator.instance
 
 ## validate schema definition
 parser = Kwalify::Yaml::Parser.new(metavalidator)
-errors = parser.parse_file('schema.yaml')
+errors = parser.parse_file('kwalify.schema.yaml')
 for e in errors
   puts "#{e.linenum}:#{e.column} [#{e.path}] #{e.message}"
 end if errors &amp;&amp; !errors.empty?
@@ -1711,7 +1712,7 @@ show command-line properties</div>
 </pre>
 <div class="terminal_caption">
 example of command-line properties</div>
-<pre class="terminal">$ kwalify -a genclass-ruby --module=My --hashlike
+<pre class="terminal">$ kwalify -ha genclass-ruby --module=My --hashlike
 </pre>
 <p>If command-line property '--hashlike' (== '--hashlike=true') is specified,
 module Kwalify::Util::HashLike is included for each classes generated.
