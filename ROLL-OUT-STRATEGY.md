@@ -30,12 +30,16 @@
     * tests, examples, contrib
     * Attic
 
- 7. Possible Release Order
+ 8. Decide when to make repo public.
+
+ 9. Possible Release Order
     * Preview1, Preview2,... release
     * Beta, RC (Release Candidate) release
     * Final release
 
- 10. Release Defintions (draft)
+======================================================================
+
+ 99. Release Defintions (draft)
      * MAJOR
        * Introduces significant changes.
        * May include breaking changes.
