@@ -8,11 +8,11 @@
 
  * Preview1 release
 
- * Copied original Kwalify-1.7.2 code then dc-kwalify's 1.0.0 code into repo.
+ * Copied original [Kwalify-1.7.2 code](https://rubygems.org/downloads/kwalify-0.7.2.gem) then [dc-kwalify's](https://github.com/dafyddcrosby/dc-kwalify) 1.0.0 code into repo.
 
- * See more details [Roll Out Strategy](Roll-Out-Straategy.md) regarding approach taken.
+ * See more details [Roll Out Strategy](ROLL-OUT-STRATEGY.md) regarding approach taken.
 
- * See commit history for more details.
+ * See [commit history](https://github.com/jasnow/rkwalify/commits/main) for more details.
 
 ## Release 1.4.0-preview1 (2010-07-18)
 
