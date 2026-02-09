@@ -1,6 +1,6 @@
 # rkwalify
 
-release::	0.7.3
+release::	1.4.0-preview1
 lastupdate::	$Date$
 copyright::	copyright(c) 2005-2010 kuwata-lab all rights reserved.
 

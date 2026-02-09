@@ -1,5 +1,5 @@
 .=title:          ChangeLog
-.?release:        $Release: 0.7.4 BETA $
+.?release:        $Release: 1.4.0-preview1 $
 .?lastupdate:     $Date$
 .?version:        $Rev$
 

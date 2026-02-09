@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 TDU="test/data/users-guide"
 ######################################################################
 #YAML/YAML
