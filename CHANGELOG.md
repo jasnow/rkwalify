@@ -1,14 +1,20 @@
 .=title:          ChangeLog
-.?release:        $Release: 0.7.3 $
+.?release:        $Release: 0.7.4 BETA $
 .?lastupdate:     $Date$
 .?version:        $Rev$
 
 
-.: Release 0.7.3 (2026-01-29)
+## Release 1.4.0-preview1 (2026-02-10)
 
-   .* Copied original Kwalify-1.7.2 code then dc-kwalify's code into repo.
+ * Preview1 release
 
-.: Release 0.7.2 (2010-07-18)
+ * Copied original Kwalify-1.7.2 code then dc-kwalify's 1.0.0 code into repo.
+
+ * See more details [Roll Out Strategy](Roll-Out-Straategy.md) regarding approach taken.
+
+ * See commit history for more details.
+
+## Release 0.7.2 (2010-07-18)
 
    .* bugfix:
 
@@ -17,7 +23,7 @@
 
       .- Fix a bug that Kwalify::Util.untabify() removed tailing empty strings.
 
-.: Release 0.7.1 (2008-01-28)
+## Release 0.7.1 (2008-01-28)
 
    .* bugfix:
 
@@ -27,7 +33,7 @@
       .- Path is now copied in Kwalify::ValidationError#initialize()
 
 
-.: Release 0.7.0 (2008-01-27)
+## Release 0.7.0 (2008-01-27)
 
    .* enhancements:
 
@@ -167,7 +173,7 @@
       .- License is changed from LGPL to MIT-LICENSE.
 
 
-.: Release 0.6.0 (2006-05-30)
+## Release 0.6.0 (2006-05-30)
 
    .* enhancements:
 
@@ -176,7 +182,7 @@
          class definitions in Ruby or Java from schema file.
 
 
-.: Release 0.5.1 (2005-12-20)
+## Release 0.5.1 (2005-12-20)
 
    .* enhances:
 
@@ -184,7 +190,7 @@
          emacs-compatible style.
 
 
-.: Release 0.5.0 (2005-12-17)
+## Release 0.5.0 (2005-12-17)
 
    .* enhancements:
 
@@ -200,7 +206,7 @@
       .- ParseError class is renamed to YamlSyntaxError
 
 
-.: Release 0.4.1 (2005-10-26)
+## Release 0.4.1 (2005-10-26)
 
    .* bugfix:
 
@@ -208,7 +214,7 @@
       .- Show correct error line number when key is undefined or unknown.
 
 
-.: Release 0.4.0 (2005-10-25)
+## Release 0.4.0 (2005-10-25)
 
    .* enhancements:
 
@@ -216,7 +222,7 @@
       .- Supports default rule of mapping.
 
 
-.: Release 0.3.0 (2005-09-30)
+## Release 0.3.0 (2005-09-30)
 
    .* enhancements:
 
@@ -225,7 +231,7 @@
       .- Support 'unique' constraint
 
 
-.: Release 0.2.0 (2005-09-25)
+## Release 0.2.0 (2005-09-25)
 
    .* enhancements:
 
@@ -252,6 +258,31 @@
       .- Class 'Schema' is renamed to 'Rule'.
 
 
-.: Release 0.1.0 (2005-08-01)
+## Release 0.1.0 (2005-08-01)
 
     .- beta release
+
+---
+
+## FILE TYPES
+
+### DOCS
+
+ * README.md, MIT-LICENSE, CONTRIBUTORS.md, CHANGELOG.md,
+ * doc, doc-api
+
+### CODE, YAML/JSON
+ * lib, .github, Gemfiler, kwalify.gemspec, Gemfile.lock, Rakefile,
+ * .rvmrc, .ruby-version, .ruby-gemset, .bundle
+ * .rubocop_todo.yml, .rubocop.yml, .overcommit.yml
+ * bin, tmp
+ * Manifest.txt, rkwalify-0.7.3.gem
+ * examples, contrib
+
+### TESTS
+
+ * test, coverage
+
+### INTERNAL
+
+ * .gitignore, .git, o_r, Attic
