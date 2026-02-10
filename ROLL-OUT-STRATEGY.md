@@ -5,11 +5,11 @@
  1. Naming: Use "rkwalify" as repo and gem name, but use
     "kwalify" inside code and tests.  Use "Rkwalify" in documentaiton.
 
- 2. Step 1: First add [kwalify](ahttps://rubygems.org/gems/kwalify) (0.7.2) into
+ 2. Step 1: First add [kwalify](https://rubygems.org/gems/kwalify) (0.7.2) into
     "rkwalify" repo. This includes all files (code, docs, etc).
     See commits for more details.
 
-    * Assume this original [kwalify](ahttps://rubygems.org/gems/kwalify) gem will stay around.
+    * Assume this original [kwalify](https://rubygems.org/gems/kwalify) gem will stay around.
     * Add credit to repo.
 
  3. Step 2: Then merge in [dc-kwalify](https://rubygems.org/gems/dc-kwalify)
