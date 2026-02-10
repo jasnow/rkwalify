@@ -17,4 +17,4 @@ git diff
 
 rm -f Gemfile.lock ; bundle install
 
-echo "FYI: Run 'rake' manually."
+bundle exec rake
