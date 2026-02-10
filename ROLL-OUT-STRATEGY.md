@@ -20,12 +20,11 @@
     several rubocop gems, markdown, ruby 3.4.7, simplecov).
     See commits for more details. Also used my personal tools as needed.
 
- 5. Create "rkwalify" issues for major work items.
-    * More details at https://github.com/jasnow/rkwalify/issues .
+ 5. Create "rkwalify" [issues](https://github.com/jasnow/rkwalify/issues) for major work items.
 
  6. Initial Release Target
 
-    * rkwalify's "test" Githut Action is green. Comment out test/test.rb
+    * rkwalify's "test" Github Action is green. Comment out [test/test.rb](https://github.com/jasnow/rkwalify/blob/main/test/test.rb)
         tests that are broken. See [issue](https://github.com/jasnow/rkwalify/issues/2) for details.
 
     * ruby-advisory-db (Ruby 3.4.7) tests are green  using rkwalify code.
