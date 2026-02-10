@@ -8,7 +8,7 @@
 
  * Preview1 release
 
- * Copied original [Kwalify-1.7.2 code](https://rubygems.org/downloads/kwalify-0.7.2.gem) then [dc-kwalify's](https://github.com/dafyddcrosby/dc-kwalify) 1.0.0 code into repo.
+ * (Tagged as 0.7.3) Copied original [Kwalify-1.7.2 code](https://rubygems.org/downloads/kwalify-0.7.2.gem) then [dc-kwalify's](https://github.com/dafyddcrosby/dc-kwalify) 1.0.0 code into repo.
 
  * See more details [Roll Out Strategy](ROLL-OUT-STRATEGY.md) regarding approach taken.
 
