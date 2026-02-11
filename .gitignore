@@ -11,7 +11,7 @@
 /tmp/
 o_r
 o_r~
-bin/runtests
+bin/devbin/runtests
 *.java
 *.class
 
