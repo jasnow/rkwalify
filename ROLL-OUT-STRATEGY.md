@@ -10,11 +10,11 @@
     See commits for more details.
 
     * Assume this original [kwalify](https://rubygems.org/gems/kwalify) gem will stay around.
-    * Add credit to repo.
+    * Add credit to repo to @kwatch.
 
  3. Step 2: Then merge in [dc-kwalify](https://rubygems.org/gems/dc-kwalify)
     (1.0.0) to "rkwalify" repo. See commits for more details.
-    * Add credit to repo.
+    * Add credit to repo @dc-kwalify.
 
  4. Step 3: Modernize the tool chain (bundler, rubygems, rvm, Rakefile,
     several rubocop gems, markdown, ruby 3.4.7, simplecov).

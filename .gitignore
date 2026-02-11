@@ -13,6 +13,7 @@ o_r
 o_r~
 *.java
 *.class
+origtest
 
 # Used by dotenv library to load environment variables.
 # .env
