@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 export TDU="test/data/users-guide"
+export PROJHOME=${HOME}/Projects/rkwalify
+export RUBYLIB=${PROJHOME}/lib:${PROJHOME}/test/data/users-guide
+export PATH=${PATH}:${PROJHOME}/bin
+#
 #cat <<WORKING >> /dev/null
 ######################################################################
 #YAML/YAML
@@ -56,13 +60,11 @@ echo ; echo "14.1"
 ./bin/kwalify.rb -lf ${TDU}/schema15.yaml ${TDU}/document15a.yaml
 echo ; echo "14.2"
 ./bin/kwalify.rb -lf ${TDU}/schema15.yaml ${TDU}/document15b.yaml
-
-echo "PUT 14.3 HERE"  
-
-echo ; echo "15.1 (schema.yaml unknown so changed to kwalify.schema.yaml//SKIPPED"
-echo ; echo "15.2 (schema.yaml unknown so changed to kwalify.schema.yaml//SKIPPED"
 #
-echo ; echo "16.1: NOT FULL EXAMPLE/SKIPPED"
+echo ; echo "15.1 SKIPPED: schema.yaml unknown so changed to kwalify.schema.yaml"
+echo ; echo "15.2 SKIPPED: schema.yaml unknown so changed to kwalify.schema.yaml"
+#
+echo ; echo "16.1: SKIPPED: NOT FULL EXAMPLE"
 #./bin/kwalify.rb -m ${TDU}/schema1.yaml ${TDU}/schema2.yaml"
 #
 echo ; echo "27.1 (WORKED 1st TIME)"
@@ -92,40 +94,49 @@ echo ; echo "31.2"
 echo 'DEFERRED: Getting: "schema filename is not specified."'
 ./bin/kwalify.rb -a ./lib/kwalify/templates/genclass-java \
   --package=com.example.my --implements=Serializable --basedir=src
-
-exit
 #
 ######################################################################
 #RUBY
-#export PATH=../bin:${PATH}
-#export RUBYLIB=${TDU}:${RUBYLIB}
-
-echo ; echo "14.3"
-echo "BROKEN: Can't find answers-schema.yaml - ruby -I ../bin:${TDU} ${TDU}/validate08.rb"
-
-echo ; echo "17.1"
-echo "BROKEN: Can't find ${TDU}/answers-schema.yaml - ruby -I lib:${TDU} ${TDU}/answers-validator.rb ${TDU}/document07a.yaml"
 #
-echo ; echo "18.1"
-echo "BROKEN: Can't find kwalify - ruby ${TDU}/howto3.rb"
-#
-echo ; echo "19.1"
-echo "BROKEN: Can't find lib/kwalify/util/hashlike - ruby ${TDU}/loadconfig.rb"
+echo ; echo "BROKEN - BUGS - STARTS HERE ======================================"
+set -x
 #
 echo ; echo "20.1"
-echo "BROKEN: Can't find lib/kwalify/util/hashlike.rb"
-#./bin/kwalify -a ./lib/kwalify/templates/genclass-ruby -P \
-#    -f ${TDU}/BABEL.schema.yaml \
-#    --hashlike --initialize=false --module=Babel -l lib:lib/kwalify/util
-#
-echo ; echo "21.1"
-echo "BROKEN: Can't find BABEL.schema.yaml - ruby -I lib:${TDU} ${TDU}/loadbabel.rb"
+echo "BROKEN/BUG?: 'Kwalify::Util::OrderedHash#put': stack level too deep (SystemStackError)"
+./bin/kwalify.rb -a ./lib/kwalify/templates/genclass-ruby -P \
+    -f ${TDU}/BABEL.schema.yaml \
+    --hashlike --initialize=false --module=Babel -l lib:lib/kwalify/util
 #
 echo ; echo "25.1"
-echo "BROKEN: Can't find kwalify/util/ordered-hash"
-#./bin/kwalify -a ./lib/kwalify/templates/genclass-ruby \
-#    -tf ${TDU}/address_book.schema.yaml > address_book.rb
+echo "BROKEN/BUG?: 'Kwalify::Util::OrderedHash#put': stack level too deep (SystemStackError)"
+./bin/kwalify.rb -a ./lib/kwalify/templates/genclass-ruby \
+    -tf ${TDU}/address_book.schema.yaml > address_book.rb
+wc -l address_book.rb 
+rm -f address_book.rb
+#
+echo ; echo "BROKEN/CAN'T FIND - STARTS HERE ======================================"
+#
+echo ; echo "14.3"
+echo "BROKEN: Can't find answers-schema.yaml"
+ruby ${TDU}/validate08.rb
+#
+echo ; echo "17.1"
+echo "BROKEN: Can't find ${TDU}/answers-schema.yaml"
+ruby ${TDU}/answers-validator.rb ${TDU}/document07a.yaml
+#
+echo ; echo "18.1"
+echo "BROKEN: Can't find kwalify"
+ruby ${TDU}/howto3.rb
+#
+echo ; echo "19.1"
+echo "BROKEN: Can't find lib/kwalify/util/hashlike"
+ruby ${TDU}/loadconfig.rb
+#
+echo ; echo "21.1"
+echo "BROKEN: Can't find BABEL.schema.yaml"
+ruby ${TDU}/loadbabel.rb
 #
 echo ; echo "26.1"
-echo "BROKEN: Can't find address_book.yaml - ruby -I lib:${TDU} ${TDU}/example_address_book.rb"
-#
+echo "BROKEN: Can't find address_book.yaml"
+ruby -I ${RUBYLIB} ${TDU}/example_address_book.rb
+#EOF

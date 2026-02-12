@@ -85,13 +85,12 @@ test/data/users-guide/document15a.yaml#0: valid.
 test/data/users-guide/document15b.yaml#0: INVALID
   - (line 5) [/user] key 'email:' is required.
   - (line 5) [/user/name] 'toooooo-looooong-name': too long (length 21 > max 16).
-PUT 14.3 HERE
 
-15.1 (schema.yaml unknown so changed to kwalify.schema.yaml//SKIPPED
+15.1 SKIPPED: schema.yaml unknown so changed to kwalify.schema.yaml
 
-15.2 (schema.yaml unknown so changed to kwalify.schema.yaml//SKIPPED
+15.2 SKIPPED: schema.yaml unknown so changed to kwalify.schema.yaml
 
-16.1: NOT FULL EXAMPLE/SKIPPED
+16.1: SKIPPED: NOT FULL EXAMPLE
 
 27.1 (WORKED 1st TIME)
   --module=name   :  module name in which class defined
@@ -129,3 +128,115 @@ DEFERRED: No jar file - javac -classpath '.:kwalify.jar' test/data/users-guide/E
 31.2
 DEFERRED: Getting: "schema filename is not specified."
 schema filename is not specified.
+
+BROKEN - BUGS - STARTS HERE ======================================
++ echo
+
++ echo 20.1
+20.1
++ echo 'BROKEN/BUG?: '\''Kwalify::Util::OrderedHash#put'\'': stack level too deep (SystemStackError)'
+BROKEN/BUG?: 'Kwalify::Util::OrderedHash#put': stack level too deep (SystemStackError)
++ ./bin/kwalify.rb -a ./lib/kwalify/templates/genclass-ruby -P -f test/data/users-guide/BABEL.schema.yaml --hashlike --initialize=false --module=Babel -l lib:lib/kwalify/util
+./bin/kwalify.rb:3697:in 'Kwalify::Util::OrderedHash#put': stack level too deep (SystemStackError)
+	from ./bin/kwalify.rb:3697:in 'Kwalify::Util::OrderedHash#put'
+	from ./bin/kwalify.rb:3697:in 'Kwalify::Util::OrderedHash#put'
+	from ./bin/kwalify.rb:3697:in 'Kwalify::Util::OrderedHash#put'
+	from ./bin/kwalify.rb:3697:in 'Kwalify::Util::OrderedHash#put'
+	from ./bin/kwalify.rb:3697:in 'Kwalify::Util::OrderedHash#put'
+	from ./bin/kwalify.rb:3697:in 'Kwalify::Util::OrderedHash#put'
+	from ./bin/kwalify.rb:3697:in 'Kwalify::Util::OrderedHash#put'
+	from ./bin/kwalify.rb:3697:in 'Kwalify::Util::OrderedHash#put'
+	 ... 10066 levels...
+	from ./bin/kwalify.rb:3916:in 'Kwalify::Main#perform_action'
+	from ./bin/kwalify.rb:3827:in 'Kwalify::Main#execute'
+	from ./bin/kwalify.rb:3845:in 'Kwalify::Main.main'
+	from ./bin/kwalify.rb:4167:in '<main>'
++ echo
+
++ echo 25.1
+25.1
++ echo 'BROKEN/BUG?: '\''Kwalify::Util::OrderedHash#put'\'': stack level too deep (SystemStackError)'
+BROKEN/BUG?: 'Kwalify::Util::OrderedHash#put': stack level too deep (SystemStackError)
++ ./bin/kwalify.rb -a ./lib/kwalify/templates/genclass-ruby -tf test/data/users-guide/address_book.schema.yaml
+./bin/kwalify.rb:3696:in 'Kwalify::Util::OrderedHash#put': stack level too deep (SystemStackError)
+	from ./bin/kwalify.rb:3697:in 'Kwalify::Util::OrderedHash#put'
+	from ./bin/kwalify.rb:3697:in 'Kwalify::Util::OrderedHash#put'
+	from ./bin/kwalify.rb:3697:in 'Kwalify::Util::OrderedHash#put'
+	from ./bin/kwalify.rb:3697:in 'Kwalify::Util::OrderedHash#put'
+	from ./bin/kwalify.rb:3697:in 'Kwalify::Util::OrderedHash#put'
+	from ./bin/kwalify.rb:3697:in 'Kwalify::Util::OrderedHash#put'
+	from ./bin/kwalify.rb:3697:in 'Kwalify::Util::OrderedHash#put'
+	from ./bin/kwalify.rb:3697:in 'Kwalify::Util::OrderedHash#put'
+	 ... 10066 levels...
+	from ./bin/kwalify.rb:3916:in 'Kwalify::Main#perform_action'
+	from ./bin/kwalify.rb:3827:in 'Kwalify::Main#execute'
+	from ./bin/kwalify.rb:3845:in 'Kwalify::Main.main'
+	from ./bin/kwalify.rb:4167:in '<main>'
++ wc -l address_book.rb
+0 address_book.rb
++ rm -f address_book.rb
++ echo
+
++ echo 'BROKEN/CAN'\''T FIND - STARTS HERE ======================================'
+BROKEN/CAN'T FIND - STARTS HERE ======================================
++ echo
+
++ echo 14.3
+14.3
++ echo 'BROKEN: Can'\''t find answers-schema.yaml'
+BROKEN: Can't find answers-schema.yaml
++ ruby test/data/users-guide/validate08.rb
+/home/t530-dev/.rvm/rubies/ruby-3.4.7/lib/ruby/3.4.0/psych.rb:688:in 'File#initialize': No such file or directory @ rb_sysopen - answers-schema.yaml (Errno::ENOENT)
+	from /home/t530-dev/.rvm/rubies/ruby-3.4.7/lib/ruby/3.4.0/psych.rb:688:in 'IO.open'
+	from /home/t530-dev/.rvm/rubies/ruby-3.4.7/lib/ruby/3.4.0/psych.rb:688:in 'Psych.load_file'
+	from test/data/users-guide/validate08.rb:7:in '<main>'
++ echo
+
++ echo 17.1
+17.1
++ echo 'BROKEN: Can'\''t find test/data/users-guide/answers-schema.yaml'
+BROKEN: Can't find test/data/users-guide/answers-schema.yaml
++ ruby test/data/users-guide/answers-validator.rb test/data/users-guide/document07a.yaml
+/home/t530-dev/Projects/rkwalify/lib/kwalify.rb:53:in 'IO.read': No such file or directory @ rb_sysopen - answers-schema.yaml (Errno::ENOENT)
+	from /home/t530-dev/Projects/rkwalify/lib/kwalify.rb:53:in 'Kwalify::Yaml.load_file'
+	from test/data/users-guide/answers-validator.rb:10:in '<class:AnswersValidator>'
+	from test/data/users-guide/answers-validator.rb:7:in '<main>'
++ echo
+
++ echo 18.1
+18.1
++ echo 'BROKEN: Can'\''t find kwalify'
+BROKEN: Can't find kwalify
++ ruby test/data/users-guide/howto3.rb
+/home/t530-dev/Projects/rkwalify/lib/kwalify/parser/yaml.rb:135:in 'IO.read': No such file or directory @ rb_sysopen - howto3.yaml (Errno::ENOENT)
+	from /home/t530-dev/Projects/rkwalify/lib/kwalify/parser/yaml.rb:135:in 'Kwalify::Yaml::Parser#parse_file'
+	from test/data/users-guide/howto3.rb:4:in '<main>'
++ echo
+
++ echo 19.1
+19.1
++ echo 'BROKEN: Can'\''t find lib/kwalify/util/hashlike'
+BROKEN: Can't find lib/kwalify/util/hashlike
++ ruby test/data/users-guide/loadconfig.rb
+/home/t530-dev/Projects/rkwalify/lib/kwalify.rb:53:in 'IO.read': No such file or directory @ rb_sysopen - config.schema.yaml (Errno::ENOENT)
+	from /home/t530-dev/Projects/rkwalify/lib/kwalify.rb:53:in 'Kwalify::Yaml.load_file'
+	from test/data/users-guide/loadconfig.rb:10:in '<main>'
++ echo
+
++ echo 21.1
+21.1
++ echo 'BROKEN: Can'\''t find BABEL.schema.yaml'
+BROKEN: Can't find BABEL.schema.yaml
++ ruby test/data/users-guide/loadbabel.rb
+/home/t530-dev/Projects/rkwalify/lib/kwalify.rb:53:in 'IO.read': No such file or directory @ rb_sysopen - BABEL.schema.yaml (Errno::ENOENT)
+	from /home/t530-dev/Projects/rkwalify/lib/kwalify.rb:53:in 'Kwalify::Yaml.load_file'
+	from test/data/users-guide/loadbabel.rb:5:in '<main>'
++ echo
+
++ echo 26.1
+26.1
++ echo 'BROKEN: Can'\''t find address_book.yaml'
+BROKEN: Can't find address_book.yaml
++ ruby -I /home/t530-dev/Projects/rkwalify/lib:/home/t530-dev/Projects/rkwalify/test/data/users-guide test/data/users-guide/example_address_book.rb
+test/data/users-guide/example_address_book.rb:6:in 'IO.read': No such file or directory @ rb_sysopen - address_book.yaml (Errno::ENOENT)
+	from test/data/users-guide/example_address_book.rb:6:in '<main>'
