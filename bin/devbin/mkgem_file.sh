@@ -2,6 +2,6 @@
 
 rm -f rkwalify-*.gem
 
-./bin/mkManifest.sh
+./bin/devbin/mkManifest.sh
 
 gem build

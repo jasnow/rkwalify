@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 if [ "X$1X" == "XX" ] ; then
+    echo "Usage: $0 file"
     exit
 fi
  
