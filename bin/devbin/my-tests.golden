@@ -1,0 +1,131 @@
+
+2.1
+test/data/users-guide/document01a.yaml#0: valid.
+
+2.2
+test/data/users-guide/document01b.yaml#0: INVALID
+  - (line 2) [/1] '123': not a string.
+
+3.1
+test/data/users-guide/document02a.yaml#0: valid.
+
+3.2
+test/data/users-guide/document02b.yaml#0: INVALID
+  - (line 2) [/email] 'foo(at)mail.com': not matched to pattern /@/.
+  - (line 3) [/age] 'twenty': not a integer.
+  - (line 4) [/birth] 'Jun 01, 1985': not a date.
+
+4.1
+test/data/users-guide/document03a.yaml#0: valid.
+
+4.2
+test/data/users-guide/document03b.yaml#0: INVALID
+  - (line 3) [/1] key 'name:' is required.
+  - (line 3) [/1/naem] key 'naem:' is undefined.
+  - (line 6) [/2/mail] key 'mail:' is undefined.
+
+5.1
+test/data/users-guide/document04a.yaml#0: valid.
+
+5.2
+test/data/users-guide/document04b.yaml#0: INVALID
+  - (line 4) [/employees/0/code] 'A101': not a integer.
+  - (line 9) [/employees/1/mail] key 'mail:' is undefined.
+
+8.1
+test/data/users-guide/document05a.yaml#0: valid.
+
+8.2
+test/data/users-guide/document05b.yaml#0: INVALID
+  - (line 2) [/0/email] 'foo(at)mail.com': not matched to pattern /@/.
+  - (line 3) [/0/password] 'xxx123': too short (length 6 < min 8).
+  - (line 4) [/0/age] 'twenty': not a integer.
+  - (line 5) [/0/blood] 'a': invalid blood value.
+  - (line 7) [/1] key 'name:' is required.
+  - (line 7) [/1/given-name] key 'given-name:' is undefined.
+  - (line 8) [/1/family-name] key 'family-name:' is undefined.
+  - (line 10) [/1/age] '15': too small (< min 18).
+  - (line 12) [/1/birth] '1980/01/01': not a date.
+
+9.1
+test/data/users-guide/document06a.yaml#0: valid.
+
+10.1
+test/data/users-guide/document06b.yaml#0: INVALID
+  - (line 7) [/0/groups/3] 'foo': is already used at '/0/groups/0'.
+  - (line 13) [/2/name] 'bar': is already used at '/1/name'.
+
+10.2
+test/data/users-guide/document12a.json#0: valid.
+
+11.1
+test/data/users-guide/document12b.json#0: INVALID
+  - (line 1) [/] key 'name:' is required.
+  - (line 2) [/mail] key 'mail:' is undefined.
+  - (line 3) [/age] 'twenty': not a integer.
+  - (line 4) [/gender] 'X': invalid gender value.
+  - (line 5) [/favorite/0] '123': not a string.
+  - (line 5) [/favorite/1] '456': not a string.
+
+12.1
+test/data/users-guide/document13a.yaml#0: valid.
+
+12.2
+test/data/users-guide/document14a.yaml#0: valid.
+
+13.1
+test/data/users-guide/document14b.yaml#0: INVALID
+  - (line 2) [/value2] '1.1': too large (> max 1).
+  - (line 3) [/value3] '-2.0': too small (< min -1).
+
+14.1
+test/data/users-guide/document15a.yaml#0: valid.
+
+14.2
+test/data/users-guide/document15b.yaml#0: INVALID
+  - (line 5) [/user] key 'email:' is required.
+  - (line 5) [/user/name] 'toooooo-looooong-name': too long (length 21 > max 16).
+PUT 14.3 HERE
+
+15.1 (schema.yaml unknown so changed to kwalify.schema.yaml//SKIPPED
+
+15.2 (schema.yaml unknown so changed to kwalify.schema.yaml//SKIPPED
+
+16.1: NOT FULL EXAMPLE/SKIPPED
+
+27.1 (WORKED 1st TIME)
+  --module=name   :  module name in which class defined
+  --parent=name   :  parent class name
+  --include=name  :  module name which all classes include
+  --initialize=false :  not print initialize() method
+  --hashlike      :  include Kwalify::Util::HashLike module
+
+27.2
+  --module=name   :  module name in which class defined
+  --parent=name   :  parent class name
+  --include=name  :  module name which all classes include
+  --initialize=false :  not print initialize() method
+  --hashlike      :  include Kwalify::Util::HashLike module
+
+27.3 (WORKED 1st TIME)
+generating ./AddressBook.java...done.
+generating ./Group.java...done.
+generating ./Person.java...done.
+
+30.1.1
+DEFERRED: No jar file - javac -nowarn -classpath '.:kwalify.jar' *.java
+
+30.1.2
+DEFERRED: No jar file - javac -classpath '.:kwalify.jar' test/data/users-guide/ExampleAddressBook
+
+31.1 (WORKED 1st TIME)
+  --package=name        :  package name
+  --extends=name        :  class name to extend
+  --implements=name,... :  interface names to implement
+  --dir=path            :  directory to locate output file
+  --basedir=path        :  base directory to locate output file
+  --constructor=false   :  not print initialize() method
+
+31.2
+DEFERRED: Getting: "schema filename is not specified."
+schema filename is not specified.
