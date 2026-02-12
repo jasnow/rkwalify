@@ -1,8 +1,8 @@
 # rkwalify
 
-release::	1.4.0-preview1
-lastupdate::	$Date$
-copyright::	copyright(c) 2005-2010 kuwata-lab all rights reserved.
+ * release::	1.4.0-preview1
+ * lastupdate::	$Date$
+ * copyright::	copyright(c) 2005-2010 kuwata-lab all rights reserved.
 
 ## Introduction
 
@@ -11,42 +11,43 @@ Updated version of
 
 ## Getting Started Using Gem
 
-See [documentation](doc/users-guide.html) for details.
+ * See [documentation](doc/users-guide.html) for details.
 
-To install, add this line to your application's Gemfile:
+ * To install, add this line to your application's Gemfile:
 
- * gem "rkwalify"
+   * gem "rkwalify"
 
-Or install directly with "gem install rkwalify".
+   * Or install directly with "gem install rkwalify".
 
 (Optional) The 'contrib/inline-require' script to concatenate
 all scripts and libraries into a file.
-
+```
   $ cd rkwalify/
   $ unset RUBYLIB
   $ ruby contrib/inline-require -I ./lib bin/rkwalify > contrib/rkwalify
   $ chmod a+x contrib/rkwalify
   $ cp lib/kwalify/kwalify.schema.yaml $HOME/bin
   $ mv contrib/rkwalify                $HOME/bin
-
+```
 ## CONTRIBUTE
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for details. 
+  See [CONTRIBUTING.md](CONTRIBUTING.md) for details. 
 
 ## Contributing as developer
 
-To create Gemfile.lock file, run "bundle install".
+ * To create Gemfile.lock file, run "bundle install".
 
-To run the tests, type "rake".
+ * To run the tests, type "rake".
 
-To run the tests with (simplecov) coverage, type "COVERAGE='yes' rake".
-Then open **coverage/index.html** in a browser.
+ * To run the tests with (simplecov) coverage, type "COVERAGE='yes' rake".
+   Then open **coverage/index.html** in a browser.
 
 # License
 
 [MIT License](MIT-LICENSE)
 
 # Copyright
-
+```
 copyright(c) 2005-2010 kuwata-lab all rights reserved.
 copyright(c) 2026 Al Snow all rights reserved.
+```
