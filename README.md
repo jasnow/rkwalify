@@ -17,7 +17,7 @@ Updated version of
 
    * gem "rkwalify"
 
-   * Or install directly with "gem install rkwalify".
+ * Or install directly with "gem install rkwalify".
 
 (Optional) The 'contrib/inline-require' script to concatenate
 all scripts and libraries into a file.
@@ -39,8 +39,9 @@ all scripts and libraries into a file.
 
  * To run the tests, type "rake".
 
- * To run the tests with (simplecov) coverage, type "COVERAGE='yes' rake".
-   Then open **coverage/index.html** in a browser.
+ * To run the tests with (simplecov) coverage,
+   * type "COVERAGE='yes' rake",
+   * and then open **coverage/index.html** in a browser.
 
 # License
 
