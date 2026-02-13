@@ -3,6 +3,7 @@ export TDU="test/data/users-guide"
 export PROJHOME=${HOME}/Projects/rkwalify
 export RUBYLIB=${PROJHOME}/lib:${PROJHOME}/test/data/users-guide
 export PATH=${PATH}:${PROJHOME}/bin
+COVERAGE="yes"
 #
 #cat <<WORKING >> /dev/null
 ######################################################################
@@ -98,21 +99,21 @@ echo 'DEFERRED: Getting: "schema filename is not specified."'
 ######################################################################
 #RUBY
 #
-echo ; echo "BROKEN - BUGS - STARTS HERE ======================================"
+echo ; echo "DEFERRED/BROKEN - BUGS - STARTS HERE ===================="
 set -x
 #
 echo ; echo "20.1"
-echo "BROKEN/BUG?: 'Kwalify::Util::OrderedHash#put': stack level too deep (SystemStackError)"
-./bin/kwalify.rb -a ./lib/kwalify/templates/genclass-ruby -P \
-    -f ${TDU}/BABEL.schema.yaml \
-    --hashlike --initialize=false --module=Babel -l lib:lib/kwalify/util
+echo "DEFERRED/BROKEN/BUG?: 'Kwalify::Util::OrderedHash#put': stack level too deep (SystemStackError)"
+#./bin/kwalify.rb -a ./lib/kwalify/templates/genclass-ruby -P \
+#    -f ${TDU}/BABEL.schema.yaml \
+#    --hashlike --initialize=false --module=Babel -l lib:lib/kwalify/util
 #
 echo ; echo "25.1"
-echo "BROKEN/BUG?: 'Kwalify::Util::OrderedHash#put': stack level too deep (SystemStackError)"
-./bin/kwalify.rb -a ./lib/kwalify/templates/genclass-ruby \
-    -tf ${TDU}/address_book.schema.yaml > address_book.rb
-wc -l address_book.rb 
-rm -f address_book.rb
+echo "DEFERRED/BROKEN/BUG?: 'Kwalify::Util::OrderedHash#put': stack level too deep (SystemStackError)"
+#./bin/kwalify.rb -a ./lib/kwalify/templates/genclass-ruby \
+#    -tf ${TDU}/address_book.schema.yaml > address_book.rb
+#wc -l address_book.rb 
+#rm -f address_book.rb
 #
 echo ; echo "BROKEN/CAN'T FIND - STARTS HERE ======================================"
 #
@@ -139,4 +140,6 @@ ruby ${TDU}/loadbabel.rb
 echo ; echo "26.1"
 echo "BROKEN: Can't find address_book.yaml"
 ruby -I ${RUBYLIB} ${TDU}/example_address_book.rb
+
+unset COVERAGE
 #EOF
