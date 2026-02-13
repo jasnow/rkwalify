@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Al Snow', 'David Crosby', 'makoto kuwata']
 
   spec.summary       = 'rKwalify is a parser, schema validator, and data binding tool for YAML and JSON.'
-  spec.description   = spec.summary
+  spec.description   = 'rKwalify is a parser, schema validator, and data binding tool for YAML and JSON. rKwalify enables you to handle YAML and JSON more easily and strictly.'
   spec.homepage      = 'https://github.com/jasnow/rkwalify/blob/main/README.md'
   spec.license       = 'MIT'
   spec.required_ruby_version = '>= 3.4.7'
@@ -19,7 +19,7 @@ Gem::Specification.new do |spec|
   spec.metadata['source_code_uri'] = 'https://github.com/jasnow/rkwalify'
   spec.metadata['rubygems_mfa_required'] = 'true'
 
-  spec.files = File.read("Manifest.txt").split
+  spec.files         = `git ls-files`.split("\n")
   spec.bindir        = 'bin'
   spec.executables   = spec.files.grep(%r{\Abin/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
