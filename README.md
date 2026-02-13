@@ -6,8 +6,7 @@
 
 ## Introduction
 
-Updated version of
-"RKwalify is a parser, schema validator, and data binding tool for YAML and JSON"
+Updated version of "RKwalify is a parser, schema validator, and data binding tool for YAML and JSON"
 
 ## Getting Started Using Gem
 

@@ -2,6 +2,7 @@
 
 rm -f rkwalify-*.gem
 
-./bin/devbin/mkManifest.sh
+# Create the Manifest.txt file that will be used by "gem build."
+find . -type f  |sed -e s,./,, > Manifest.txt 
 
 gem build

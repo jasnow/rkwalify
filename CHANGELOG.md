@@ -6,13 +6,17 @@
 
 ## Release 1.4.0-preview1 (2026-02-10)
 
- * Preview1 release
-
- * (Tagged as 0.7.3) Copied original [Kwalify-1.7.2 code](https://rubygems.org/downloads/kwalify-0.7.2.gem) then [dc-kwalify's](https://github.com/dafyddcrosby/dc-kwalify) 1.0.0 code into repo.
+ * Release information in [CHANGELOG](CHANGELOG.md).
 
  * See more details [Roll Out Strategy](ROLL-OUT-STRATEGY.md) regarding approach taken.
 
- * See [commit history](https://github.com/jasnow/rkwalify/commits/main) for more details.
+ * See [commit history](commits/main) for more details.
+
+ * Known issues are documented as [issues](issues).
+
+## Release 0.7.3 (2026-02-10)
+
+ *  (Tagged as 0.7.3) Copied original [Kwalify-1.7.2 code](https://rubygems.org/downloads/kwalify-0.7.2.gem) then [dc-kwalify's](https://github.com/dafyddcrosby/dc-kwalify) 1.0.0 code into repo.
 
 ## Release 0.7.2 (2010-07-18)
 
@@ -276,7 +280,7 @@
  * .rvmrc, .ruby-version, .ruby-gemset, .bundle
  * .rubocop_todo.yml, .rubocop.yml, .overcommit.yml
  * bin, tmp
- * Manifest.txt, rkwalify-0.7.3.gem
+ * Manifest.txt, rkwalify-*.gem
  * examples, contrib
 
 ### TESTS

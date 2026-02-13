@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-echo -n "yaml::::::" ; find . -name "*.yaml" -type f |wc
-echo -n "rb::::::::" ; find . -name "*.rb"   -type f |wc
-echo -n "copyright:" ; git grep -i copyright         |wc
+echo -n "yaml:::::: " ; find . -name "*.yaml" -type f |wc -l
+echo -n "rb:::::::: " ; find . -name "*.rb"   -type f |wc -l 
+echo -n "copyright: " ; git grep -i copyright         |wc -l 
 
 find . -name "*.yaml" -type f | sed -e "s,^./,," |sort -u > /tmp/$$_Y
 find . -name "*.rb"   -type f | sed -e "s,^./,," |sort -u > /tmp/$$_R
