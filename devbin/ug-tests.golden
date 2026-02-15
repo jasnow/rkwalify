@@ -129,52 +129,19 @@ DEFERRED: No jar file - javac -classpath '.:kwalify.jar' test/data/users-guide/E
 DEFERRED: Getting: "schema filename is not specified."
 schema filename is not specified.
 
-BROKEN - BUGS - STARTS HERE ======================================
+DEFERRED/BROKEN - BUGS - STARTS HERE ====================
 + echo
 
 + echo 20.1
 20.1
-+ echo 'BROKEN/BUG?: '\''Kwalify::Util::OrderedHash#put'\'': stack level too deep (SystemStackError)'
-BROKEN/BUG?: 'Kwalify::Util::OrderedHash#put': stack level too deep (SystemStackError)
-+ ./bin/kwalify.rb -a ./lib/kwalify/templates/genclass-ruby -P -f test/data/users-guide/BABEL.schema.yaml --hashlike --initialize=false --module=Babel -l lib:lib/kwalify/util
-./bin/kwalify.rb:3697:in 'Kwalify::Util::OrderedHash#put': stack level too deep (SystemStackError)
-	from ./bin/kwalify.rb:3697:in 'Kwalify::Util::OrderedHash#put'
-	from ./bin/kwalify.rb:3697:in 'Kwalify::Util::OrderedHash#put'
-	from ./bin/kwalify.rb:3697:in 'Kwalify::Util::OrderedHash#put'
-	from ./bin/kwalify.rb:3697:in 'Kwalify::Util::OrderedHash#put'
-	from ./bin/kwalify.rb:3697:in 'Kwalify::Util::OrderedHash#put'
-	from ./bin/kwalify.rb:3697:in 'Kwalify::Util::OrderedHash#put'
-	from ./bin/kwalify.rb:3697:in 'Kwalify::Util::OrderedHash#put'
-	from ./bin/kwalify.rb:3697:in 'Kwalify::Util::OrderedHash#put'
-	 ... 10066 levels...
-	from ./bin/kwalify.rb:3916:in 'Kwalify::Main#perform_action'
-	from ./bin/kwalify.rb:3827:in 'Kwalify::Main#execute'
-	from ./bin/kwalify.rb:3845:in 'Kwalify::Main.main'
-	from ./bin/kwalify.rb:4167:in '<main>'
++ echo 'DEFERRED/BROKEN/BUG?: '\''Kwalify::Util::OrderedHash#put'\'': stack level too deep (SystemStackError)'
+DEFERRED/BROKEN/BUG?: 'Kwalify::Util::OrderedHash#put': stack level too deep (SystemStackError)
 + echo
 
 + echo 25.1
 25.1
-+ echo 'BROKEN/BUG?: '\''Kwalify::Util::OrderedHash#put'\'': stack level too deep (SystemStackError)'
-BROKEN/BUG?: 'Kwalify::Util::OrderedHash#put': stack level too deep (SystemStackError)
-+ ./bin/kwalify.rb -a ./lib/kwalify/templates/genclass-ruby -tf test/data/users-guide/address_book.schema.yaml
-./bin/kwalify.rb:3696:in 'Kwalify::Util::OrderedHash#put': stack level too deep (SystemStackError)
-	from ./bin/kwalify.rb:3697:in 'Kwalify::Util::OrderedHash#put'
-	from ./bin/kwalify.rb:3697:in 'Kwalify::Util::OrderedHash#put'
-	from ./bin/kwalify.rb:3697:in 'Kwalify::Util::OrderedHash#put'
-	from ./bin/kwalify.rb:3697:in 'Kwalify::Util::OrderedHash#put'
-	from ./bin/kwalify.rb:3697:in 'Kwalify::Util::OrderedHash#put'
-	from ./bin/kwalify.rb:3697:in 'Kwalify::Util::OrderedHash#put'
-	from ./bin/kwalify.rb:3697:in 'Kwalify::Util::OrderedHash#put'
-	from ./bin/kwalify.rb:3697:in 'Kwalify::Util::OrderedHash#put'
-	 ... 10066 levels...
-	from ./bin/kwalify.rb:3916:in 'Kwalify::Main#perform_action'
-	from ./bin/kwalify.rb:3827:in 'Kwalify::Main#execute'
-	from ./bin/kwalify.rb:3845:in 'Kwalify::Main.main'
-	from ./bin/kwalify.rb:4167:in '<main>'
-+ wc -l address_book.rb
-0 address_book.rb
-+ rm -f address_book.rb
++ echo 'DEFERRED/BROKEN/BUG?: '\''Kwalify::Util::OrderedHash#put'\'': stack level too deep (SystemStackError)'
+DEFERRED/BROKEN/BUG?: 'Kwalify::Util::OrderedHash#put': stack level too deep (SystemStackError)
 + echo
 
 + echo 'BROKEN/CAN'\''T FIND - STARTS HERE ======================================'
@@ -240,3 +207,4 @@ BROKEN: Can't find address_book.yaml
 + ruby -I /home/t530-dev/Projects/rkwalify/lib:/home/t530-dev/Projects/rkwalify/test/data/users-guide test/data/users-guide/example_address_book.rb
 test/data/users-guide/example_address_book.rb:6:in 'IO.read': No such file or directory @ rb_sysopen - address_book.yaml (Errno::ENOENT)
 	from test/data/users-guide/example_address_book.rb:6:in '<main>'
++ unset COVERAGE
