@@ -2,12 +2,12 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-- [RKWALIFY Roll Out Stategy](#rkwalify-roll-out-stategy)
+- [RKwalify Roll Out Stategy](#rkwalify-roll-out-stategy)
 - [Release Order/Naming](#release-ordernaming)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-## RKWALIFY Roll Out Stategy
+## RKwalify Roll Out Stategy
 
 **This document only focuses on the initial 2026 release: 1.4.0.**
 

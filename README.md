@@ -68,5 +68,3 @@ all scripts and libraries into a file.
 copyright(c) 2005-2010 kuwata-lab all rights reserved.
 copyright(c) 2026 Al Snow all rights reserved.
 ```
-
-![Last Updated](https://img.shields.io/date/$(date +%s)?label=Last%20Updated)
