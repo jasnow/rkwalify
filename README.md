@@ -1,3 +1,7 @@
+[![Gem Version](https://badge.fury.io/rb/rkwalify.svg?icon=si%3Arubygems)](https://badge.fury.io/rb/rkwalify)
+[![Ruby CI](https://github.com/jasnow/rkwalify/actions/workflows/test.yml/badge.svg)](https://github.com/jasnow/rkwalify/actions/workflows/test.yml)
+![Last Updated](https://img.shields.io/date/$(date +%s)?label=Last%20Updated)
+
 # rkwalify
 
  * release::	1.4.0-preview1
