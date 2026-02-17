@@ -1,3 +1,28 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Release 1.4.0-preview1 (2026-02-10)](#release-140-preview1-2026-02-10)
+- [Release 0.7.3 (2026-02-10)](#release-073-2026-02-10)
+- [Release 0.7.2 (2010-07-18)](#release-072-2010-07-18)
+- [Release 0.7.1 (2008-01-28)](#release-071-2008-01-28)
+- [Release 0.7.0 (2008-01-27)](#release-070-2008-01-27)
+- [Release 0.6.0 (2006-05-30)](#release-060-2006-05-30)
+- [Release 0.5.1 (2005-12-20)](#release-051-2005-12-20)
+- [Release 0.5.0 (2005-12-17)](#release-050-2005-12-17)
+- [Release 0.4.1 (2005-10-26)](#release-041-2005-10-26)
+- [Release 0.4.0 (2005-10-25)](#release-040-2005-10-25)
+- [Release 0.3.0 (2005-09-30)](#release-030-2005-09-30)
+- [Release 0.2.0 (2005-09-25)](#release-020-2005-09-25)
+- [Release 0.1.0 (2005-08-01)](#release-010-2005-08-01)
+- [FILE TYPES](#file-types)
+  - [DOCS](#docs)
+  - [CODE, YAML/JSON](#code-yamljson)
+  - [TESTS](#tests)
+  - [INTERNAL](#internal)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 .=title:          ChangeLog
 .?release:        $Release: 1.4.0-preview1 $
 .?lastupdate:     $Date$

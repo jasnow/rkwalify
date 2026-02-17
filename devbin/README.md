@@ -1,3 +1,11 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [devbin Directory](#devbin-directory)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## devbin Directory
 
 These files are shell scripts used by the repo's developer(s).
