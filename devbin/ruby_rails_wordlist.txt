@@ -1,0 +1,195 @@
+
+======================================================================
+actioncable
+actioncontroller
+actionmailer
+actionview
+activejob
+activemodel serializers
+activerecord
+activestorage
+activesupport
+agile
+architecture
+array
+assets pipeline
+associations
+aws
+bdd
+behavior-driven development
+blocks
+bootstrap
+bugfix
+bundler
+byebug
+callbacks
+cancancan
+capistrano
+capybara
+carrierwave
+chmod
+ci/cd
+ci/cd pipelines
+classes
+code coverage
+code review
+concat
+config
+const
+controllers
+convention over configuration
+cors
+ctags
+darwin
+database migrations
+david
+debugging
+devbin
+devise
+digitalocean
+docker
+documentation
+domain-specific language
+don’t repeat yourself
+dotenv
+dry
+dsl
+duck typing
+emacs
+enum
+enumerable
+environments
+erb
+errno
+eruby
+es6
+eval
+exception handling
+expr
+factorybot
+faker
+faraday
+fgrep
+FIX: emtpy
+fixme
+fixtures
+fixup
+fname
+garbage collection
+gem
+gemfile
+gemset
+generators
+getch
+getref
+git
+github
+gitlab
+graphql
+haml
+hash
+helpers
+heroku
+hotwire
+html
+httparty
+import maps
+indexing
+irb
+javascript
+jbuilder
+json
+jwt
+kaminari
+kubernetes
+lambdas
+lastupdate
+layouts
+linting
+matsumoto
+matz
+metaprogramming
+migrations
+minitest
+mixins
+models
+model–view–controller
+modules
+monkey patching
+mri
+mvc
+mysql
+nested attributes
+nginx
+nokogiri
+oauth
+objects
+oj
+orm
+pair programming
+partials
+passenger
+performance optimization
+polymorphic associations
+postgresql
+procs
+pry
+puma
+pundit
+query optimization
+rails
+rails console
+rake tasks
+rbenv
+redis
+refactoring
+repl
+resque
+rest api
+restful routes
+ror
+routes
+rspec
+rspec rails
+rubocop
+ruby
+rubygems
+rubylib
+ruby on rails
+rvm
+scaffolding
+scalability
+schema
+scrum
+seeds
+serialization
+shoulda matchers
+shrine
+sidekiq
+simplecov
+slim
+sqlite
+stimulus
+stimulusjs
+string interpolation
+strong parameters
+symbols
+tailwindcss
+tdd
+test-driven development
+transactions
+turbo
+turbo frames
+turbo streams
+validations
+vcr
+version control
+views
+webpacker
+websockets
+willpaginate
+xml
+yaml
+yarv
+yield
+yukihiro 

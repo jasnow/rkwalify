@@ -3934,7 +3934,7 @@ module Kwalify
       str = File.read(schema_filename)
       if str.empty?
         #* key=:schema_empty  msg="%s: empty schema.\n"
-        msg = Kwalify.msg(:schema_emtpy) % filename
+        msg = Kwalify.msg(:schema_empty) % filename
         raise CommandOptionError.new(msg)
       end
       str = Util.untabify(str) if @options[:untabify]

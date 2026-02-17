@@ -141,5 +141,12 @@ echo ; echo "26.1"
 echo "BROKEN: Can't find address_book.yaml"
 ruby -I ${RUBYLIB} ${TDU}/example_address_book.rb
 
+######################################################################
+
+echo "Check for misspelled words"
+devbin/chkspelling.sh > /tmp/$$_MISPELLINGS
+wc /tmp/$$_MISPELLINGS
+rm /tmp/$$_MISPELLINGS
+
 unset COVERAGE
 #EOF
