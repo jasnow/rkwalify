@@ -3,7 +3,7 @@
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
 - [RKWALIFY Roll Out Stategy](#rkwalify-roll-out-stategy)
-- [RELEASE ORDER/NAMING](#release-ordernaming)
+- [Release Order/Naming](#release-ordernaming)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -49,7 +49,7 @@
 
  10. Decide when to make repo public.
 
-## RELEASE ORDER/NAMING
+## Release Order/Naming
 
  * Possible Release Order
     * Preview1, Preview2,... release

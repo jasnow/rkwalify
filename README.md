@@ -13,8 +13,7 @@
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 [![Gem Version](https://badge.fury.io/rb/rkwalify.svg?icon=si%3Arubygems)](https://badge.fury.io/rb/rkwalify)
-[![Ruby CI](https://github.com/jasnow/rkwalify/actions/workflows/test.yml/badge.svg)](https://github.com/jasnow/rkwalify/actions/workflows/test.yml)
-![Last Updated](https://img.shields.io/date/$(date +%s)?label=Last%20Updated)
+[![Ruby CI](https://github.com/jasnow/rkwalify/actions/workflows/ruby.yml/badge.svg)](https://github.com/jasnow/rkwalify/actions/workflows/ruby.yml)
 
 # rkwalify
 
@@ -69,3 +68,5 @@ all scripts and libraries into a file.
 copyright(c) 2005-2010 kuwata-lab all rights reserved.
 copyright(c) 2026 Al Snow all rights reserved.
 ```
+
+![Last Updated](https://img.shields.io/date/$(date +%s)?label=Last%20Updated)
