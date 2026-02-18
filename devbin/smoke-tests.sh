@@ -62,12 +62,6 @@ echo ; echo "14.1"
 echo ; echo "14.2"
 ./bin/kwalify.rb -lf ${TDU}/schema15.yaml ${TDU}/document15b.yaml
 #
-echo ; echo "15.1 SKIPPED: schema.yaml unknown so changed to kwalify.schema.yaml"
-echo ; echo "15.2 SKIPPED: schema.yaml unknown so changed to kwalify.schema.yaml"
-#
-echo ; echo "16.1: SKIPPED: NOT FULL EXAMPLE"
-#./bin/kwalify.rb -m ${TDU}/schema1.yaml ${TDU}/schema2.yaml"
-#
 echo ; echo "17.1"
 ruby ${TDU}/answers-validator.rb ${TDU}/document07a.yaml
 #
@@ -93,23 +87,8 @@ echo ; echo "27.3 (WORKED 1st TIME)"
     -tf ${TDU}/address_book.schema.yaml
 rm -f AddressBook.java  Group.java  Person.java
 #
-echo ; echo "30.1.1"
-echo "DEFERRED: No jar file - javac -nowarn -classpath '.:kwalify.jar' *.java"
-# -Xlint:unchecked => "warning: [unchecked] unchecked call to
-#    set(int,E) as a member of the raw type List
-#List<Group> seq = new ArrayList<>();
-#List<Person> seq = new ArrayList<>();
-#
-echo ; echo "30.1.2"
-echo "DEFERRED: No jar file - javac -classpath '.:kwalify.jar' ${TDU}/ExampleAddressBook"
-#
 echo ; echo "31.1 (WORKED 1st TIME)"
 ./bin/kwalify.rb -ha ./lib/kwalify/templates/genclass-java
-#
-echo ; echo "31.2"
-echo 'DEFERRED: Getting: "schema filename is not specified."'
-./bin/kwalify.rb -a ./lib/kwalify/templates/genclass-java \
-  --package=com.example.my --implements=Serializable --basedir=src
 #
 ######################################################################
 echo "Check for misspelled words"
@@ -117,10 +96,33 @@ echo "Check for misspelled words"
 wc /tmp/$$_MISPELLINGS 2> /dev/null
 rm -f /tmp/$$_MISPELLINGS
 ######################################################################
-#RUBY
 #
-echo ; echo "DEFERRED/BROKEN - BUGS - STARTS HERE ===================="
+echo ; echo "DEFERRED/BROKEN/SKIPPED - BUGS - STARTS HERE ============"
 set -x
+#
+echo ; echo "15.1 SKIPPED: schema.yaml unknown so changed to kwalify.schema.yaml"
+echo ; echo "15.2 SKIPPED: schema.yaml unknown so changed to kwalify.schema.yaml"
+#
+echo ; echo "16.1: SKIPPED: NOT FULL EXAMPLE"
+#./bin/kwalify.rb -m ${TDU}/schema1.yaml ${TDU}/schema2.yaml"
+#
+echo ; echo "30.1.1 (JAR FILE)"
+echo "DEFERRED: No jar file - javac -nowarn -classpath '.:kwalify.jar' *.java"
+# -Xlint:unchecked => "warning: [unchecked] unchecked call to
+#    set(int,E) as a member of the raw type List
+#List<Group> seq = new ArrayList<>();
+#List<Person> seq = new ArrayList<>();
+#
+echo ; echo "30.1.2 (JAR FILE)"
+echo "DEFERRED: No jar file - javac -classpath '.:kwalify.jar' ${TDU}/ExampleAddressBook"
+#
+echo ; echo "31.2 (GENCLASS-JAVA)"
+echo 'DEFERRED: Getting: "schema filename is not specified."'
+./bin/kwalify.rb -a ./lib/kwalify/templates/genclass-java \
+  --package=com.example.my --implements=Serializable --basedir=src
+#
+######################################################################
+#RUBY
 #
 echo ; echo "14.3"
 echo "14.3: DEFERRED/BROKEN: Something about 'ARGF.class#read'"
@@ -141,4 +143,3 @@ echo "25.1: DEFERRED/BROKEN/BUG?: 'Kwalify::Util::OrderedHash#put': stack level 
 #
 unset COVERAGE
 #EOF
-######################################################################
