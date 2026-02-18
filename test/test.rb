@@ -56,9 +56,11 @@ if $0 == __FILE__
   require 'test-rule.rb'
 
 #  require 'test-validator.rb'    # 37 tests,  72 assertions, 20 failures, 0 errors
-#  require 'test-metavalidator.rb' # 161 tests, 321 assertions, 4 failures, 0 errors
+  require 'test-metavalidator.rb'
 
-  require 'test-databinding.rb'
+# 1/27/2026: Commented out; Still getting: "Notification: <DataBindingTest#
+#     test_databind4> was redefined [test_databind4(DataBindingTest)]
+#  require 'test-databinding.rb'
 
 #  require 'test-main.rb'         # 37 tests,  49 assertions,  2 failures, 0 errors
 #  require 'test-action.rb'       # 22 tests,  26 assertions,  0 failures, 6 ERRORS

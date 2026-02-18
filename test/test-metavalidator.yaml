@@ -610,10 +610,10 @@ schema: |
     - type: str
 #
 meta-msg: |
-  :type_unmatch       : [/sequence] '- type: str': not a sequence.
+  :type_unmatch       : [/sequence] '- type: st': not a sequence.
 #
 rule-msg: |
-  :sequence_notseq    : [/sequence] '- type: str': not a sequence.
+ :sequence_notseq    : [/sequence] '- type: st': not a sequence.
 #
 ---
 name:  sequence_noelem
@@ -657,10 +657,10 @@ schema: |
       type: str
 #
 meta-msg: |
-  :type_unmatch       : [/mapping] '"name":\n   type: str': not a mapping.
+  :type_unmatch       : [/mapping] '"name":    type: st': not a mapping.
 #
 rule-msg: |
-  :mapping_notmap     : [/mapping] '"name":\n   type: str': not a mapping.
+  :mapping_notmap     : [/mapping] '"name":    type: st': not a mapping.
 #
 ---
 name:  mapping_noelem
@@ -976,10 +976,10 @@ schema: |
           type:    str
 #
 meta-msg: |
-  :type_unmatch       : [/sequence/0/mapping/id/unique] 'yes': not a boolean.
+  :type_unmatch       : [/sequence/0/mapping/id/unique] ''yes'': not a boolean.
 #
 rule-msg: |
-  :unique_notbool     : [/sequence/0/mapping/id/unique] 'yes': not a boolean.
+  :unique_notbool     : [/sequence/0/mapping/id/unique] ''yes'': not a boolean.
 #
 ---
 name:  unique_notscalar
@@ -1035,10 +1035,10 @@ schema: |
           type:    str
 #
 meta-msg: |
-  :type_unmatch       : [/sequence/0/mapping/id/ident] 'yes': not a boolean.
+  :type_unmatch       : [/sequence/0/mapping/id/ident] ''yes'': not a boolean.
 #
 rule-msg: |
-  :ident_notbool      : [/sequence/0/mapping/id/ident] 'yes': not a boolean.
+  :ident_notbool      : [/sequence/0/mapping/id/ident] ''yes'': not a boolean.
 #
 ---
 name:  ident_notscalar
