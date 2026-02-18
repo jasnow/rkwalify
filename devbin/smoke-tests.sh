@@ -112,34 +112,33 @@ echo 'DEFERRED: Getting: "schema filename is not specified."'
   --package=com.example.my --implements=Serializable --basedir=src
 #
 ######################################################################
+echo "Check for misspelled words"
+#HID FOR NOW: devbin/chkspelling.sh > /tmp/$$_MISPELLINGS
+wc /tmp/$$_MISPELLINGS 2> /dev/null
+rm -f /tmp/$$_MISPELLINGS
+######################################################################
 #RUBY
 #
 echo ; echo "DEFERRED/BROKEN - BUGS - STARTS HERE ===================="
 set -x
 #
 echo ; echo "14.3"
-echo "DEFERRED/BROKEN: Something about 'ARGF.class#read'"
+echo "14.3: DEFERRED/BROKEN: Something about 'ARGF.class#read'"
 #ruby ${TDU}/validate08.rb
 #
 echo ; echo "20.1"
-echo "DEFERRED/BROKEN/BUG?: 'Kwalify::Util::OrderedHash#put': stack level too deep (SystemStackError)"
+echo "20.1: DEFERRED/BROKEN/BUG?: 'Kwalify::Util::OrderedHash#put': stack level too deep (SystemStackError)"
 #./bin/kwalify.rb -a ./lib/kwalify/templates/genclass-ruby -P \
 #    -f ${TDU}/BABEL.schema.yaml \
 #    --hashlike --initialize=false --module=Babel -l lib:lib/kwalify/util
 #
 echo ; echo "25.1"
-echo "DEFERRED/BROKEN/BUG?: 'Kwalify::Util::OrderedHash#put': stack level too deep (SystemStackError)"
+echo "25.1: DEFERRED/BROKEN/BUG?: 'Kwalify::Util::OrderedHash#put': stack level too deep (SystemStackError)"
 #./bin/kwalify.rb -a ./lib/kwalify/templates/genclass-ruby \
 #    -tf ${TDU}/address_book.schema.yaml > address_book.rb
 #wc -l address_book.rb 
 #rm -f address_book.rb
 #
-######################################################################
-echo "Check for misspelled words"
-#HID FOR NOW: devbin/chkspelling.sh > /tmp/$$_MISPELLINGS
-wc /tmp/$$_MISPELLINGS 2> /dev/null
-rm -f /tmp/$$_MISPELLINGS
-
 unset COVERAGE
 #EOF
 ######################################################################

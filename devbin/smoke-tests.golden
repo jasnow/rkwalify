@@ -92,6 +92,169 @@ test/data/users-guide/document15b.yaml#0: INVALID
 
 16.1: SKIPPED: NOT FULL EXAMPLE
 
+17.1
+Valid.
+
+18.1
+[{"name" => "Foo",
+  "parent" =>
+   {"name" => "Bar", "parent" => {"name" => "Baz", "parent" => "null"}}},
+ {"name" => "Bar", "parent" => {"name" => "Baz", "parent" => "null"}},
+ {"name" => "Baz", "parent" => "null"}]
+
+19.1
+#<Config:0x00007e0f64ca7dc0
+ @host="localhost",
+ @pass="password1",
+ @port=8080,
+ @user="user1">
+
+21.1
+{"teams" =>
+  [#<Babel::Team:0x00007b771f751a40
+    @chief=
+     #<Babel::Member:0x00007b771f74fa88
+      @desc="Scientist",
+      @name="Kohichi Minamoto",
+      @team=#<Babel::Team:0x00007b771f751a40 ...>>,
+    @desc="Level 7 ESPers",
+    @members=
+     [#<Babel::Member:0x00007b771f74ebb0
+       @desc="Psychokino",
+       @name="Kaoru Akashi",
+       @team=#<Babel::Team:0x00007b771f751a40 ...>>,
+      #<Babel::Member:0x00007b771f74deb8
+       @desc="Teleporter",
+       @name="Aoi Nogami",
+       @team=#<Babel::Team:0x00007b771f751a40 ...>>,
+      #<Babel::Member:0x00007b771f74d1c0
+       @desc="Psycometrer",
+       @name="Shiho Sannomiya",
+       @team=#<Babel::Team:0x00007b771f751a40 ...>>],
+    @name="The Children">],
+ "members" =>
+  [#<Babel::Member:0x00007b771f74fa88
+    @desc="Scientist",
+    @name="Kohichi Minamoto",
+    @team=
+     #<Babel::Team:0x00007b771f751a40
+      @chief=#<Babel::Member:0x00007b771f74fa88 ...>,
+      @desc="Level 7 ESPers",
+      @members=
+       [#<Babel::Member:0x00007b771f74ebb0
+         @desc="Psychokino",
+         @name="Kaoru Akashi",
+         @team=#<Babel::Team:0x00007b771f751a40 ...>>,
+        #<Babel::Member:0x00007b771f74deb8
+         @desc="Teleporter",
+         @name="Aoi Nogami",
+         @team=#<Babel::Team:0x00007b771f751a40 ...>>,
+        #<Babel::Member:0x00007b771f74d1c0
+         @desc="Psycometrer",
+         @name="Shiho Sannomiya",
+         @team=#<Babel::Team:0x00007b771f751a40 ...>>],
+      @name="The Children">>,
+   #<Babel::Member:0x00007b771f74ebb0
+    @desc="Psychokino",
+    @name="Kaoru Akashi",
+    @team=
+     #<Babel::Team:0x00007b771f751a40
+      @chief=
+       #<Babel::Member:0x00007b771f74fa88
+        @desc="Scientist",
+        @name="Kohichi Minamoto",
+        @team=#<Babel::Team:0x00007b771f751a40 ...>>,
+      @desc="Level 7 ESPers",
+      @members=
+       [#<Babel::Member:0x00007b771f74ebb0 ...>,
+        #<Babel::Member:0x00007b771f74deb8
+         @desc="Teleporter",
+         @name="Aoi Nogami",
+         @team=#<Babel::Team:0x00007b771f751a40 ...>>,
+        #<Babel::Member:0x00007b771f74d1c0
+         @desc="Psycometrer",
+         @name="Shiho Sannomiya",
+         @team=#<Babel::Team:0x00007b771f751a40 ...>>],
+      @name="The Children">>,
+   #<Babel::Member:0x00007b771f74deb8
+    @desc="Teleporter",
+    @name="Aoi Nogami",
+    @team=
+     #<Babel::Team:0x00007b771f751a40
+      @chief=
+       #<Babel::Member:0x00007b771f74fa88
+        @desc="Scientist",
+        @name="Kohichi Minamoto",
+        @team=#<Babel::Team:0x00007b771f751a40 ...>>,
+      @desc="Level 7 ESPers",
+      @members=
+       [#<Babel::Member:0x00007b771f74ebb0
+         @desc="Psychokino",
+         @name="Kaoru Akashi",
+         @team=#<Babel::Team:0x00007b771f751a40 ...>>,
+        #<Babel::Member:0x00007b771f74deb8 ...>,
+        #<Babel::Member:0x00007b771f74d1c0
+         @desc="Psycometrer",
+         @name="Shiho Sannomiya",
+         @team=#<Babel::Team:0x00007b771f751a40 ...>>],
+      @name="The Children">>,
+   #<Babel::Member:0x00007b771f74d1c0
+    @desc="Psycometrer",
+    @name="Shiho Sannomiya",
+    @team=
+     #<Babel::Team:0x00007b771f751a40
+      @chief=
+       #<Babel::Member:0x00007b771f74fa88
+        @desc="Scientist",
+        @name="Kohichi Minamoto",
+        @team=#<Babel::Team:0x00007b771f751a40 ...>>,
+      @desc="Level 7 ESPers",
+      @members=
+       [#<Babel::Member:0x00007b771f74ebb0
+         @desc="Psychokino",
+         @name="Kaoru Akashi",
+         @team=#<Babel::Team:0x00007b771f751a40 ...>>,
+        #<Babel::Member:0x00007b771f74deb8
+         @desc="Teleporter",
+         @name="Aoi Nogami",
+         @team=#<Babel::Team:0x00007b771f751a40 ...>>,
+        #<Babel::Member:0x00007b771f74d1c0 ...>],
+      @name="The Children">>]}
+
+26.1
+[#<Group:0x000075840cc1a6a0 @desc="my family", @name="family">,
+ #<Group:0x000075840cc1a650 @desc="my friends", @name="friend">,
+ #<Group:0x000075840cc1a628
+  @desc="those who works together",
+  @name="business">]
+[#<Person:0x000075840cd6f3c0
+  @birth=#<Date: 2000-01-01 ((2451545j,0s,0n),+0s,-Infj)>,
+  @blood="A",
+  @deleted=false,
+  @desc=nil,
+  @email=nil,
+  @group="family",
+  @name="Sumire",
+  @phone=nil>,
+ #<Person:0x000075840cd6f320
+  @birth=#<Date: 1995-01-01 ((2449719j,0s,0n),+0s,-Infj)>,
+  @blood=nil,
+  @deleted=false,
+  @desc=nil,
+  @email="shiina@mail.org",
+  @group="friend",
+  @name="Shiina",
+  @phone=nil>,
+ #<Person:0x000075840cd6f2d0
+  @birth=nil,
+  @blood=nil,
+  @deleted=false,
+  @desc=nil,
+  @email="cherry@mail.net",
+  @group="business",
+  @name="Sakura",
+  @phone="012-345-6789">]
+
 27.1 (WORKED 1st TIME)
   --module=name   :  module name in which class defined
   --parent=name   :  parent class name
@@ -128,83 +291,25 @@ DEFERRED: No jar file - javac -classpath '.:kwalify.jar' test/data/users-guide/E
 31.2
 DEFERRED: Getting: "schema filename is not specified."
 schema filename is not specified.
+Check for misspelled words
 
 DEFERRED/BROKEN - BUGS - STARTS HERE ====================
 + echo
 
++ echo 14.3
+14.3
++ echo '14.3: DEFERRED/BROKEN: Something about '\''ARGF.class#read'\'''
+14.3: DEFERRED/BROKEN: Something about 'ARGF.class#read'
++ echo
+
 + echo 20.1
 20.1
-+ echo 'DEFERRED/BROKEN/BUG?: '\''Kwalify::Util::OrderedHash#put'\'': stack level too deep (SystemStackError)'
-DEFERRED/BROKEN/BUG?: 'Kwalify::Util::OrderedHash#put': stack level too deep (SystemStackError)
++ echo '20.1: DEFERRED/BROKEN/BUG?: '\''Kwalify::Util::OrderedHash#put'\'': stack level too deep (SystemStackError)'
+20.1: DEFERRED/BROKEN/BUG?: 'Kwalify::Util::OrderedHash#put': stack level too deep (SystemStackError)
 + echo
 
 + echo 25.1
 25.1
-+ echo 'DEFERRED/BROKEN/BUG?: '\''Kwalify::Util::OrderedHash#put'\'': stack level too deep (SystemStackError)'
-DEFERRED/BROKEN/BUG?: 'Kwalify::Util::OrderedHash#put': stack level too deep (SystemStackError)
-+ echo
-
-+ echo 'BROKEN/CAN'\''T FIND - STARTS HERE ======================================'
-BROKEN/CAN'T FIND - STARTS HERE ======================================
-+ echo
-
-+ echo 14.3
-14.3
-+ echo 'BROKEN: Can'\''t find answers-schema.yaml'
-BROKEN: Can't find answers-schema.yaml
-+ ruby test/data/users-guide/validate08.rb
-/home/t530-dev/.rvm/rubies/ruby-3.4.7/lib/ruby/3.4.0/psych.rb:688:in 'File#initialize': No such file or directory @ rb_sysopen - answers-schema.yaml (Errno::ENOENT)
-	from /home/t530-dev/.rvm/rubies/ruby-3.4.7/lib/ruby/3.4.0/psych.rb:688:in 'IO.open'
-	from /home/t530-dev/.rvm/rubies/ruby-3.4.7/lib/ruby/3.4.0/psych.rb:688:in 'Psych.load_file'
-	from test/data/users-guide/validate08.rb:7:in '<main>'
-+ echo
-
-+ echo 17.1
-17.1
-+ echo 'BROKEN: Can'\''t find test/data/users-guide/answers-schema.yaml'
-BROKEN: Can't find test/data/users-guide/answers-schema.yaml
-+ ruby test/data/users-guide/answers-validator.rb test/data/users-guide/document07a.yaml
-/home/t530-dev/Projects/rkwalify/lib/kwalify.rb:53:in 'IO.read': No such file or directory @ rb_sysopen - answers-schema.yaml (Errno::ENOENT)
-	from /home/t530-dev/Projects/rkwalify/lib/kwalify.rb:53:in 'Kwalify::Yaml.load_file'
-	from test/data/users-guide/answers-validator.rb:10:in '<class:AnswersValidator>'
-	from test/data/users-guide/answers-validator.rb:7:in '<main>'
-+ echo
-
-+ echo 18.1
-18.1
-+ echo 'BROKEN: Can'\''t find kwalify'
-BROKEN: Can't find kwalify
-+ ruby test/data/users-guide/howto3.rb
-/home/t530-dev/Projects/rkwalify/lib/kwalify/parser/yaml.rb:135:in 'IO.read': No such file or directory @ rb_sysopen - howto3.yaml (Errno::ENOENT)
-	from /home/t530-dev/Projects/rkwalify/lib/kwalify/parser/yaml.rb:135:in 'Kwalify::Yaml::Parser#parse_file'
-	from test/data/users-guide/howto3.rb:4:in '<main>'
-+ echo
-
-+ echo 19.1
-19.1
-+ echo 'BROKEN: Can'\''t find lib/kwalify/util/hashlike'
-BROKEN: Can't find lib/kwalify/util/hashlike
-+ ruby test/data/users-guide/loadconfig.rb
-/home/t530-dev/Projects/rkwalify/lib/kwalify.rb:53:in 'IO.read': No such file or directory @ rb_sysopen - config.schema.yaml (Errno::ENOENT)
-	from /home/t530-dev/Projects/rkwalify/lib/kwalify.rb:53:in 'Kwalify::Yaml.load_file'
-	from test/data/users-guide/loadconfig.rb:10:in '<main>'
-+ echo
-
-+ echo 21.1
-21.1
-+ echo 'BROKEN: Can'\''t find BABEL.schema.yaml'
-BROKEN: Can't find BABEL.schema.yaml
-+ ruby test/data/users-guide/loadbabel.rb
-/home/t530-dev/Projects/rkwalify/lib/kwalify.rb:53:in 'IO.read': No such file or directory @ rb_sysopen - BABEL.schema.yaml (Errno::ENOENT)
-	from /home/t530-dev/Projects/rkwalify/lib/kwalify.rb:53:in 'Kwalify::Yaml.load_file'
-	from test/data/users-guide/loadbabel.rb:5:in '<main>'
-+ echo
-
-+ echo 26.1
-26.1
-+ echo 'BROKEN: Can'\''t find address_book.yaml'
-BROKEN: Can't find address_book.yaml
-+ ruby -I /home/t530-dev/Projects/rkwalify/lib:/home/t530-dev/Projects/rkwalify/test/data/users-guide test/data/users-guide/example_address_book.rb
-test/data/users-guide/example_address_book.rb:6:in 'IO.read': No such file or directory @ rb_sysopen - address_book.yaml (Errno::ENOENT)
-	from test/data/users-guide/example_address_book.rb:6:in '<main>'
++ echo '25.1: DEFERRED/BROKEN/BUG?: '\''Kwalify::Util::OrderedHash#put'\'': stack level too deep (SystemStackError)'
+25.1: DEFERRED/BROKEN/BUG?: 'Kwalify::Util::OrderedHash#put': stack level too deep (SystemStackError)
 + unset COVERAGE
