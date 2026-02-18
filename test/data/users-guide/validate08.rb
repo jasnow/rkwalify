@@ -4,7 +4,7 @@ require 'kwalify'
 require 'yaml'
 
 ## load schema definition
-schema = YAML.load_file('answers-schema.yaml')
+schema = YAML.load_file('test/data/users-guide/answers-schema.yaml')
 
 ## create validator for answers
 validator = Kwalify::Validator.new(schema) { |value, rule, path, errors|

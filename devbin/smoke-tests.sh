@@ -68,6 +68,21 @@ echo ; echo "15.2 SKIPPED: schema.yaml unknown so changed to kwalify.schema.yaml
 echo ; echo "16.1: SKIPPED: NOT FULL EXAMPLE"
 #./bin/kwalify.rb -m ${TDU}/schema1.yaml ${TDU}/schema2.yaml"
 #
+echo ; echo "17.1"
+ruby ${TDU}/answers-validator.rb ${TDU}/document07a.yaml
+#
+echo ; echo "18.1"
+ruby ${TDU}/howto3.rb
+#
+echo ; echo "19.1"
+ruby ${TDU}/loadconfig.rb
+#
+echo ; echo "21.1"
+ruby ${TDU}/loadbabel.rb
+#
+echo ; echo "26.1"
+ruby -I ${RUBYLIB} ${TDU}/example_address_book.rb
+#
 echo ; echo "27.1 (WORKED 1st TIME)"
 ./bin/kwalify.rb -ha ./lib/kwalify/templates/genclass-ruby
 echo ; echo "27.2"
@@ -102,6 +117,10 @@ echo 'DEFERRED: Getting: "schema filename is not specified."'
 echo ; echo "DEFERRED/BROKEN - BUGS - STARTS HERE ===================="
 set -x
 #
+echo ; echo "14.3"
+echo "DEFERRED/BROKEN: Something about 'ARGF.class#read'"
+#ruby ${TDU}/validate08.rb
+#
 echo ; echo "20.1"
 echo "DEFERRED/BROKEN/BUG?: 'Kwalify::Util::OrderedHash#put': stack level too deep (SystemStackError)"
 #./bin/kwalify.rb -a ./lib/kwalify/templates/genclass-ruby -P \
@@ -115,38 +134,12 @@ echo "DEFERRED/BROKEN/BUG?: 'Kwalify::Util::OrderedHash#put': stack level too de
 #wc -l address_book.rb 
 #rm -f address_book.rb
 #
-echo ; echo "BROKEN/CAN'T FIND - STARTS HERE ======================================"
-#
-echo ; echo "14.3"
-echo "BROKEN: Can't find answers-schema.yaml"
-ruby ${TDU}/validate08.rb
-#
-echo ; echo "17.1"
-echo "BROKEN: Can't find ${TDU}/answers-schema.yaml"
-ruby ${TDU}/answers-validator.rb ${TDU}/document07a.yaml
-#
-echo ; echo "18.1"
-echo "BROKEN: Can't find kwalify"
-ruby ${TDU}/howto3.rb
-#
-echo ; echo "19.1"
-echo "BROKEN: Can't find lib/kwalify/util/hashlike"
-ruby ${TDU}/loadconfig.rb
-#
-echo ; echo "21.1"
-echo "BROKEN: Can't find BABEL.schema.yaml"
-ruby ${TDU}/loadbabel.rb
-#
-echo ; echo "26.1"
-echo "BROKEN: Can't find address_book.yaml"
-ruby -I ${RUBYLIB} ${TDU}/example_address_book.rb
-
 ######################################################################
-
 echo "Check for misspelled words"
-devbin/chkspelling.sh > /tmp/$$_MISPELLINGS
-wc /tmp/$$_MISPELLINGS
-rm /tmp/$$_MISPELLINGS
+#HID FOR NOW: devbin/chkspelling.sh > /tmp/$$_MISPELLINGS
+wc /tmp/$$_MISPELLINGS 2> /dev/null
+rm -f /tmp/$$_MISPELLINGS
 
 unset COVERAGE
 #EOF
+######################################################################

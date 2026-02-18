@@ -2,7 +2,7 @@ require 'kwalify'
 require_relative 'models'
 
 ## load schema definition
-schema = Kwalify::Yaml.load_file('BABEL.schema.yaml',
+schema = Kwalify::Yaml.load_file('test/data/users-guide/BABEL.schema.yaml',
                                  :untabify=>true,
                                  :preceding_alias=>true)
 
@@ -20,7 +20,7 @@ validator = Kwalify::Validator.new(schema)
 parser = Kwalify::Yaml::Parser.new(validator)
 parser.preceding_alias = true
 parser.data_binding = true
-ydoc = parser.parse_file('BABEL.data.yaml', :untabify=>true)
+ydoc = parser.parse_file('test/data/users-guide/BABEL.data.yaml', :untabify=>true)
 
 ## show document
 require 'pp'

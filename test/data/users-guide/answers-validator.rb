@@ -7,7 +7,7 @@ require 'kwalify'
 class AnswersValidator < Kwalify::Validator
 
    ## load schema definition
-   @@schema = Kwalify::Yaml.load_file('answers-schema.yaml')
+   @@schema = Kwalify::Yaml.load_file('test/data/users-guide/answers-schema.yaml')
    ## or
    ##   require 'yaml'
    ##   @@schema = YAML.load_file('answers-schema.yaml')

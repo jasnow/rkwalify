@@ -7,11 +7,11 @@ class Config
 end
 ## create validator object
 require 'kwalify'
-schema = Kwalify::Yaml.load_file('config.schema.yaml')
+schema = Kwalify::Yaml.load_file('test/data/users-guide/config.schema.yaml')
 validator = Kwalify::Validator.new(schema)
 ## parse configuration file with data binding
 parser = Kwalify::Yaml::Parser.new(validator)
 parser.data_binding = true    # enable data binding
-config = parser.parse_file('config.yaml')
+config = parser.parse_file('test/data/users-guide/config.yaml')
 require 'pp'
 pp config

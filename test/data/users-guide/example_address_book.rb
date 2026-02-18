@@ -3,7 +3,7 @@ require 'yaml'
 require 'pp'
 require 'date'
 
-str = File.read('address_book.yaml')
+str = File.read('test/data/users-guide/address_book.yaml')
 ydoc = YAML.load(str, permitted_classes: [Date])
 addrbook = AddressBook.new(ydoc)
 
