@@ -86,12 +86,6 @@ test/data/users-guide/document15b.yaml#0: INVALID
   - (line 5) [/user] key 'email:' is required.
   - (line 5) [/user/name] 'toooooo-looooong-name': too long (length 21 > max 16).
 
-15.1 SKIPPED: schema.yaml unknown so changed to kwalify.schema.yaml
-
-15.2 SKIPPED: schema.yaml unknown so changed to kwalify.schema.yaml
-
-16.1: SKIPPED: NOT FULL EXAMPLE
-
 17.1
 Valid.
 
@@ -103,7 +97,7 @@ Valid.
  {"name" => "Baz", "parent" => "null"}]
 
 19.1
-#<Config:0x00007e0f64ca7dc0
+#<Config:0x000074093d9d7d70
  @host="localhost",
  @pass="password1",
  @port=8080,
@@ -111,123 +105,123 @@ Valid.
 
 21.1
 {"teams" =>
-  [#<Babel::Team:0x00007b771f751a40
+  [#<Babel::Team:0x0000756b6d341a40
     @chief=
-     #<Babel::Member:0x00007b771f74fa88
+     #<Babel::Member:0x0000756b6d33fa88
       @desc="Scientist",
       @name="Kohichi Minamoto",
-      @team=#<Babel::Team:0x00007b771f751a40 ...>>,
+      @team=#<Babel::Team:0x0000756b6d341a40 ...>>,
     @desc="Level 7 ESPers",
     @members=
-     [#<Babel::Member:0x00007b771f74ebb0
+     [#<Babel::Member:0x0000756b6d33ebb0
        @desc="Psychokino",
        @name="Kaoru Akashi",
-       @team=#<Babel::Team:0x00007b771f751a40 ...>>,
-      #<Babel::Member:0x00007b771f74deb8
+       @team=#<Babel::Team:0x0000756b6d341a40 ...>>,
+      #<Babel::Member:0x0000756b6d33deb8
        @desc="Teleporter",
        @name="Aoi Nogami",
-       @team=#<Babel::Team:0x00007b771f751a40 ...>>,
-      #<Babel::Member:0x00007b771f74d1c0
+       @team=#<Babel::Team:0x0000756b6d341a40 ...>>,
+      #<Babel::Member:0x0000756b6d33d1c0
        @desc="Psycometrer",
        @name="Shiho Sannomiya",
-       @team=#<Babel::Team:0x00007b771f751a40 ...>>],
+       @team=#<Babel::Team:0x0000756b6d341a40 ...>>],
     @name="The Children">],
  "members" =>
-  [#<Babel::Member:0x00007b771f74fa88
+  [#<Babel::Member:0x0000756b6d33fa88
     @desc="Scientist",
     @name="Kohichi Minamoto",
     @team=
-     #<Babel::Team:0x00007b771f751a40
-      @chief=#<Babel::Member:0x00007b771f74fa88 ...>,
+     #<Babel::Team:0x0000756b6d341a40
+      @chief=#<Babel::Member:0x0000756b6d33fa88 ...>,
       @desc="Level 7 ESPers",
       @members=
-       [#<Babel::Member:0x00007b771f74ebb0
+       [#<Babel::Member:0x0000756b6d33ebb0
          @desc="Psychokino",
          @name="Kaoru Akashi",
-         @team=#<Babel::Team:0x00007b771f751a40 ...>>,
-        #<Babel::Member:0x00007b771f74deb8
+         @team=#<Babel::Team:0x0000756b6d341a40 ...>>,
+        #<Babel::Member:0x0000756b6d33deb8
          @desc="Teleporter",
          @name="Aoi Nogami",
-         @team=#<Babel::Team:0x00007b771f751a40 ...>>,
-        #<Babel::Member:0x00007b771f74d1c0
+         @team=#<Babel::Team:0x0000756b6d341a40 ...>>,
+        #<Babel::Member:0x0000756b6d33d1c0
          @desc="Psycometrer",
          @name="Shiho Sannomiya",
-         @team=#<Babel::Team:0x00007b771f751a40 ...>>],
+         @team=#<Babel::Team:0x0000756b6d341a40 ...>>],
       @name="The Children">>,
-   #<Babel::Member:0x00007b771f74ebb0
+   #<Babel::Member:0x0000756b6d33ebb0
     @desc="Psychokino",
     @name="Kaoru Akashi",
     @team=
-     #<Babel::Team:0x00007b771f751a40
+     #<Babel::Team:0x0000756b6d341a40
       @chief=
-       #<Babel::Member:0x00007b771f74fa88
+       #<Babel::Member:0x0000756b6d33fa88
         @desc="Scientist",
         @name="Kohichi Minamoto",
-        @team=#<Babel::Team:0x00007b771f751a40 ...>>,
+        @team=#<Babel::Team:0x0000756b6d341a40 ...>>,
       @desc="Level 7 ESPers",
       @members=
-       [#<Babel::Member:0x00007b771f74ebb0 ...>,
-        #<Babel::Member:0x00007b771f74deb8
+       [#<Babel::Member:0x0000756b6d33ebb0 ...>,
+        #<Babel::Member:0x0000756b6d33deb8
          @desc="Teleporter",
          @name="Aoi Nogami",
-         @team=#<Babel::Team:0x00007b771f751a40 ...>>,
-        #<Babel::Member:0x00007b771f74d1c0
+         @team=#<Babel::Team:0x0000756b6d341a40 ...>>,
+        #<Babel::Member:0x0000756b6d33d1c0
          @desc="Psycometrer",
          @name="Shiho Sannomiya",
-         @team=#<Babel::Team:0x00007b771f751a40 ...>>],
+         @team=#<Babel::Team:0x0000756b6d341a40 ...>>],
       @name="The Children">>,
-   #<Babel::Member:0x00007b771f74deb8
+   #<Babel::Member:0x0000756b6d33deb8
     @desc="Teleporter",
     @name="Aoi Nogami",
     @team=
-     #<Babel::Team:0x00007b771f751a40
+     #<Babel::Team:0x0000756b6d341a40
       @chief=
-       #<Babel::Member:0x00007b771f74fa88
+       #<Babel::Member:0x0000756b6d33fa88
         @desc="Scientist",
         @name="Kohichi Minamoto",
-        @team=#<Babel::Team:0x00007b771f751a40 ...>>,
+        @team=#<Babel::Team:0x0000756b6d341a40 ...>>,
       @desc="Level 7 ESPers",
       @members=
-       [#<Babel::Member:0x00007b771f74ebb0
+       [#<Babel::Member:0x0000756b6d33ebb0
          @desc="Psychokino",
          @name="Kaoru Akashi",
-         @team=#<Babel::Team:0x00007b771f751a40 ...>>,
-        #<Babel::Member:0x00007b771f74deb8 ...>,
-        #<Babel::Member:0x00007b771f74d1c0
+         @team=#<Babel::Team:0x0000756b6d341a40 ...>>,
+        #<Babel::Member:0x0000756b6d33deb8 ...>,
+        #<Babel::Member:0x0000756b6d33d1c0
          @desc="Psycometrer",
          @name="Shiho Sannomiya",
-         @team=#<Babel::Team:0x00007b771f751a40 ...>>],
+         @team=#<Babel::Team:0x0000756b6d341a40 ...>>],
       @name="The Children">>,
-   #<Babel::Member:0x00007b771f74d1c0
+   #<Babel::Member:0x0000756b6d33d1c0
     @desc="Psycometrer",
     @name="Shiho Sannomiya",
     @team=
-     #<Babel::Team:0x00007b771f751a40
+     #<Babel::Team:0x0000756b6d341a40
       @chief=
-       #<Babel::Member:0x00007b771f74fa88
+       #<Babel::Member:0x0000756b6d33fa88
         @desc="Scientist",
         @name="Kohichi Minamoto",
-        @team=#<Babel::Team:0x00007b771f751a40 ...>>,
+        @team=#<Babel::Team:0x0000756b6d341a40 ...>>,
       @desc="Level 7 ESPers",
       @members=
-       [#<Babel::Member:0x00007b771f74ebb0
+       [#<Babel::Member:0x0000756b6d33ebb0
          @desc="Psychokino",
          @name="Kaoru Akashi",
-         @team=#<Babel::Team:0x00007b771f751a40 ...>>,
-        #<Babel::Member:0x00007b771f74deb8
+         @team=#<Babel::Team:0x0000756b6d341a40 ...>>,
+        #<Babel::Member:0x0000756b6d33deb8
          @desc="Teleporter",
          @name="Aoi Nogami",
-         @team=#<Babel::Team:0x00007b771f751a40 ...>>,
-        #<Babel::Member:0x00007b771f74d1c0 ...>],
+         @team=#<Babel::Team:0x0000756b6d341a40 ...>>,
+        #<Babel::Member:0x0000756b6d33d1c0 ...>],
       @name="The Children">>]}
 
 26.1
-[#<Group:0x000075840cc1a6a0 @desc="my family", @name="family">,
- #<Group:0x000075840cc1a650 @desc="my friends", @name="friend">,
- #<Group:0x000075840cc1a628
+[#<Group:0x000072230acea690 @desc="my family", @name="family">,
+ #<Group:0x000072230acea640 @desc="my friends", @name="friend">,
+ #<Group:0x000072230acea618
   @desc="those who works together",
   @name="business">]
-[#<Person:0x000075840cd6f3c0
+[#<Person:0x000072230ae5f3e0
   @birth=#<Date: 2000-01-01 ((2451545j,0s,0n),+0s,-Infj)>,
   @blood="A",
   @deleted=false,
@@ -236,7 +230,7 @@ Valid.
   @group="family",
   @name="Sumire",
   @phone=nil>,
- #<Person:0x000075840cd6f320
+ #<Person:0x000072230ae5f340
   @birth=#<Date: 1995-01-01 ((2449719j,0s,0n),+0s,-Infj)>,
   @blood=nil,
   @deleted=false,
@@ -245,7 +239,7 @@ Valid.
   @group="friend",
   @name="Shiina",
   @phone=nil>,
- #<Person:0x000075840cd6f2d0
+ #<Person:0x000072230ae5f2f0
   @birth=nil,
   @blood=nil,
   @deleted=false,
@@ -274,12 +268,6 @@ generating ./AddressBook.java...done.
 generating ./Group.java...done.
 generating ./Person.java...done.
 
-30.1.1
-DEFERRED: No jar file - javac -nowarn -classpath '.:kwalify.jar' *.java
-
-30.1.2
-DEFERRED: No jar file - javac -classpath '.:kwalify.jar' test/data/users-guide/ExampleAddressBook
-
 31.1 (WORKED 1st TIME)
   --package=name        :  package name
   --extends=name        :  class name to extend
@@ -287,13 +275,41 @@ DEFERRED: No jar file - javac -classpath '.:kwalify.jar' test/data/users-guide/E
   --dir=path            :  directory to locate output file
   --basedir=path        :  base directory to locate output file
   --constructor=false   :  not print initialize() method
-
-31.2
-DEFERRED: Getting: "schema filename is not specified."
-schema filename is not specified.
 Check for misspelled words
 
-DEFERRED/BROKEN - BUGS - STARTS HERE ====================
+DEFERRED/BROKEN/SKIPPED - BUGS - STARTS HERE ============
++ echo
+
++ echo '15.1 SKIPPED: schema.yaml unknown so changed to kwalify.schema.yaml'
+15.1 SKIPPED: schema.yaml unknown so changed to kwalify.schema.yaml
++ echo
+
++ echo '15.2 SKIPPED: schema.yaml unknown so changed to kwalify.schema.yaml'
+15.2 SKIPPED: schema.yaml unknown so changed to kwalify.schema.yaml
++ echo
+
++ echo '16.1: SKIPPED: NOT FULL EXAMPLE'
+16.1: SKIPPED: NOT FULL EXAMPLE
++ echo
+
++ echo '30.1.1 (JAR FILE)'
+30.1.1 (JAR FILE)
++ echo 'DEFERRED: No jar file - javac -nowarn -classpath '\''.:kwalify.jar'\'' *.java'
+DEFERRED: No jar file - javac -nowarn -classpath '.:kwalify.jar' *.java
++ echo
+
++ echo '30.1.2 (JAR FILE)'
+30.1.2 (JAR FILE)
++ echo 'DEFERRED: No jar file - javac -classpath '\''.:kwalify.jar'\'' test/data/users-guide/ExampleAddressBook'
+DEFERRED: No jar file - javac -classpath '.:kwalify.jar' test/data/users-guide/ExampleAddressBook
++ echo
+
++ echo '31.2 (GENCLASS-JAVA)'
+31.2 (GENCLASS-JAVA)
++ echo 'DEFERRED: Getting: "schema filename is not specified."'
+DEFERRED: Getting: "schema filename is not specified."
++ ./bin/kwalify.rb -a ./lib/kwalify/templates/genclass-java --package=com.example.my --implements=Serializable --basedir=src
+schema filename is not specified.
 + echo
 
 + echo 14.3

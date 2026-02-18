@@ -1,3 +1,3 @@
-git tag -a v1.4.0-preview1 8e71cbc8a6eccde2baf3e35982c2dec01f961f91 \
--m "Release version 1.4.0-preview1" 
+HASHTAG="TBD"
+git tag -a v1.4.0-beta "${HASHTAG}" -m "Release version 1.4.0-beta"
 git push origin --tags

@@ -28,6 +28,28 @@
 .?lastupdate:     $Date$
 .?version:        $Rev$
 
+## Release 1.4.0-beta (2026-02-18)
+
+## What's New/Changes/Fixes
+
+ * See [commit history](commits/main) for more details.
+
+ * Known issues are documented as [issues](issues).
+
+## Changelog
+
+ * For the complete list of changes, please refer to the
+   GitHub release notes: [CHANGELOG](CHANGELOG.md)
+
+## Feeback and Support
+
+ * "If you encounter any issues or have suggestions, please
+   open a ticket on our GitHub repository: [issues](issues)
+
+## ROLL OUT STRATEGY
+
+ * See more details [Roll Out Strategy](ROLL-OUT-STRATEGY.md)
+   regarding approach taken.
 
 ## Release 1.4.0-preview1 (2026-02-10)
 

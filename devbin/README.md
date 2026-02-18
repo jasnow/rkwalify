@@ -14,8 +14,12 @@ Currently these scripts include:
 
  * STATIC ANALYSIS/TEST-RELATED:
    * chkspelling.sh - Check for misspelled words
+     * ruby_rails_wordlist.txt - list of words related to ruby or rails
+     * ruby_docs_wordlist.txt - list of words from ruby doc  (not included)
+       * ruby_3_4_1_complete_rdocs (not included)
    * chk-rad-repo.sh - Test code against ruby-advisory-db repo.
-   * my-tests.sh - short and dirty version of testsuite., 
+   * smoke-tests.sh - short and dirty version of testsuite., 
+     * smoke-tests.golden
    * runtests.sh
 
  * PACKAGING:
@@ -28,3 +32,4 @@ Currently these scripts include:
      create a *.gem file.
    * got-all-rel-numbers.sh - Check for old release numbers.
    * updata-rel-numbers.sh -  Update release numbers.
+   * mktag - Add a release tag to project.

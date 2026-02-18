@@ -29,6 +29,6 @@
 
  * Submit your repo as example of rkwalify use.
 
- * TBD
+ * Fell free reaching out and suggested another way to help out.
 
 Thanks again for your interest on contributing to the project!
