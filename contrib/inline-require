@@ -6,7 +6,7 @@
 ### usage: inline-require [-h] [-I path[,path2,..]] script
 ###
 ### copyright(c) 2005-2010 kuwata-lab all rights reserved.
-### Release 1.4.0-preview1
+### Release 1.4.0-beta
 ### $Rev: 10 $
 ###
 

@@ -2,4 +2,4 @@
 
 rm -f rkwalify-*.gem
 
-gem build
+gem build rkwalify-1.4.0.beta.gem

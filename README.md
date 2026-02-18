@@ -17,7 +17,7 @@
 [![Gem Version](https://badge.fury.io/rb/rkwalify.svg?icon=si%3Arubygems)](https://badge.fury.io/rb/rkwalify)
 [![Ruby CI](https://github.com/jasnow/rkwalify/actions/workflows/ruby.yml/badge.svg)](https://github.com/jasnow/rkwalify/actions/workflows/ruby.yml)
 
- * release::	1.4.0-preview1
+ * release::	1.4.0-beta
  * lastupdate::	$Date$
  * copyright::	copyright(c) 2005-2010 kuwata-lab all rights reserved.
 

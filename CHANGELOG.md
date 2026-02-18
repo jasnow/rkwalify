@@ -2,7 +2,7 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-- [Release 1.4.0-preview1 (2026-02-10)](#release-140-preview1-2026-02-10)
+- [Release 1.4.0-beta (2026-02-10)](#release-140-preview1-2026-02-10)
 - [Release 0.7.3 (2026-02-10)](#release-073-2026-02-10)
 - [Release 0.7.2 (2010-07-18)](#release-072-2010-07-18)
 - [Release 0.7.1 (2008-01-28)](#release-071-2008-01-28)
@@ -24,7 +24,7 @@
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 .=title:          ChangeLog
-.?release:        $Release: 1.4.0-preview1 $
+.?release:        $Release 1.4.0-beta $
 .?lastupdate:     $Date$
 .?version:        $Rev$
 
@@ -51,7 +51,7 @@
  * See more details [Roll Out Strategy](ROLL-OUT-STRATEGY.md)
    regarding approach taken.
 
-## Release 1.4.0-preview1 (2026-02-10)
+## Release 1.4.0-private1 (2026-02-10)
 
  * Release information in [CHANGELOG](CHANGELOG.md).
 
