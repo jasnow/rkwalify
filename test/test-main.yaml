@@ -79,7 +79,7 @@
     java: CommandOptionException
   message: "-i: invalid command option."
   error_symbol*:
-    ruby: !ruby/sym :command_option_invalid
+    ruby: !ruby/sym "command_option_invalid"
     java: command.option.invalid
 ##
 - name:  optionError2
@@ -92,7 +92,7 @@
     java: CommandOptionException
   message: "-f: schema filename is required."
   error_symbol*:
-    ruby: !ruby/sym :command_option_schema_required
+    ruby: !ruby/sym "command_option_schema_required"
     java: command.option.noschema
 ####
 ##name:  optionError3

@@ -62,7 +62,7 @@ if $0 == __FILE__
 #     test_databind4> was redefined [test_databind4(DataBindingTest)]
 #  require 'test-databinding.rb'
 
-#  require 'test-main.rb'         # 37 tests,  49 assertions,  2 failures, 0 errors
+  require 'test-main.rb'
 #  require 'test-action.rb'       # 22 tests,  26 assertions,  0 failures, 6 ERRORS
 #  require 'test-users-guide.rb'  # 48 tests,  55 assertions, 29 failures, 0 errors
 
