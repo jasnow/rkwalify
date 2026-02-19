@@ -37,7 +37,7 @@ class YamlParserTest < Test::Unit::TestCase
         File.write("#{@name}.expected", @expected)
         File.write("#{@name}.actual", actual)
       end
-      if $print
+      if ENV["DEBUG"]
         print actual
       else
         assert_text_equal(@expected, actual)

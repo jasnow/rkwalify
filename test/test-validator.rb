@@ -49,7 +49,7 @@ class ValidatorTest < Test::Unit::TestCase
       args = [e.error_symbol.inspect, e.linenum, e.path, e.message]
       actual << ("%-20s: (line %d)[%s] %s\n" % args)
     end
-    if $print
+    if ENV["DEBUG"]
       print actual
     else
       assert_text_equal(expected, actual)

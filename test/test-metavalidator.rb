@@ -70,7 +70,7 @@ class MetaValidatorTest < Test::Unit::TestCase
       raise error if error.is_a?(Kwalify::AssertionError)
       actual << ("%-20s: [%s] %s\n" % [error.error_symbol.inspect, error.path, error.message])
     end
-    if $print
+    if ENV["DEBUG"]
       print actual
     else
       assert_text_equal(expected, actual)
