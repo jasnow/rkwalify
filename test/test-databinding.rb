@@ -35,7 +35,6 @@ class DataBindingTest < Test::Unit::TestCase
       eval s
     end
   end
-  load_yaml_testdata(filename, :lang=>'ruby')
 
 
   def _test

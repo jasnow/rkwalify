@@ -62,9 +62,7 @@ if $0 == __FILE__
 #  require 'test-validator.rb'    # 37 tests,  72 assertions, 20 failures, 0 errors
   require 'test-metavalidator.rb'
 
-# 1/27/2026: Commented out; Still getting: "Notification: <DataBindingTest#
-#     test_databind4> was redefined [test_databind4(DataBindingTest)]
-#  require 'test-databinding.rb'
+  require 'test-databinding.rb'
 
   require 'test-main.rb'
 #  require 'test-action.rb'       # 22 tests,  26 assertions,  0 failures, 6 ERRORS
