@@ -3,7 +3,6 @@
 ### $Release 1.4.0-beta $
 ### copyright(c) 2005-2010 kuwata-lab all rights reserved.
 ###
-# frozen_string_literal: false
 
 require 'yaml'
 require 'erb'
@@ -85,7 +84,7 @@ module Kwalify
       ## help or version
       if @options[:help] || @options[:version]
         action = @options[:action]
-        s = ''
+        s = String.new
         s << _version() << "\n"           if @options[:version]
         s << _usage()                     if @options[:help] && !action
         s << _describe_properties(action) if @options[:help] && action

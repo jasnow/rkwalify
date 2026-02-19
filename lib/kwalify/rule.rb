@@ -4,8 +4,6 @@
 ### copyright(c) 2005-2010 kuwata-lab all rights reserved.
 ###
 
-# frozen_string_literal: false
-
 require 'kwalify/messages'
 require 'kwalify/errors'
 require 'kwalify/types'
@@ -474,7 +472,7 @@ module Kwalify
     protected
 
 
-    def _inspect(str="", level=0, done={})
+    def _inspect(str = String.new, level = 0, done = {})
       done[self.__id__] = true
       str << ("  " * level) << "name:    #{@name}\n"         unless @name.nil?
       str << ("  " * level) << "desc:    #{@desc}\n"         unless @desc.nil?

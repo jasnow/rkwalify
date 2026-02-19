@@ -3,7 +3,7 @@
 ### $Release 1.4.0-beta $
 ### copyright(c) 2005-2010 kuwata-lab all rights reserved.
 ###
-# frozen_string_literal: false
+# frozen_string_literal: true
 
 module Kwalify
 
@@ -17,18 +17,19 @@ module Kwalify
     ## ex.
     ##   untabified_str = YamlHelper.untabify(tabbed_str)
     ##
-    def untabify(str, width=8)
+
+    def untabify(str, width = 8)
       return str if str.nil?
-      list = str.split("\t", -1)   # if 2nd arg is negative then split() doesn't remove tailing empty strings
+      list = str.split("\t", -1)
       last = list.pop
-      sb = ''
+      sb = String.new
       list.each do |s|
         column = (n = s.rindex(?\n)) ? s.length - n - 1 : s.length
         n = width - (column % width)
         sb << s << (' ' * n)
       end
       sb << last if last
-      return sb
+      sb
     end
 
 

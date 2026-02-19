@@ -3,7 +3,6 @@
 ### $Release 1.4.0-beta $
 ### copyright(c) 2005-2010 kuwata-lab all rights reserved.
 ###
-# frozen_string_literal: false
 
 require 'strscan'
 require 'kwalify/errors'

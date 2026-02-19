@@ -3,7 +3,6 @@
 ### $Release 1.4.0-beta $
 ### copyright(c) 2005-2010 kuwata-lab all rights reserved.
 ###
-# frozen_string_literal: false
 
 require File.dirname(__FILE__) + '/test.rb'
 
@@ -65,10 +64,11 @@ class MetaValidatorTest < Test::Unit::TestCase
       end
       expected = @rule_msg
     end
-    actual = ''
+    actual = String.new
     errors.each do |error|
       raise error if error.is_a?(Kwalify::AssertionError)
-      actual << ("%-20s: [%s] %s\n" % [error.error_symbol.inspect, error.path, error.message])
+      actual << ("%-20s: [%s] %s\n" % [error.error_symbol.inspect,
+        error.path, error.message])
     end
     if ENV["DEBUG"]
       print actual

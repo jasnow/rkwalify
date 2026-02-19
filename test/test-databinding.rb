@@ -3,7 +3,6 @@
 ### $Release 1.4.0-beta $
 ### copyright(c) 2005-2010 kuwata-lab all rights reserved.
 ###
-# frozen_string_literal: false
 
 require File.dirname(__FILE__) + '/test.rb'
 
@@ -25,7 +24,7 @@ class DataBindingTest < Test::Unit::TestCase
       TESTDATA1.key?(name) and raise "name '#{name}' is dupilcated."
       TESTDATA1[name] = hash
       #
-      s = ''
+      s = String.new
       s <<   "def test_#{name}\n"
       s <<   "  @name = '#{name}'\n"
       for key, val in hash
@@ -57,7 +56,7 @@ class DataBindingTest < Test::Unit::TestCase
     ydoc = parser.parse(@data)
     assert_equal(parser.errors, [])
     ## pp
-    result = ''
+    result = String.new
     def result.write(arg); self << arg.to_s; end
     PP.pp(ydoc, result)
     ## convert object-id to portable number

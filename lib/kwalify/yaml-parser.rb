@@ -3,7 +3,6 @@
 ### $Release 1.4.0-beta $
 ### copyright(c) 2005-2010 kuwata-lab all rights reserved.
 ###
-# frozen_string_literal: false
 
 require 'kwalify/messages'
 require 'kwalify/errors'
@@ -553,12 +552,14 @@ module Kwalify
       margin = $3 && !$3.empty? ? $3.to_i : nil
       #text = $4.empty? ? '' :  $4 + sep
       text = $4
-      s = ''
-      empty = ''
+      s = String.new
+      empty = String.new
       min_indent = -1
+
       while line = _getline()
         line =~ /^( *)(.*)/
         indent = $1.length
+
         if $2.empty?
           empty << "\n"
         elsif indent < column
@@ -566,7 +567,7 @@ module Kwalify
         else
           min_indent = indent if min_indent < 0 || min_indent > indent
           s << empty << line
-          empty = ''
+          empty = String.new
         end
       end
       s << empty if indicator == '+' && char != '>'
