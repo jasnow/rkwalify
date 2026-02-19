@@ -488,7 +488,6 @@ end
 ### $Release 1.4.0-beta $
 ### copyright(c) 2005-2010 kuwata-lab all rights reserved.
 ###
-# frozen_string_literal: false
 
 #--already included require 'kwalify/messages'
 #--already included require 'kwalify/errors'
@@ -1355,7 +1354,6 @@ end
 ### $Release 1.4.0-beta $
 ### copyright(c) 2005-2010 kuwata-lab all rights reserved.
 ###
-# frozen_string_literal: false
 
 module Kwalify
 
@@ -1516,7 +1514,6 @@ end
 ### $Release 1.4.0-beta $
 ### copyright(c) 2005-2010 kuwata-lab all rights reserved.
 ###
-# frozen_string_literal: false
 
 require 'strscan'
 #--already included require 'kwalify/errors'
@@ -2745,7 +2742,6 @@ end
 ### $Release 1.4.0-beta $
 ### copyright(c) 2005-2010 kuwata-lab all rights reserved.
 ###
-# frozen_string_literal: false
 
 #--already included require 'kwalify/messages'
 #--already included require 'kwalify/errors'
@@ -3666,7 +3662,6 @@ end
 ### $Release 1.4.0-beta $
 ### copyright(c) 2005-2010 kuwata-lab all rights reserved.
 ###
-# frozen_string_literal: false
 
 require 'yaml'
 require 'erb'
