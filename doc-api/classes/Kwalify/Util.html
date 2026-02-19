@@ -164,7 +164,7 @@ ex.
       <span class="ruby-identifier">hashlist</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">hash</span><span class="ruby-operator">|</span>
         <span class="ruby-identifier">key</span> = <span class="ruby-identifier">hash</span>[<span class="ruby-identifier">primarykey</span>]
         <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">key</span>
-          <span class="ruby-identifier">riase</span> <span class="ruby-node">&quot;primary key '#{key}' not found.&quot;</span>
+          <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;primary key '#{key}' not found.&quot;</span>
         <span class="ruby-keyword kw">end</span>
         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">flag_duplicate_check</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">hashtable</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-identifier">key</span>)
           <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;primary key '#{key}' duplicated (value '#{hashtable[key]}')&quot;</span>

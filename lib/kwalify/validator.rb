@@ -37,16 +37,23 @@ module Kwalify
   ##     end
   ##   end
   ##
+
+  def self.logger
+    @logger ||= Object.new.tap do |obj|
+      def obj.method_missing(*); end
+    end
+  end
+
   class Validator
     include Kwalify::ErrorHelper
 
-
-    def initialize(hash_or_rule, &block)
+    def initialize(hash_or_rule, logger: nil, &block)
       obj = hash_or_rule
       @rule = (obj.nil? || obj.is_a?(Rule)) ? obj : Rule.new(obj)
+      @logger = logger || Kwalify.logger
       @block = block
     end
-    attr_reader :rule
+    attr_reader :rule, :logger
 
 
     def _inspect
@@ -55,8 +62,10 @@ module Kwalify
 
 
     def validate(value)
+      @logger.debug("Starting validation") if @logger
       path = '';  errors = [];  done = {};  uniq_table = nil
       _validate(value, @rule, path, errors, done, uniq_table)
+      @logger.debug("Validation complete: #{errors.length} errors") if @logger
       return errors
     end
 
@@ -276,6 +285,20 @@ module Kwalify
       end
     end
 
+    def _validate_assert(value, rule, path, errors)
+      assert_error("rule=#{rule._inspect}") unless rule.assert
+      local_val = value
+      begin
+        result = eval(rule.assert, binding)
+        unless result
+          #* key=:assert_failed  msg="assertion expression failed (%s)."
+          errors << validate_error(:assert_failed, rule, path, 
+            value, [rule.assert])
+        end
+      rescue StandardError => ex
+        errors << validate_error(:assert_failed, rule, path, value, [rule.assert])
+      end
+    end
 
   end
 

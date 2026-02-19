@@ -32,7 +32,7 @@ class ParserTest < Test::Unit::TestCase
       else
         actual = doc.inspect + "\n"
       end
-      if $log
+      if @logger
         File.write("#{@name}.expected", @expected)
         File.write("#{@name}.actual", actual)
       end

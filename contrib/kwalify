@@ -1473,7 +1473,7 @@ module Kwalify
       hashlist.each do |hash|
         key = hash[primarykey]
         unless key
-          riase "primary key '#{key}' not found."
+          raise "primary key '#{key}' not found."
         end
         if flag_duplicate_check && hashtable.key?(key)
           raise "primary key '#{key}' duplicated (value '#{hashtable[key]}')"

@@ -3,6 +3,7 @@
 ### $Release 1.4.0-beta $
 ### copyright(c) 2005-2010 kuwata-lab all rights reserved.
 ###
+
 # frozen_string_literal: false
 
 require 'kwalify/messages'
@@ -74,12 +75,13 @@ module Kwalify
     end
 
 
-    keys = %w[type name desc required pattern enum assert range length
-              ident unique default sequence mapping class]
-    #table = keys.inject({}) {|h, k| h[k.intern] = "_init_#{k}_value".intern; h }
-    table = {}; keys.each {|k| table[k.intern] = :"_init_#{k}_value" }
-    @@dispatch_table = table
-
+    # Dispatch table maps schema keys to their initialization methods.
+    # This allows dynamic method lookup for _init_<key>_value methods.
+    SCHEMA_KEYS = %w[type name desc required pattern enum assert range length
+                     ident unique default sequence mapping class].freeze
+    @@dispatch_table = SCHEMA_KEYS.each_with_object({}) do |key, table|
+      table[key.intern] = :"_init_#{key}_value"
+    end.freeze
 
     protected
 
@@ -206,9 +208,8 @@ module Kwalify
         raise schema_error(:assert_noval, rule, path, val)
       end
       begin
-        # WAS: @assert_proc = eval "proc { |val| #{val} }"
-        @assert_proc = ->(val, expr) { binding.local_variable_set(:val, val); eval(expr) }
-        # OR: @assert_proc = ->(val, &block) { block.call(val) }
+        # Store expression as string, evaluate at validation time
+        @assert_expr = val
       rescue ::SyntaxError => ex
         #* key=:assert_syntaxerr  msg="expression syntax error."
         raise schema_error(:assert_syntaxerr, rule, path, val)

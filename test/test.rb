@@ -50,6 +50,10 @@ if $0 == __FILE__
 
 # NOTE: 1/29/2026: Commented out all non-test-rule test for now.
 
+  require 'test_logger.rb'
+
+  require 'test-hashlike.rb'
+
 #  require 'test-parser-yaml.rb'  # 91 tests, 913 assertions,  7 failures, 0 error
 #  require 'test-yaml-parser.rb'  # 89 tests, 249 assertions, 17 failures, 0 errors
 

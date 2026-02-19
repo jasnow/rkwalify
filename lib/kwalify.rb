@@ -15,8 +15,33 @@ require 'kwalify/yaml-parser'
 #require 'kwalify/parser/base'
 #require 'kwalify/parser/yaml'
 
+# Ruby 4.0 Compatibility Patch: StringScanner#peep was renamed to #peek in Ruby 4.0.
+require 'strscan'
+class StringScanner
+  alias_method :peep, :peek unless method_defined?(:peep)
+end
 
 module Kwalify
+
+  require 'logger'
+
+  # Logger singleton - can be configured per application
+  @@logger = Logger.new($stderr, level: Logger::WARN)
+  @@logger.formatter = proc do |severity, datetime, progname, msg|
+    "#{severity}: #{msg}\n"
+  end
+
+  def self.logger
+    @@logger
+  end
+
+  def self.logger=(logger)
+    @@logger = logger
+  end
+
+  def self.log(level, message)
+    @@logger.send(level, message)
+  end
 
   module Util
 
