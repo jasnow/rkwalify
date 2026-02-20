@@ -91,9 +91,8 @@ module Kwalify
         val =  hash['assert']
         #val =~ /\bval\b/ or errors << validate_error(:assert_noval, rule, "#{path}/assert", val)
         begin
-          # WAS: eval "proc { |val| #{val} }"
-          eval "proc { |val| #{val} }" #   proc { |val| val > 10 }
-        rescue ::SyntaxError => ex
+          RubyVM::InstructionSequence.compile("proc { |val| #{val} }")
+        rescue SyntaxError
           errors << validate_error(:assert_syntaxerr, rule, "#{path}/assert", val)
         end
       end

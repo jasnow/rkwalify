@@ -29,7 +29,7 @@ class Test::Unit::TestCase  # :nodoc:
       expfile.write(expected); expfile.flush()
       actfile = Tempfile.new(".actual.")
       actfile.write(actual);   actfile.flush()
-      diff = `diff #{diffopt} #{expfile.path} #{actfile.path}`
+      system("diff", *diff_args, expfile.path, actfile.path)
     ensure
       expfile.close(true) if expfile
       actfile.close(true) if actfile
