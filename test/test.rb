@@ -50,25 +50,36 @@ if $0 == __FILE__
 
 # NOTE: 1/29/2026: Commented out all non-test-rule test for now.
 
+   # 6 tests, 6 errors - 0% passed
+#  require 'test-action.rb'
+
+   # 21 tests, 46 assertions, 20 failures - 4.7619% passed
+#  require 'test-validator.rb'
+
+   # 32 tests, 29 assertions, 29 failures, 1 notifications - 9.375% passed
+#  require 'test-users-guide.rb'
+
+   # 69 tests, 69 assertions, 20 failures - 71.0145% passed
+#  require 'test-yaml-parser.rb'
+
+   # 71 tests, 840 assertions, 3 failures - 95.7746% passed
+#  require 'test-parser-yaml.rb'
+
+#  hidme = <<~HIDME
   require 'test_logger.rb'
 
   require 'test-hashlike.rb'
 
-#  require 'test-parser-yaml.rb'
-#  require 'test-yaml-parser.rb'
-
   require 'test-rule.rb'
 
-#  require 'test-validator.rb'
   require 'test-metavalidator.rb'
 
   require 'test-databinding.rb'
 
   require 'test-main.rb'
-#  require 'test-action.rb'
-#  require 'test-users-guide.rb'
 
   require 'test-util.rb'
+#HIDME
 
 #  suite = Test::Unit::TestSuite.new()
 #  suite << ValidatorTest.suite()
