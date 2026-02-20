@@ -556,7 +556,7 @@ module Kwalify
       empty = String.new
       min_indent = -1
 
-      while line = _getline()
+      while (line = _getline())
         line =~ /^( *)(.*)/
         indent = $1.length
 

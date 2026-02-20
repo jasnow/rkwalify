@@ -10,18 +10,22 @@ AllCops:
 Style/StringLiterals:
   Enabled: false
 
-# Disable all cops reported in the inspection output
-Lint/AmbiguousRegexpLiteral:            { Enabled: false }
-Lint/UselessAssignment:                 { Enabled: false }
-Lint/DuplicateMethods:                  { Enabled: false }
-Lint/UnusedMethodArgument:              { Enabled: false }
+# DISABLED
 Lint/ShadowedArgument:                  { Enabled: false }
-Lint/UnderscorePrefixedVariableName:    { Enabled: false }
 Lint/UnusedBlockArgument:               { Enabled: false }
 Lint/MissingSuper:                      { Enabled: false }
-Lint/Void:                              { Enabled: false }
-Lint/AssignmentInCondition:             { Enabled: false }
 Lint/ElseLayout:                        { Enabled: false }
 Lint/DuplicateRequire:                  { Enabled: false }
+
+# NOT DANGEROUS
+Lint/UselessAssignment:                 { Enabled: false }
+Lint/UnusedMethodArgument:              { Enabled: false }
+Lint/UnderscorePrefixedVariableName:    { Enabled: false }
+Lint/Void:                              { Enabled: false }
 Lint/UselessMethodDefinition:           { Enabled: false }
 Lint/RedundantStringCoercion:           { Enabled: false }
+
+# FIXED
+#Lint/AmbiguousRegexpLiteral:            { Enabled: false }
+#Lint/AssignmentInCondition:             { Enabled: false }
+#Lint/DuplicateMethods:                  { Enabled: false }
