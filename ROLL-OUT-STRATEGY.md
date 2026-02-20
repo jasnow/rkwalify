@@ -27,7 +27,7 @@
     * Add credit to repo @dafyddcrosby.
 
  4. Step 3: Modernize the tool chain (bundler, rubygems, rvm, Rakefile,
-    several rubocop gems, markdown, ruby 3.4.7, simplecov).
+    several rubocop gems, markdown, ruby 4.0.1, simplecov).
     See commits for more details. Also used my personal tools as needed.
 
  5. Create "rkwalify" [issues](https://github.com/jasnow/rkwalify/issues)
@@ -38,8 +38,9 @@
     * rkwalify's "test" Github Action is green. Comment out [test/test.rb](https://github.com/jasnow/rkwalify/blob/main/test/test.rb)
         tests that are broken. See [issue](https://github.com/jasnow/rkwalify/issues/2) for details.
 
-    * ruby-advisory-db (Ruby 3.4.7) tests are green using rkwalify code.
+    * ruby-advisory-db (Ruby 4.0.1) tests are green using rkwalify code.
 
+    * Minimum ruby version willbe 3.4.7.
 ---
 
  8. Must decide if anything else is added to .gitignore file in final release.
@@ -51,7 +52,7 @@
 
  9. Another technique is to comment code and tests not used by #7 repos.
 
- 10. Decide when to make repo public.
+ 10. Decide when to make repo public. (2/20/2026: done)
 
 ## Release Order/Naming
 

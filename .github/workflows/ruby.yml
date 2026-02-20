@@ -20,7 +20,7 @@ jobs:
       - name:
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: "3.4.7"
+          ruby-version: "4.0.1"
           bundler-cache: false
 
       - name:
@@ -35,5 +35,5 @@ jobs:
       - name: Install Ruby and gems
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: "3.4.7"
+          ruby-version: "4.0.1"
           bundler-cache: true
