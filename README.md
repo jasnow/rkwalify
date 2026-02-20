@@ -1,3 +1,8 @@
+# RKwalify
+
+[![Gem Version](https://badge.fury.io/rb/rkwalify.svg?icon=si%3Arubygems)](https://badge.fury.io/rb/rkwalify)
+[![Ruby CI](https://github.com/jasnow/rkwalify/actions/workflows/ruby.yml/badge.svg)](https://github.com/jasnow/rkwalify/actions/workflows/ruby.yml)
+
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
@@ -11,11 +16,6 @@
 - [Copyright](#copyright)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
-# RKwalify
-
-[![Gem Version](https://badge.fury.io/rb/rkwalify.svg?icon=si%3Arubygems)](https://badge.fury.io/rb/rkwalify)
-[![Ruby CI](https://github.com/jasnow/rkwalify/actions/workflows/ruby.yml/badge.svg)](https://github.com/jasnow/rkwalify/actions/workflows/ruby.yml)
 
  * release::	1.4.0-beta
  * lastupdate::	$Date$

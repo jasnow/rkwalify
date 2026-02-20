@@ -82,7 +82,7 @@ class Kwalify::BaseParser
     ch = _getch()
     ch == '"' || ch == "'" or raise "assertion error"
     endch = ch
-    s = ''
+    s = String.new
     while !(ch = _getch()).nil? && ch != endch
       if ch != '\\'
         s << ch
