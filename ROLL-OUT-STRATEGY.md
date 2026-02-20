@@ -45,7 +45,7 @@
  8. Must decide if anything else is added to .gitignore file in final release.
     * Candidates
        * doc, doc-api (As of 2/18/2026, included)
-       * tests, examples, contrib 
+       * tests, examples
        * Attic
     * As of 2/18/2026, all of the above are included.
 

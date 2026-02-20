@@ -328,7 +328,7 @@
  * .rubocop_todo.yml, .rubocop.yml, .overcommit.yml
  * bin, tmp
  * Manifest.txt, rkwalify-*.gem
- * examples, contrib
+ * examples
 
 ### TESTS
 

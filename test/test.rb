@@ -19,24 +19,21 @@ unless defined?(TESTDIR)
   $LOAD_PATH << libdir << TESTDIR
 end
 
-
 class StringWriter < String
   alias write <<
 end
 
-
 class Hash
   def inspect
-    buf = [ '{' ]
+    buf = ['{']
     self.keys.sort_by {|k| k.to_s }.each_with_index do |key, i|
-      buf << ', ' if i > 0
+      buf << ', ' if i.positive
       buf << key.inspect << '=>' << self[key].inspect
     end
     buf << '}'
-    return buf.join
+    buf.join
   end
 end
-
 
 require 'test/unit'
 require 'yaml'
@@ -46,45 +43,45 @@ require 'kwalify/util'
 require 'kwalify/util/assert-text-equal'
 require 'kwalify/util/testcase-helper'
 
-if $0 == __FILE__
+if $PROGRAM_NAME == __FILE__
 
-# NOTE: 1/29/2026: Commented out all non-test-rule test for now.
+  # NOTE: 1/29/2026: Commented out all non-test-rule test for now.
 
-   # 6 tests, 6 errors - 0% passed
-#  require 'test-action.rb'
+  # 6 tests, 6 errors - 0% passed
+  # require 'test-action'
 
-   # 21 tests, 46 assertions, 20 failures - 4.7619% passed
-#  require 'test-validator.rb'
+  # 21 tests, 46 assertions, 20 failures - 4.7619% passed
+  # require 'test-validator'
 
-   # 32 tests, 29 assertions, 29 failures, 1 notifications - 9.375% passed
-#  require 'test-users-guide.rb'
+  # 32 tests, 29 assertions, 29 failures, 1 notifications - 9.375% passed
+  # require 'test-users-guide'
 
-   # 69 tests, 69 assertions, 20 failures - 71.0145% passed
-#  require 'test-yaml-parser.rb'
+  # 69 tests, 69 assertions, 20 failures - 71.0145% passed
+  # require 'test-yaml-parser'
 
-   # 71 tests, 840 assertions, 3 failures - 95.7746% passed
-#  require 'test-parser-yaml.rb'
+  # 71 tests, 840 assertions, 3 failures - 95.7746% passed
+  # require 'test-parser-yaml'
 
-#  hidme = <<~HIDME
-  require 'test_logger.rb'
+# hidme = <<~HIDME
+  require 'test_logger'
 
-  require 'test-hashlike.rb'
+  require 'test-hashlike'
 
-  require 'test-rule.rb'
+  require 'test-rule'
 
-  require 'test-metavalidator.rb'
+  require 'test-metavalidator'
 
-  require 'test-databinding.rb'
+  require 'test-databinding'
 
-  require 'test-main.rb'
+  require 'test-main'
 
-  require 'test-util.rb'
+  require 'test-util'
 #HIDME
 
-#  suite = Test::Unit::TestSuite.new()
-#  suite << ValidatorTest.suite()
-#  suite << MetaValidatorTest.suite()
-#  suite << ParserTest.suite()
-#  Test::Unit::UI::Console::TestRunner.run(suite)
+  # suite = Test::Unit::TestSuite.new()
+  # suite << ValidatorTest.suite()
+  # suite << MetaValidatorTest.suite()
+  # suite << ParserTest.suite()
+  # Test::Unit::UI::Console::TestRunner.run(suite)
 
 end

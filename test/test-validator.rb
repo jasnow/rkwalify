@@ -69,7 +69,7 @@ class ValidatorTest < Test::Unit::TestCase
       #actual << "%-20s: (line %d)[%s] %s\n" % args
       actual << ("%-20s: %d:%d:[%s] %s\n" % args)
     end
-    if $print
+    if ENV["DEBUG"]
       print actual
     else
       assert_text_equal(expected, actual)
@@ -84,7 +84,7 @@ class ValidatorTest < Test::Unit::TestCase
     actual = error_list.collect { |e|
       "%-20s: [%s] %s\n" % [e.error_symbol.inspect, e.path, e.message]
     }.sort.join()
-    if $print
+    if ENV["DEBUG"]
       print actual
     else
       assert_text_equal(expected, actual)

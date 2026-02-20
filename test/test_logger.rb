@@ -2,8 +2,8 @@ require 'test/unit'
 require 'stringio'
 require 'kwalify/validator'
 
-#require 'kwalify'
-#require 'logger'
+# require 'kwalify'
+# require 'logger'
 
 class TestLogger < Test::Unit::TestCase
   def test_custom_logger
@@ -17,7 +17,7 @@ class TestLogger < Test::Unit::TestCase
       }
     }
     validator = Kwalify::Validator.new(schema, logger: custom_logger)
-    
+
     # Should accept the custom logger
     assert_equal custom_logger, validator.logger
   end
@@ -30,7 +30,7 @@ class TestLogger < Test::Unit::TestCase
       }
     }
     validator = Kwalify::Validator.new(schema)
-    
+
     # Should use default logger
     assert_not_nil validator.logger
   end

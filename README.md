@@ -35,15 +35,13 @@ Updated version of "RKwalify is a parser, schema validator, and data binding too
 
  * Or install directly with "gem install rkwalify".
 
-(Optional) The 'contrib/inline-require' script to concatenate
+(Optional) The 'devbin/inline-require' script to concatenate
 all scripts and libraries into a file.
 ```
   $ cd rkwalify/
   $ unset RUBYLIB
-  $ ruby contrib/inline-require -I ./lib bin/rkwalify > contrib/rkwalify
-  $ chmod a+x contrib/rkwalify
-  $ cp lib/kwalify/kwalify.schema.yaml $HOME/bin
-  $ mv contrib/rkwalify                $HOME/bin
+  $ ruby ./devbin/inline-require -I ./lib ./bin/kwalify.rb > ./bin/kwalify
+  $ cp ./lib/kwalify/kwalify.schema.yaml ./bin
 ```
 ## CONTRIBUTE
 
