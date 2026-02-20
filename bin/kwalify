@@ -2747,8 +2747,6 @@ end
 #--already included require 'kwalify/errors'
 #--already included require 'kwalify/types'
 
-require 'date'
-
 
 module Kwalify
 
@@ -3443,8 +3441,10 @@ module Kwalify
         if tzone_h
           diff_sec = tzone_h.to_i * 60 * 60
           if tzone_m
-            if diff_sec > 0 ; diff_sec += tzone_m.to_i * 60
-            else            ; diff_sec -= tzone_m.to_i * 60
+            if diff_sec > 0
+              diff_sec += tzone_m.to_i * 60
+            else
+              diff_sec -= tzone_m.to_i * 60
             end
           end
           p diff_sec

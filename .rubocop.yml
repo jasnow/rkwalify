@@ -10,13 +10,6 @@ AllCops:
 Style/StringLiterals:
   Enabled: false
 
-# DISABLED
-Lint/ShadowedArgument:                  { Enabled: false }
-Lint/UnusedBlockArgument:               { Enabled: false }
-Lint/MissingSuper:                      { Enabled: false }
-Lint/ElseLayout:                        { Enabled: false }
-Lint/DuplicateRequire:                  { Enabled: false }
-
 # NOT DANGEROUS
 Lint/UselessAssignment:                 { Enabled: false }
 Lint/UnusedMethodArgument:              { Enabled: false }
@@ -25,7 +18,15 @@ Lint/Void:                              { Enabled: false }
 Lint/UselessMethodDefinition:           { Enabled: false }
 Lint/RedundantStringCoercion:           { Enabled: false }
 
+# DISABLED/DEFFERED
+Lint/DuplicateMethods:                  { Enabled: false }
+Lint/ShadowedArgument:                  { Enabled: false }
+Lint/UnusedBlockArgument:               { Enabled: false }
+Lint/MissingSuper:                      { Enabled: false }
+
+
 # FIXED
 #Lint/AmbiguousRegexpLiteral:            { Enabled: false }
 #Lint/AssignmentInCondition:             { Enabled: false }
-#Lint/DuplicateMethods:                  { Enabled: false }
+#Lint/ElseLayout:                        { Enabled: false }
+#Lint/DuplicateRequire:                  { Enabled: false }
