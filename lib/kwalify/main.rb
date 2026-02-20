@@ -128,7 +128,7 @@ module Kwalify
         exit 1
       rescue Kwalify::KwalifyError => ex
         raise ex if main.debug?
-        $stderr.puts "ERROR: #{ex.to_s}"
+        $stderr.puts "ERROR: #{ex}"
         exit 1
       #rescue => ex
       #  if main.debug?

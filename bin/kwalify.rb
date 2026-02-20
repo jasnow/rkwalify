@@ -2150,7 +2150,7 @@ class Kwalify::Yaml::Parser < Kwalify::BaseParser
       else  # indicator == '>'
         if !text.empty? && spaces.length == indent
           if s.sub!(/\r?\n((\r?\n)+)\z/, '\1')
-            nil
+            # Ruby will return "nil"
           elsif is_folded
             s.sub!(/\r?\n\z/, ' ')
           end
@@ -2165,7 +2165,7 @@ class Kwalify::Yaml::Parser < Kwalify::BaseParser
     end
     ## chomping
     if chomping == '+'
-      nil
+      # Ruby will return "nil"
     elsif chomping == '-'
       s.sub!(/(\r?\n)+\z/, '')
     else
@@ -2228,7 +2228,7 @@ class Kwalify::Yaml::Parser < Kwalify::BaseParser
     scan('[')
     skip_spaces_and_comments()
     if scan(']')
-      nil
+      # Ruby will return "nil"
     else
       rule = seq_rule ? seq_rule.sequence[0] : nil                         #*V
       uniq_table = rule ? rule._uniqueness_check_table() : nil             #*V
@@ -2267,7 +2267,7 @@ class Kwalify::Yaml::Parser < Kwalify::BaseParser
     scan('{')
     skip_spaces_and_comments()
     if scan('}')
-      nil
+      # Ruby will return "nil"
     else
       path.push(nil)
       is_merged = false
@@ -3845,7 +3845,7 @@ module Kwalify
         exit 1
       rescue Kwalify::KwalifyError => ex
         raise ex if main.debug?
-        $stderr.puts "ERROR: #{ex.to_s}"
+        $stderr.puts "ERROR: #{ex}"
         exit 1
       #rescue => ex
       #  if main.debug?
