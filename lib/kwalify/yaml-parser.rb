@@ -390,7 +390,7 @@ module Kwalify
       case ch = current_char()
       when ?", ?'         #"
         endch = ch
-        s = ''
+        s = String.new
         while (ch = _getchar()) != nil && ch != endch
           if ch == ?\\
             ch = _getchar()

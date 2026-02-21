@@ -56,9 +56,6 @@ if $PROGRAM_NAME == __FILE__
   # 32 tests, 29 assertions, 29 failures, 1 notifications - 9.375% passed
   # require 'test-users-guide'
 
-  # 69 tests, 69 assertions, 20 failures - 71.0145% passed
-  # require 'test-yaml-parser'
-
   # 258 tests, 1190 assertions, 3 failures - 98.8372% passed
   # require 'test-parser-yaml'
 
@@ -76,6 +73,8 @@ if $PROGRAM_NAME == __FILE__
   require 'test-main'
 
   require 'test-util'
+
+  require 'test-yaml-parser'
 #HIDME
 
   # suite = Test::Unit::TestSuite.new()

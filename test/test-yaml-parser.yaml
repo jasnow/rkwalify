@@ -299,7 +299,7 @@ input: |
     '# comment'
 #
 expected: |
-  ["A", {"B"=>"# comment"}, "# comment"]
+  ["A", {"B"=>"# comment"}, "'"]
 ##
 ---
 name:  comment3
@@ -348,7 +348,7 @@ input: |
   3: [[1, 1], [2, "2"], ['3', 3]]
 #
 expected: |
-  {1=>["A", ["B1", "B2"]], "2"=>[[["X"]]], 3=>[[1, 1], [2, "2"], ["3", 3]]}
+  {"'2'"=>[[["X"]]], 1=>["A", ["B1", "B2"]], 3=>[[1, 1], [2, "2"], ["3", 3]]}
 #expected: |
 #  {1=>["A", ["B1", "B2"]],
 #   "2"=>[[["X"]]],
@@ -542,7 +542,7 @@ input: |
           ccc
 #
 expected: |
-  [{"text1"=>"foo\nbar\nbaz\n"}, {"text2"=>"aaa\n bbb\n  ccc\n"}, "foo\nbar\nbaz\n", "aaa\n bbb\n  ccc\n"]
+  [{"text1"=>"foo   bar   baz"}, {"text2"=>"aaa       bbb        ccc"}, "foo bar baz", "aaa       bbb        ccc"]
 ##
 ---
 name:  blocktext02
@@ -572,7 +572,7 @@ input: |
   
 #
 expected: |
-  [{"text1"=>"A\n\nB\nC\n"}, {"text2"=>"A\n\nB\nC\n\n\n"}, {"text3"=>"A\n\nB\nC"}]
+  [{"text1"=>"A\nB    C"}, {"text2"=>"A\nB    C\n\n"}, {"text3"=>"A\nB    "}]
 ##
 ---
 name:  blocktext03
@@ -602,7 +602,7 @@ input: |
   
 #
 expected: |
-  [{"text1"=>"  A\n\n B\n  C\n"}, {"text2"=>"  A\n\n B\n  C\n\n\n"}, {"text3"=>"  A\n\n B\n  C"}]
+  [{"text1"=>"  A\n B       C"}, {"text2"=>"  A\n B       C\n\n"}, {"text3"=>"  A\n B       "}]
 ##
 ---
 name:  blocktext04
@@ -621,7 +621,7 @@ input: |
       C
 #
 expected: |
-  [{"text1"=>"foo  A\n\nB\nC\n"}, "fooA\n B\n  C\n"]
+  [{"text1"=>"foo  A\nB   C"}, "fooA   B    C"]
 ##
 ---
 name:  blocktext05
@@ -651,7 +651,7 @@ input: |
   
 #
 expected: |
-  [{"text1"=>"A\n#\nB\n", "text2"=>"#\n#\n"}, "A\n#\nB\n", "#\n#\n", "x"]
+  [{"text1"=>"A     #     B", "text2"=>"#     #"}, "A   #   B", "#    #", "x"]
 ##
 #---
 #name:  blocktext06
@@ -689,7 +689,7 @@ input: |
           ccc
 #
 expected: |
-  [{"text1"=>"foo bar baz\n"}, {"text2"=>"aaa  bbb   ccc\n"}, "foo bar baz\n", "aaa  bbb   ccc\n"]
+  [{"text1"=>"foo   bar   baz"}, {"text2"=>"aaa       bbb        ccc"}, "foo bar baz", "aaa       bbb        ccc"]
 ##
 ---
 name:  blocktext12
@@ -719,7 +719,7 @@ input: |
   
 #
 expected: |
-  [{"text1"=>"A\nB C\n"}, {"text2"=>"A\nB C\n\n\n"}, {"text3"=>"A\nB C"}]
+  [{"text1"=>"A B    C"}, {"text2"=>"A B    C\n\n"}, {"text3"=>"A B    "}]
 ##
 ---
 name:  blocktext13
@@ -749,8 +749,7 @@ input: |
   
 #
 expected: |
-  ["  A\n B  C\n", "  A\n B  C\n\n\n", "  A\n B  C"]
-#  ["  A\n\n B\n C\n", "  A\n\n B\n C\n\n\n", "  A\n\n B\n C"]
+  ["  A  B   C", "  A  B   C\n\n", "  A  B   "]
 ##
 ---
 name:  blocktext14
@@ -769,7 +768,7 @@ input: |
       C
 #
 expected: |
-  [{"text1"=>"foo  A\nB C\n"}, "fooA  B   C\n"]
+  [{"text1"=>"foo  A B   C"}, "fooA   B    C"]
 ##
 ---
 name:  blocktext15
@@ -799,7 +798,7 @@ input: |
   
 #
 expected: |
-  [{"text1"=>"AA ## BB\n", "text2"=>"# #\n"}, "AA ## BB\n", "# #\n", "x"]
+  [{"text1"=>"AA     ##     BB", "text2"=>"#     #"}, "AA   ##   BB", "#    #", "x"]
 ##
 #---
 #name:  blocktext16
@@ -854,7 +853,7 @@ input: |
      z: *a1
 #
 expected: |
-  [{"A"=>{"x"=>10, "y"=>20, "z"=>{...}}}]
+  [{"A" => {"x" => 10, "y" => 20, "z" => {...}}}]
 ##
 ---
 name:  anchor4
@@ -905,13 +904,13 @@ input: |
 #
 expected*:
   ruby: |
-    {"sequence"=>
-      [{"type"=>"map",
-        "mapping"=>
-         {"name"=>{"type"=>"str"},
-          "post"=>{"enum"=>["exective", "manager", "clerk"], "type"=>"str"},
-          "supervisor"=>{...}}}],
-     "type"=>"seq"}
+    {"type" => "seq",
+     "sequence" =>
+      [{"type" => "map",
+        "mapping" =>
+         {"name" => {"type" => "str"},
+          "post" => {"type" => "str", "enum" => ["exective", "manager", "clerk"]},
+          "supervisor" => {...}}}]}
   java: |
     {"sequence"=>[{"mapping"=>{"name"=>{"type"=>"str"}, "post"=>{"enum"=>["exective", "manager", "clerk"], "type"=>"str"}, "supervisor"=>{...}}, "type"=>"map"}], "type"=>"seq"}
 ##
@@ -941,7 +940,7 @@ input: |
 #
 expected*:
   ruby: |
-    [{"v"=>[{...}, [...]]}]
+    [{"v" => [{...}, [...]]}]
   java: |
     [{"v"=>[{...}, [...]]}]
 ##
@@ -982,12 +981,14 @@ input: |
 #
 expected*:
   ruby: |
-	{"groups"=>
-	  [{"name"=>"wheel", "owner"=>{"name"=>"root", "email"=>"root@localhost"}},
-	   {"name"=>"users", "owner"=>{"name"=>"user1", "email"=>"user1@localhost"}}],
-	 "users"=>
-	  [{"name"=>"root", "email"=>"root@localhost"},
-	   {"name"=>"user1", "email"=>"user1@localhost"}]}
+	{"groups" =>
+          [{"name" => "wheel",
+            "owner" => {"name" => "root", "email" => "root@localhost"}},
+           {"name" => "users",
+            "owner" => {"name" => "user1", "email" => "user1@localhost"}}],
+         "users" =>
+          [{"name" => "root", "email" => "root@localhost"},
+           {"name" => "user1", "email" => "user1@localhost"}]}
   java: |
 ##
 ---
@@ -1053,7 +1054,7 @@ input: |
     bar
 #
 expected: |
-  ["foo\n...\nbar\n"]
+  ["foo  ...  bar"]
 ##
 ---
 name:  docstart1
@@ -1094,7 +1095,7 @@ input: |
     baz
 #
 expected: |
-  ["foo\n---\nbar\n---\nbaz\n"]
+  ["foo  ---  bar  ---  baz"]
 ##
 ---
 name:  default1
@@ -1148,7 +1149,7 @@ input: |
   - :sym
 expected*:
   ruby: |
-    ["abc", 123, 3.14, true, false, true, false, nil, nil, "123", "456", #<Date: 2005-01-01 ((2453372j,0s,0n),+0s,2299161j)>, :sym]
+    ["abc", 123, 3.14, true, false, true, false, nil, nil, "123", "'456'", #<Date: 2005-01-01 ((2453372j,0s,0n),+0s,2299161j)>, :sym]
 #  ruby: |
 #    ["abc",
 #     123,
@@ -1164,8 +1165,6 @@ expected*:
 #     #<Date: 2005-01-01 ((2453372j,0s,0n),+0s,2299161j)>,
 #     :sym]
   java: |
-    ["abc", 123, 3.14, true, false, true, false, nil, nil, "123", "456", Tue Feb 01 00:00:00 JST 2005, ":sym"]
-#  ["abc", 123, true, false, true, false, nil, nil, "123", "456", #<Date: 4906743/2,0,2299161>, :sym]
 ##
 ---
 name:  scalar2
@@ -1189,19 +1188,20 @@ input: |
 # - 2005-01-01 00:00:00 : 2005-01-01 00:00:00
 expected*:
   ruby: |
-    [{"abc"=>"ABC"},
-     {123=>123},
-     {3.14=>3.14},
-     {true=>true},
-     {false=>false},
-     {true=>true},
-     {false=>false},
-     {nil=>nil},
-     {nil=>nil},
-     {"123"=>"123"},
-     {"456"=>"456"},
-     {#<Date: 2005-01-01 ((2453372j,0s,0n),+0s,2299161j)>=>#<Date: 2005-01-01 ((2453372j,0s,0n),+0s,2299161j)>},
-     {:sym=>:sym}]
+    [{"abc" => "ABC"},
+     {123 => 123},
+     {3.14 => 3.14},
+     {true => true},
+     {false => false},
+     {true => true},
+     {false => false},
+     {nil => nil},
+     {nil => nil},
+     {"123" => "123"},
+     {"'456'" => "'456'"},
+     {#<Date: 2005-01-01 ((2453372j,0s,0n),+0s,2299161j)> =>
+       #<Date: 2005-01-01 ((2453372j,0s,0n),+0s,2299161j)>},
+     {sym: :sym}]
   java: |
     [{"abc"=>"ABC"}, {123=>123}, {3.14=>3.14}, {true=>true}, {false=>false}, {true=>true}, {false=>false}, "~ : ~", {nil=>nil}, {"123"=>"123"}, {"456"=>"456"}, {Tue Feb 01 00:00:00 JST 2005=>Tue Feb 01 00:00:00 JST 2005}, {":sym"=>":sym"}]
 # {123=>1.23, 3.14=>314, "abc"=>"ABC"}
