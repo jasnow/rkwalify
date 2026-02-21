@@ -57,6 +57,7 @@ if $PROGRAM_NAME == __FILE__
   # require 'test-users-guide'
 
   # 258 tests, 1190 assertions, 3 failures - 98.8372% passed
+  # 2/21/2026: 3 failed test (expected a number, got nil.
   # require 'test-parser-yaml'
 
 # hidme = <<~HIDME

@@ -80,7 +80,6 @@ module Kwalify
     def execute(argv=ARGV)
       ## parse command-line options
       filenames = _parse_argv(argv)
-
       ## help or version
       if @options[:help] || @options[:version]
         action = @options[:action]
