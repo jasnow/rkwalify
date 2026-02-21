@@ -59,7 +59,7 @@ if $PROGRAM_NAME == __FILE__
   # 69 tests, 69 assertions, 20 failures - 71.0145% passed
   # require 'test-yaml-parser'
 
-  # 71 tests, 840 assertions, 3 failures - 95.7746% passed
+  # 258 tests, 1190 assertions, 3 failures - 98.8372% passed
   # require 'test-parser-yaml'
 
 # hidme = <<~HIDME
