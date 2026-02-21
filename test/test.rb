@@ -27,7 +27,7 @@ class Hash
   def inspect
     buf = ['{']
     self.keys.sort_by {|k| k.to_s }.each_with_index do |key, i|
-      buf << ', ' if i.positive
+      buf << ', ' if i.positive?
       buf << key.inspect << '=>' << self[key].inspect
     end
     buf << '}'
