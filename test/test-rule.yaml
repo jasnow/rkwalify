@@ -314,4 +314,3 @@ input: |
           mapping:   *main-rule
           name:      MAIN
           #required:  yes
-
