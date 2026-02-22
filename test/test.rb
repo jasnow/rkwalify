@@ -23,6 +23,13 @@ class StringWriter < String
   alias write <<
 end
 
+require "stringio"
+class String
+  def winsize
+    [24, 80]  # or any default terminal size
+  end
+end
+
 class Hash
   def inspect
     buf = ['{']
