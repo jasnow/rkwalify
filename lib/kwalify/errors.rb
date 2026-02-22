@@ -38,7 +38,7 @@ module Kwalify
     alias message to_s
 
     def to_s
-      s = ''
+      s = String.new
       s << @filename << ":" if @filename
       s << "#{@linenum}:#{@column} " if @linenum
       s << "[#{path()}] " if @path
