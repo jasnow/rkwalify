@@ -27,12 +27,13 @@ module Kwalify
       #end
       #++
 
-      def key?(key)
-        instance_variables().include?("@#{key}")
-      end
       if Object.method_defined?('instance_variable_defined?')
         def key?(key)
           instance_variable_defined?("@#{key}")
+        end
+      else
+        def key?(key)
+          instance_variables().include?("@#{key}")
         end
       end
 
