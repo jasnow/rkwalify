@@ -163,7 +163,7 @@ module Kwalify
       flag += Regexp::MULTILINE  if opt.include?("m")
       begin
         @regexp = Regexp.compile(pat, flag)
-      rescue RegexpError => ex
+      rescue RegexpError => _ex
         #* key=:pattern_syntaxerr  msg="has regexp error."
         raise schema_error(:pattern_syntaxerr, rule, path, val)
       end
@@ -208,7 +208,7 @@ module Kwalify
       begin
         # Store expression as string, evaluate at validation time
         @assert_expr = val
-      rescue ::SyntaxError => ex
+      rescue ::SyntaxError => _ex
         #* key=:assert_syntaxerr  msg="expression syntax error."
         raise schema_error(:assert_syntaxerr, rule, path, val)
       end

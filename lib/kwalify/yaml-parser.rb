@@ -478,7 +478,7 @@ module Kwalify
     def parse_alias(column, value)
       assert value =~ /^\*([-\w]+)(( *)(.*))?$/
       label  = $1
-      space  = $3
+      _space  = $3
       value2 = $4
       if value2 && !value2.empty? && value2[0] != ?\#
         #* key=:alias_extradata  msg="alias cannot take any data."
@@ -544,11 +544,11 @@ module Kwalify
 
 
     def parse_block_text(column, value)
-      assert value =~ /^[>|\|]/
-      value =~ /^([>|\|])([-+]?)(\d+)?\s*(.*)$/
+      assert value =~ /^[>|]/
+      value =~ /^([>|])([-+]?)(\d+)?\s*(.*)$/
       char = $1
       indicator = $2
-      sep = char == "|" ? "\n" : " "
+      _sep = char == "|" ? "\n" : " "
       margin = $3 && !$3.empty? ? $3.to_i : nil
       #text = $4.empty? ? '' :  $4 + sep
       text = $4
@@ -698,7 +698,7 @@ module Kwalify
         year, month, day = $1.to_i, $2.to_i, $3.to_i
         return Date.new(year, month, day)
       when /^(\d\d\d\d)-(\d\d)-(\d\d)(?:[Tt]|[ \t]+)(\d\d?):(\d\d):(\d\d)(\.\d*)?(?:Z|[ \t]*([-+]\d\d?)(?::(\d\d))?)?$/
-        year, mon, mday, hour, min, sec, usec, tzone_h, tzone_m = $1, $2, $3, $4, $5, $6, $7, $8, $9
+        year, mon, _mday, hour, min, sec, usec, tzone_h, tzone_m = $1, $2, $3, $4, $5, $6, $7, $8, $9
         #Time.utc(sec, min, hour, mday, mon, year, wday, yday, isdst, zone)
         #t = Time.utc(sec, min, hour, mday, mon, year, nil, nil, nil, nil)
         #Time.utc(year[, mon[, day[, hour[, min[, sec[, usec]]]]]])

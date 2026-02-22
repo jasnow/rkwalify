@@ -65,7 +65,7 @@ module Kwalify
         pat = (val =~ /\A\/(.*)\/([mi]?[mi]?)\z/ ? $1 : val)
         begin
           Regexp.compile(pat)
-        rescue RegexpError => ex
+        rescue RegexpError => _ex
           errors << validate_error(:pattern_syntaxerr, rule, "#{path}/pattern", val)
         end
       end

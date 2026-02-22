@@ -21,8 +21,8 @@ class YamlParserTest < Test::Unit::TestCase
     @testopts ||= {}
     parser.preceding_alias = true if @testopts['preceding_alias']
     if @error_class
-      ex = assert_raise(@error_class) do
-        doc = parser.parse(@input)
+      _ex = assert_raise(@error_class) do
+        _doc = parser.parse(@input)
       end
     else
       doc = parser.parse(@input)

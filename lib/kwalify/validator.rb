@@ -208,15 +208,6 @@ module Kwalify
     public :_validate_unique
 
 
-    def _validate_assert(value, rule, path, errors)
-      assert_error("rule=#{rule._inspect}") unless rule.assert_proc
-      unless rule.assert_proc.call(value)
-        #* key=:assert_failed  msg="assertion expression failed (%s)."
-        errors << validate_error(:assert_failed, rule, path, value, [rule.assert])
-      end
-    end
-
-
     def _validate_enum(value, rule, path, errors)
       assert_error("rule=#{rule._inspect}") unless rule.enum
       unless rule.enum.include?(value)
@@ -284,6 +275,17 @@ module Kwalify
         errors << validate_error(:length_tooshortex, rule, path, value, [len, min_ex])
       end
     end
+
+
+# DUP def
+#    def _validate_assert(value, rule, path, errors)
+#      assert_error("rule=#{rule._inspect}") unless rule.assert_proc
+#      unless rule.assert_proc.call(value)
+#        #* key=:assert_failed  msg="assertion expression failed (%s)."
+#        errors << validate_error(:assert_failed, rule, path, value, [rule.assert])
+#      end
+#    end
+
 
     def _validate_assert(value, rule, path, errors)
       assert_error("rule=#{rule._inspect}") unless rule.assert
