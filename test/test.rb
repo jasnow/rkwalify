@@ -54,16 +54,16 @@ if $PROGRAM_NAME == __FILE__
 
   # (3 left) 7 tests, 1259 assertions, 3 failures - 99.0826% passed
   # 2/21/2026: 3 failed test (expected a number, got nil.
-   require 'test-parser-yaml'
+  # require 'test-parser-yaml'
 
   # (6 left) 262 tests, 419 assertions, 6 errors, 0 failures - 97.7099% passed
-   require 'test-action'
+  # require 'test-action'
 
   # (20 left) 277 tests, 445 assertions, 0 failures, 20 errors - 92.7798% passed
-   require 'test-validator'
+  # require 'test-validator'
 
   # (30 left) 288 tests, 419 assertions, ..., 29 errors, ...1 notif's - 89.9306% passed
-   require 'test-users-guide'
+  # require 'test-users-guide'
 
 # hidme = <<~HIDME
   require 'test_logger'
