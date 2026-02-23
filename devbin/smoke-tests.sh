@@ -62,6 +62,14 @@ echo ; echo "14.1"
 echo ; echo "14.2"
 ./bin/kwalify.rb -lf ${TDU}/schema15.yaml ${TDU}/document15b.yaml
 #
+echo ; echo "14.3"
+echo "14.3"
+ruby ${TDU}/validate08.rb ${TUD}/document07a.yaml
+#
+echo ; echo "15.1 SKIPPED: schema.yaml unknown so changed to kwalify.schema.yaml"
+echo ; echo "15.2 SKIPPED: schema.yaml unknown so changed to kwalify.schema.yaml"
+echo ; echo "16.1: SKIPPED: NOT FULL EXAMPLE - ./bin/kwalify.rb -m ${TDU}/schema1.yaml ${TDU}/schema2.yaml"
+#
 echo ; echo "17.1"
 ruby ${TDU}/answers-validator.rb ${TDU}/document07a.yaml
 #
@@ -91,25 +99,16 @@ echo ; echo "31.1 (WORKED 1st TIME)"
 ./bin/kwalify.rb -ha ./lib/kwalify/templates/genclass-java
 #
 ######################################################################
-echo "Check for misspelled words"
-#HID FOR NOW: devbin/chkspelling.sh > /tmp/$$_MISPELLINGS
-wc /tmp/$$_MISPELLINGS 2> /dev/null
-rm -f /tmp/$$_MISPELLINGS
-######################################################################
 #
 echo ; echo "DEFERRED/BROKEN/SKIPPED - BUGS - STARTS HERE ============"
 set -x
-#
-echo ; echo "15.1 SKIPPED: schema.yaml unknown so changed to kwalify.schema.yaml"
-echo ; echo "15.2 SKIPPED: schema.yaml unknown so changed to kwalify.schema.yaml"
-#
-echo ; echo "16.1: SKIPPED: NOT FULL EXAMPLE"
-#./bin/kwalify.rb -m ${TDU}/schema1.yaml ${TDU}/schema2.yaml"
-#
+######################################################################
+# DEFERRED/BORKEN/JAVA RELATED
+
 echo ; echo "30.1.1 (JAR FILE)"
 echo "DEFERRED: No jar file - javac -nowarn -classpath '.:kwalify.jar' *.java"
 # -Xlint:unchecked => "warning: [unchecked] unchecked call to
-#    set(int,E) as a member of the raw type List
+#    set(int,E) as a member of the raw type List"
 #List<Group> seq = new ArrayList<>();
 #List<Person> seq = new ArrayList<>();
 #
@@ -118,15 +117,11 @@ echo "DEFERRED: No jar file - javac -classpath '.:kwalify.jar' ${TDU}/ExampleAdd
 #
 echo ; echo "31.2 (GENCLASS-JAVA)"
 echo 'DEFERRED: Getting: "schema filename is not specified."'
-./bin/kwalify.rb -a ./lib/kwalify/templates/genclass-java \
-  --package=com.example.my --implements=Serializable --basedir=src
+#./bin/kwalify.rb -a ./lib/kwalify/templates/genclass-java \
+#  --package=com.example.my --implements=Serializable --basedir=src
 #
 ######################################################################
-#RUBY
-#
-echo ; echo "14.3"
-echo "14.3: DEFERRED/BROKEN: Something about 'ARGF.class#read'"
-#ruby ${TDU}/validate08.rb
+# DEFERRED/BORKEN/"too deep" errors
 #
 echo ; echo "20.1"
 echo "20.1: DEFERRED/BROKEN/BUG?: 'Kwalify::Util::OrderedHash#put': stack level too deep (SystemStackError)"
@@ -140,6 +135,14 @@ echo "25.1: DEFERRED/BROKEN/BUG?: 'Kwalify::Util::OrderedHash#put': stack level 
 #    -tf ${TDU}/address_book.schema.yaml > address_book.rb
 #wc -l address_book.rb 
 #rm -f address_book.rb
+#
+######################################################################
+# MISSPELLED WORDS (too slow so commented out)
+#
+echo "Check for misspelled words"
+#HID FOR NOW: devbin/chkspelling.sh > /tmp/$$_MISPELLINGS
+wc /tmp/$$_MISPELLINGS 2> /dev/null
+rm -f /tmp/$$_MISPELLINGS
 #
 unset COVERAGE
 #EOF
