@@ -20,10 +20,12 @@ Currently these scripts include:
    * chk-rad-repo.sh - Test code against ruby-advisory-db repo.
    * smoke-tests.sh - short and dirty version of testsuite., 
      * smoke-tests.golden
+   * rubycheck.sh - Test code against "ruby -d -v".
    * runtests.sh
 
  * PACKAGING:
    * mkbig-rkwalify.sh - Combine all the code into 1 file.
+     * inline-require (node-js tool to incline all require code into 1 file)
 
  * RELEASING:
    * chkcopyrights.sh - Check copyright lines in files.
