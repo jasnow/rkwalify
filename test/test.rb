@@ -53,7 +53,7 @@ require 'kwalify/util/testcase-helper'
 if $PROGRAM_NAME == __FILE__
 
   # (3 left) 7 tests, 1259 assertions, 3 failures - 99.0826% passed
-  # 2/21/2026: 3 failed test (expected a number, got nil.
+  # 2/21/2026: 3 failed test (expected a number, got nil).
   # require 'test-parser-yaml'
 
   # (6 left) 262 tests, 419 assertions, 6 errors, 0 failures - 97.7099% passed
