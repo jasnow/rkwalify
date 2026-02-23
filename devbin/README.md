@@ -18,8 +18,9 @@ Currently these scripts include:
      * ruby_docs_wordlist.txt - list of words from ruby doc  (not included)
        * ruby_3_4_1_complete_rdocs (not included)
    * chk-rad-repo.sh - Test code against ruby-advisory-db repo.
-   * smoke-tests.sh - short and dirty version of testsuite., 
-     * smoke-tests.golden
+   * run-smoketest.sh - Wrapper to run the "smoke-tests.sh script.
+     * smoke-tests.sh - short and dirty version of testsuite., 
+       * smoke-tests.golden
    * rubycheck.sh - Test code against "ruby -d -v".
    * runtests.sh
 

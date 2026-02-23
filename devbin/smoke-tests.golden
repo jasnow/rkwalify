@@ -97,7 +97,7 @@ Valid.
  {"name" => "Baz", "parent" => "null"}]
 
 19.1
-#<Config:0x000071576b7fdcb0
+#<Config:0x000077d3b46cdc70
  @host="localhost",
  @pass="password1",
  @port=8080,
@@ -105,123 +105,123 @@ Valid.
 
 21.1
 {"teams" =>
-  [#<Babel::Team:0x0000769fa3f87aa0
+  [#<Babel::Team:0x0000744cf8197a80
     @chief=
-     #<Babel::Member:0x0000769fa3f85ac0
+     #<Babel::Member:0x0000744cf8195aa0
       @desc="Scientist",
       @name="Kohichi Minamoto",
-      @team=#<Babel::Team:0x0000769fa3f87aa0 ...>>,
+      @team=#<Babel::Team:0x0000744cf8197a80 ...>>,
     @desc="Level 7 ESPers",
     @members=
-     [#<Babel::Member:0x0000769fa4133ed0
+     [#<Babel::Member:0x0000744cf8343f78
        @desc="Psychokino",
        @name="Kaoru Akashi",
-       @team=#<Babel::Team:0x0000769fa3f87aa0 ...>>,
-      #<Babel::Member:0x0000769fa4133e80
+       @team=#<Babel::Team:0x0000744cf8197a80 ...>>,
+      #<Babel::Member:0x0000744cf8343e88
        @desc="Teleporter",
        @name="Aoi Nogami",
-       @team=#<Babel::Team:0x0000769fa3f87aa0 ...>>,
-      #<Babel::Member:0x0000769fa4133d90
+       @team=#<Babel::Team:0x0000744cf8197a80 ...>>,
+      #<Babel::Member:0x0000744cf8343d98
        @desc="Psycometrer",
        @name="Shiho Sannomiya",
-       @team=#<Babel::Team:0x0000769fa3f87aa0 ...>>],
+       @team=#<Babel::Team:0x0000744cf8197a80 ...>>],
     @name="The Children">],
  "members" =>
-  [#<Babel::Member:0x0000769fa3f85ac0
+  [#<Babel::Member:0x0000744cf8195aa0
     @desc="Scientist",
     @name="Kohichi Minamoto",
     @team=
-     #<Babel::Team:0x0000769fa3f87aa0
-      @chief=#<Babel::Member:0x0000769fa3f85ac0 ...>,
+     #<Babel::Team:0x0000744cf8197a80
+      @chief=#<Babel::Member:0x0000744cf8195aa0 ...>,
       @desc="Level 7 ESPers",
       @members=
-       [#<Babel::Member:0x0000769fa4133ed0
+       [#<Babel::Member:0x0000744cf8343f78
          @desc="Psychokino",
          @name="Kaoru Akashi",
-         @team=#<Babel::Team:0x0000769fa3f87aa0 ...>>,
-        #<Babel::Member:0x0000769fa4133e80
+         @team=#<Babel::Team:0x0000744cf8197a80 ...>>,
+        #<Babel::Member:0x0000744cf8343e88
          @desc="Teleporter",
          @name="Aoi Nogami",
-         @team=#<Babel::Team:0x0000769fa3f87aa0 ...>>,
-        #<Babel::Member:0x0000769fa4133d90
+         @team=#<Babel::Team:0x0000744cf8197a80 ...>>,
+        #<Babel::Member:0x0000744cf8343d98
          @desc="Psycometrer",
          @name="Shiho Sannomiya",
-         @team=#<Babel::Team:0x0000769fa3f87aa0 ...>>],
+         @team=#<Babel::Team:0x0000744cf8197a80 ...>>],
       @name="The Children">>,
-   #<Babel::Member:0x0000769fa4133ed0
+   #<Babel::Member:0x0000744cf8343f78
     @desc="Psychokino",
     @name="Kaoru Akashi",
     @team=
-     #<Babel::Team:0x0000769fa3f87aa0
+     #<Babel::Team:0x0000744cf8197a80
       @chief=
-       #<Babel::Member:0x0000769fa3f85ac0
+       #<Babel::Member:0x0000744cf8195aa0
         @desc="Scientist",
         @name="Kohichi Minamoto",
-        @team=#<Babel::Team:0x0000769fa3f87aa0 ...>>,
+        @team=#<Babel::Team:0x0000744cf8197a80 ...>>,
       @desc="Level 7 ESPers",
       @members=
-       [#<Babel::Member:0x0000769fa4133ed0 ...>,
-        #<Babel::Member:0x0000769fa4133e80
+       [#<Babel::Member:0x0000744cf8343f78 ...>,
+        #<Babel::Member:0x0000744cf8343e88
          @desc="Teleporter",
          @name="Aoi Nogami",
-         @team=#<Babel::Team:0x0000769fa3f87aa0 ...>>,
-        #<Babel::Member:0x0000769fa4133d90
+         @team=#<Babel::Team:0x0000744cf8197a80 ...>>,
+        #<Babel::Member:0x0000744cf8343d98
          @desc="Psycometrer",
          @name="Shiho Sannomiya",
-         @team=#<Babel::Team:0x0000769fa3f87aa0 ...>>],
+         @team=#<Babel::Team:0x0000744cf8197a80 ...>>],
       @name="The Children">>,
-   #<Babel::Member:0x0000769fa4133e80
+   #<Babel::Member:0x0000744cf8343e88
     @desc="Teleporter",
     @name="Aoi Nogami",
     @team=
-     #<Babel::Team:0x0000769fa3f87aa0
+     #<Babel::Team:0x0000744cf8197a80
       @chief=
-       #<Babel::Member:0x0000769fa3f85ac0
+       #<Babel::Member:0x0000744cf8195aa0
         @desc="Scientist",
         @name="Kohichi Minamoto",
-        @team=#<Babel::Team:0x0000769fa3f87aa0 ...>>,
+        @team=#<Babel::Team:0x0000744cf8197a80 ...>>,
       @desc="Level 7 ESPers",
       @members=
-       [#<Babel::Member:0x0000769fa4133ed0
+       [#<Babel::Member:0x0000744cf8343f78
          @desc="Psychokino",
          @name="Kaoru Akashi",
-         @team=#<Babel::Team:0x0000769fa3f87aa0 ...>>,
-        #<Babel::Member:0x0000769fa4133e80 ...>,
-        #<Babel::Member:0x0000769fa4133d90
+         @team=#<Babel::Team:0x0000744cf8197a80 ...>>,
+        #<Babel::Member:0x0000744cf8343e88 ...>,
+        #<Babel::Member:0x0000744cf8343d98
          @desc="Psycometrer",
          @name="Shiho Sannomiya",
-         @team=#<Babel::Team:0x0000769fa3f87aa0 ...>>],
+         @team=#<Babel::Team:0x0000744cf8197a80 ...>>],
       @name="The Children">>,
-   #<Babel::Member:0x0000769fa4133d90
+   #<Babel::Member:0x0000744cf8343d98
     @desc="Psycometrer",
     @name="Shiho Sannomiya",
     @team=
-     #<Babel::Team:0x0000769fa3f87aa0
+     #<Babel::Team:0x0000744cf8197a80
       @chief=
-       #<Babel::Member:0x0000769fa3f85ac0
+       #<Babel::Member:0x0000744cf8195aa0
         @desc="Scientist",
         @name="Kohichi Minamoto",
-        @team=#<Babel::Team:0x0000769fa3f87aa0 ...>>,
+        @team=#<Babel::Team:0x0000744cf8197a80 ...>>,
       @desc="Level 7 ESPers",
       @members=
-       [#<Babel::Member:0x0000769fa4133ed0
+       [#<Babel::Member:0x0000744cf8343f78
          @desc="Psychokino",
          @name="Kaoru Akashi",
-         @team=#<Babel::Team:0x0000769fa3f87aa0 ...>>,
-        #<Babel::Member:0x0000769fa4133e80
+         @team=#<Babel::Team:0x0000744cf8197a80 ...>>,
+        #<Babel::Member:0x0000744cf8343e88
          @desc="Teleporter",
          @name="Aoi Nogami",
-         @team=#<Babel::Team:0x0000769fa3f87aa0 ...>>,
-        #<Babel::Member:0x0000769fa4133d90 ...>],
+         @team=#<Babel::Team:0x0000744cf8197a80 ...>>,
+        #<Babel::Member:0x0000744cf8343d98 ...>],
       @name="The Children">>]}
 
 26.1
-[#<Group:0x00007ee0b433ddf8 @desc="my family", @name="family">,
- #<Group:0x00007ee0b433dd58 @desc="my friends", @name="friend">,
- #<Group:0x00007ee0b433dce0
+[#<Group:0x00007563d13dddf8 @desc="my family", @name="family">,
+ #<Group:0x00007563d13ddd58 @desc="my friends", @name="friend">,
+ #<Group:0x00007563d13ddce0
   @desc="those who works together",
   @name="business">]
-[#<Person:0x00007ee0b43e2da8
+[#<Person:0x00007563d1482df8
   @birth=#<Date: 2000-01-01 ((2451545j,0s,0n),+0s,-Infj)>,
   @blood="A",
   @deleted=false,
@@ -230,7 +230,7 @@ Valid.
   @group="family",
   @name="Sumire",
   @phone=nil>,
- #<Person:0x00007ee0b43e2d08
+ #<Person:0x00007563d1482d58
   @birth=#<Date: 1995-01-01 ((2449719j,0s,0n),+0s,-Infj)>,
   @blood=nil,
   @deleted=false,
@@ -239,7 +239,7 @@ Valid.
   @group="friend",
   @name="Shiina",
   @phone=nil>,
- #<Person:0x00007ee0b43e2bc8
+ #<Person:0x00007563d1482c18
   @birth=nil,
   @blood=nil,
   @deleted=false,
