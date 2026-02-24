@@ -40,7 +40,7 @@
 
     * ruby-advisory-db (Ruby 4.0.1) tests are green using rkwalify code.
 
-    * Minimum ruby version willbe 3.4.7.
+    * Minimum ruby version will be 3.4.7.
 ---
 
  8. Must decide if anything else is added to .gitignore file in final release.

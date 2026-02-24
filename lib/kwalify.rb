@@ -1,6 +1,6 @@
 ###
 ### $Rev$
-### $Release 1.4.0-beta $
+### $Release 1.4.0 $
 ### copyright(c) 2006 kuwata-lab.com all rights reserved.
 ###
 

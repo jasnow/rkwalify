@@ -86,6 +86,17 @@ test/data/users-guide/document15b.yaml#0: INVALID
   - (line 5) [/user] key 'email:' is required.
   - (line 5) [/user/name] 'toooooo-looooong-name': too long (length 21 > max 16).
 
+14.3
+14.3
+test/data/users-guide/validate08.rb:24:in 'ARGF.class#read': No such file or directory @ rb_sysopen - /document07a.yaml (Errno::ENOENT)
+	from test/data/users-guide/validate08.rb:24:in '<main>'
+
+15.1 SKIPPED: schema.yaml unknown so changed to kwalify.schema.yaml
+
+15.2 SKIPPED: schema.yaml unknown so changed to kwalify.schema.yaml
+
+16.1: SKIPPED: NOT FULL EXAMPLE - ./bin/kwalify.rb -m test/data/users-guide/schema1.yaml test/data/users-guide/schema2.yaml
+
 17.1
 Valid.
 
@@ -97,7 +108,7 @@ Valid.
  {"name" => "Baz", "parent" => "null"}]
 
 19.1
-#<Config:0x000077d3b46cdc70
+#<Config:HEX
  @host="localhost",
  @pass="password1",
  @port=8080,
@@ -105,123 +116,123 @@ Valid.
 
 21.1
 {"teams" =>
-  [#<Babel::Team:0x0000744cf8197a80
+  [#<Babel::Team:HEX
     @chief=
-     #<Babel::Member:0x0000744cf8195aa0
+     #<Babel::Member:HEX
       @desc="Scientist",
       @name="Kohichi Minamoto",
-      @team=#<Babel::Team:0x0000744cf8197a80 ...>>,
+      @team=#<Babel::Team:HEX ...>>,
     @desc="Level 7 ESPers",
     @members=
-     [#<Babel::Member:0x0000744cf8343f78
+     [#<Babel::Member:HEX
        @desc="Psychokino",
        @name="Kaoru Akashi",
-       @team=#<Babel::Team:0x0000744cf8197a80 ...>>,
-      #<Babel::Member:0x0000744cf8343e88
+       @team=#<Babel::Team:HEX ...>>,
+      #<Babel::Member:HEX
        @desc="Teleporter",
        @name="Aoi Nogami",
-       @team=#<Babel::Team:0x0000744cf8197a80 ...>>,
-      #<Babel::Member:0x0000744cf8343d98
+       @team=#<Babel::Team:HEX ...>>,
+      #<Babel::Member:HEX
        @desc="Psycometrer",
        @name="Shiho Sannomiya",
-       @team=#<Babel::Team:0x0000744cf8197a80 ...>>],
+       @team=#<Babel::Team:HEX ...>>],
     @name="The Children">],
  "members" =>
-  [#<Babel::Member:0x0000744cf8195aa0
+  [#<Babel::Member:HEX
     @desc="Scientist",
     @name="Kohichi Minamoto",
     @team=
-     #<Babel::Team:0x0000744cf8197a80
-      @chief=#<Babel::Member:0x0000744cf8195aa0 ...>,
+     #<Babel::Team:HEX
+      @chief=#<Babel::Member:HEX ...>,
       @desc="Level 7 ESPers",
       @members=
-       [#<Babel::Member:0x0000744cf8343f78
+       [#<Babel::Member:HEX
          @desc="Psychokino",
          @name="Kaoru Akashi",
-         @team=#<Babel::Team:0x0000744cf8197a80 ...>>,
-        #<Babel::Member:0x0000744cf8343e88
+         @team=#<Babel::Team:HEX ...>>,
+        #<Babel::Member:HEX
          @desc="Teleporter",
          @name="Aoi Nogami",
-         @team=#<Babel::Team:0x0000744cf8197a80 ...>>,
-        #<Babel::Member:0x0000744cf8343d98
+         @team=#<Babel::Team:HEX ...>>,
+        #<Babel::Member:HEX
          @desc="Psycometrer",
          @name="Shiho Sannomiya",
-         @team=#<Babel::Team:0x0000744cf8197a80 ...>>],
+         @team=#<Babel::Team:HEX ...>>],
       @name="The Children">>,
-   #<Babel::Member:0x0000744cf8343f78
+   #<Babel::Member:HEX
     @desc="Psychokino",
     @name="Kaoru Akashi",
     @team=
-     #<Babel::Team:0x0000744cf8197a80
+     #<Babel::Team:HEX
       @chief=
-       #<Babel::Member:0x0000744cf8195aa0
+       #<Babel::Member:HEX
         @desc="Scientist",
         @name="Kohichi Minamoto",
-        @team=#<Babel::Team:0x0000744cf8197a80 ...>>,
+        @team=#<Babel::Team:HEX ...>>,
       @desc="Level 7 ESPers",
       @members=
-       [#<Babel::Member:0x0000744cf8343f78 ...>,
-        #<Babel::Member:0x0000744cf8343e88
+       [#<Babel::Member:HEX ...>,
+        #<Babel::Member:HEX
          @desc="Teleporter",
          @name="Aoi Nogami",
-         @team=#<Babel::Team:0x0000744cf8197a80 ...>>,
-        #<Babel::Member:0x0000744cf8343d98
+         @team=#<Babel::Team:HEX ...>>,
+        #<Babel::Member:HEX
          @desc="Psycometrer",
          @name="Shiho Sannomiya",
-         @team=#<Babel::Team:0x0000744cf8197a80 ...>>],
+         @team=#<Babel::Team:HEX ...>>],
       @name="The Children">>,
-   #<Babel::Member:0x0000744cf8343e88
+   #<Babel::Member:HEX
     @desc="Teleporter",
     @name="Aoi Nogami",
     @team=
-     #<Babel::Team:0x0000744cf8197a80
+     #<Babel::Team:HEX
       @chief=
-       #<Babel::Member:0x0000744cf8195aa0
+       #<Babel::Member:HEX
         @desc="Scientist",
         @name="Kohichi Minamoto",
-        @team=#<Babel::Team:0x0000744cf8197a80 ...>>,
+        @team=#<Babel::Team:HEX ...>>,
       @desc="Level 7 ESPers",
       @members=
-       [#<Babel::Member:0x0000744cf8343f78
+       [#<Babel::Member:HEX
          @desc="Psychokino",
          @name="Kaoru Akashi",
-         @team=#<Babel::Team:0x0000744cf8197a80 ...>>,
-        #<Babel::Member:0x0000744cf8343e88 ...>,
-        #<Babel::Member:0x0000744cf8343d98
+         @team=#<Babel::Team:HEX ...>>,
+        #<Babel::Member:HEX ...>,
+        #<Babel::Member:HEX
          @desc="Psycometrer",
          @name="Shiho Sannomiya",
-         @team=#<Babel::Team:0x0000744cf8197a80 ...>>],
+         @team=#<Babel::Team:HEX ...>>],
       @name="The Children">>,
-   #<Babel::Member:0x0000744cf8343d98
+   #<Babel::Member:HEX
     @desc="Psycometrer",
     @name="Shiho Sannomiya",
     @team=
-     #<Babel::Team:0x0000744cf8197a80
+     #<Babel::Team:HEX
       @chief=
-       #<Babel::Member:0x0000744cf8195aa0
+       #<Babel::Member:HEX
         @desc="Scientist",
         @name="Kohichi Minamoto",
-        @team=#<Babel::Team:0x0000744cf8197a80 ...>>,
+        @team=#<Babel::Team:HEX ...>>,
       @desc="Level 7 ESPers",
       @members=
-       [#<Babel::Member:0x0000744cf8343f78
+       [#<Babel::Member:HEX
          @desc="Psychokino",
          @name="Kaoru Akashi",
-         @team=#<Babel::Team:0x0000744cf8197a80 ...>>,
-        #<Babel::Member:0x0000744cf8343e88
+         @team=#<Babel::Team:HEX ...>>,
+        #<Babel::Member:HEX
          @desc="Teleporter",
          @name="Aoi Nogami",
-         @team=#<Babel::Team:0x0000744cf8197a80 ...>>,
-        #<Babel::Member:0x0000744cf8343d98 ...>],
+         @team=#<Babel::Team:HEX ...>>,
+        #<Babel::Member:HEX ...>],
       @name="The Children">>]}
 
 26.1
-[#<Group:0x00007563d13dddf8 @desc="my family", @name="family">,
- #<Group:0x00007563d13ddd58 @desc="my friends", @name="friend">,
- #<Group:0x00007563d13ddce0
+[#<Group:HEX @desc="my family", @name="family">,
+ #<Group:HEX @desc="my friends", @name="friend">,
+ #<Group:HEX
   @desc="those who works together",
   @name="business">]
-[#<Person:0x00007563d1482df8
+[#<Person:HEX
   @birth=#<Date: 2000-01-01 ((2451545j,0s,0n),+0s,-Infj)>,
   @blood="A",
   @deleted=false,
@@ -230,7 +241,7 @@ Valid.
   @group="family",
   @name="Sumire",
   @phone=nil>,
- #<Person:0x00007563d1482d58
+ #<Person:HEX
   @birth=#<Date: 1995-01-01 ((2449719j,0s,0n),+0s,-Infj)>,
   @blood=nil,
   @deleted=false,
@@ -239,7 +250,7 @@ Valid.
   @group="friend",
   @name="Shiina",
   @phone=nil>,
- #<Person:0x00007563d1482c18
+ #<Person:HEX
   @birth=nil,
   @blood=nil,
   @deleted=false,
@@ -275,21 +286,8 @@ generating ./Person.java...done.
   --dir=path            :  directory to locate output file
   --basedir=path        :  base directory to locate output file
   --constructor=false   :  not print initialize() method
-Check for misspelled words
 
 DEFERRED/BROKEN/SKIPPED - BUGS - STARTS HERE ============
-+ echo
-
-+ echo '15.1 SKIPPED: schema.yaml unknown so changed to kwalify.schema.yaml'
-15.1 SKIPPED: schema.yaml unknown so changed to kwalify.schema.yaml
-+ echo
-
-+ echo '15.2 SKIPPED: schema.yaml unknown so changed to kwalify.schema.yaml'
-15.2 SKIPPED: schema.yaml unknown so changed to kwalify.schema.yaml
-+ echo
-
-+ echo '16.1: SKIPPED: NOT FULL EXAMPLE'
-16.1: SKIPPED: NOT FULL EXAMPLE
 + echo
 
 + echo '30.1.1 (JAR FILE)'
@@ -308,14 +306,6 @@ DEFERRED: No jar file - javac -classpath '.:kwalify.jar' test/data/users-guide/E
 31.2 (GENCLASS-JAVA)
 + echo 'DEFERRED: Getting: "schema filename is not specified."'
 DEFERRED: Getting: "schema filename is not specified."
-+ ./bin/kwalify.rb -a ./lib/kwalify/templates/genclass-java --package=com.example.my --implements=Serializable --basedir=src
-schema filename is not specified.
-+ echo
-
-+ echo 14.3
-14.3
-+ echo '14.3: DEFERRED/BROKEN: Something about '\''ARGF.class#read'\'''
-14.3: DEFERRED/BROKEN: Something about 'ARGF.class#read'
 + echo
 
 + echo 20.1
@@ -328,4 +318,8 @@ schema filename is not specified.
 25.1
 + echo '25.1: DEFERRED/BROKEN/BUG?: '\''Kwalify::Util::OrderedHash#put'\'': stack level too deep (SystemStackError)'
 25.1: DEFERRED/BROKEN/BUG?: 'Kwalify::Util::OrderedHash#put': stack level too deep (SystemStackError)
++ echo 'Check for misspelled words'
+Check for misspelled words
++ wc /tmp/51335_MISPELLINGS
++ rm -f /tmp/51335_MISPELLINGS
 + unset COVERAGE

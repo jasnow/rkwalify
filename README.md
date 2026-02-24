@@ -7,7 +7,6 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-- [RKwalify](#rkwalify)
   - [Introduction](#introduction)
   - [Getting Started Using Gem](#getting-started-using-gem)
   - [CONTRIBUTE](#contribute)
@@ -17,7 +16,7 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
- * release::	1.4.0-beta
+ * release::	1.4.0
  * lastupdate::	$Date$
  * copyright::	copyright(c) 2005-2010 kuwata-lab all rights reserved.
 

@@ -2,33 +2,44 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-- [Release 1.4.0-beta (2026-02-10)](#release-140-preview1-2026-02-10)
-- [Release 0.7.3 (2026-02-10)](#release-073-2026-02-10)
-- [Release 0.7.2 (2010-07-18)](#release-072-2010-07-18)
-- [Release 0.7.1 (2008-01-28)](#release-071-2008-01-28)
-- [Release 0.7.0 (2008-01-27)](#release-070-2008-01-27)
-- [Release 0.6.0 (2006-05-30)](#release-060-2006-05-30)
-- [Release 0.5.1 (2005-12-20)](#release-051-2005-12-20)
-- [Release 0.5.0 (2005-12-17)](#release-050-2005-12-17)
-- [Release 0.4.1 (2005-10-26)](#release-041-2005-10-26)
-- [Release 0.4.0 (2005-10-25)](#release-040-2005-10-25)
-- [Release 0.3.0 (2005-09-30)](#release-030-2005-09-30)
-- [Release 0.2.0 (2005-09-25)](#release-020-2005-09-25)
-- [Release 0.1.0 (2005-08-01)](#release-010-2005-08-01)
-- [FILE TYPES](#file-types)
-  - [DOCS](#docs)
-  - [CODE, YAML/JSON](#code-yamljson)
-  - [TESTS](#tests)
-  - [INTERNAL](#internal)
+- [GENERAL](#general)
+  - [What's New/Changes/Fixes](#whats-newchangesfixes)
+  - [Changelog](#changelog)
+  - [Feedback and Support](#feedback-and-support)
+  - [ROLL OUT STRATEGY](#roll-out-strategy)
+  - [Release 1.4.0 (2026-02-24)](#release-140-2026-02-24)
+  - [Release 1.4.0 (2026-02-18)](#release-140-2026-02-18)
+  - [What's New/Changes/Fixes](#whats-newchangesfixes-1)
+  - [Changelog](#changelog-1)
+  - [Feedback and Support](#feedback-and-support-1)
+  - [ROLL OUT STRATEGY](#roll-out-strategy-1)
+  - [Release 1.4.0-private1 (2026-02-10)](#release-140-private1-2026-02-10)
+  - [Release 0.7.3 (2026-02-10)](#release-073-2026-02-10)
+  - [Release 0.7.2 (2010-07-18)](#release-072-2010-07-18)
+  - [Release 0.7.1 (2008-01-28)](#release-071-2008-01-28)
+  - [Release 0.7.0 (2008-01-27)](#release-070-2008-01-27)
+  - [Release 0.6.0 (2006-05-30)](#release-060-2006-05-30)
+  - [Release 0.5.1 (2005-12-20)](#release-051-2005-12-20)
+  - [Release 0.5.0 (2005-12-17)](#release-050-2005-12-17)
+  - [Release 0.4.1 (2005-10-26)](#release-041-2005-10-26)
+  - [Release 0.4.0 (2005-10-25)](#release-040-2005-10-25)
+  - [Release 0.3.0 (2005-09-30)](#release-030-2005-09-30)
+  - [Release 0.2.0 (2005-09-25)](#release-020-2005-09-25)
+  - [Release 0.1.0 (2005-08-01)](#release-010-2005-08-01)
+  - [FILE TYPES](#file-types)
+    - [DOCS](#docs)
+    - [CODE, YAML/JSON](#code-yamljson)
+    - [TESTS](#tests)
+    - [INTERNAL](#internal)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 .=title:          ChangeLog
-.?release:        $Release 1.4.0-beta $
+.?release:        $Release 1.4.0 $
 .?lastupdate:     $Date$
 .?version:        $Rev$
 
-## Release 1.4.0-beta (2026-02-18)
+# GENERAL
 
 ## What's New/Changes/Fixes
 
@@ -41,7 +52,34 @@
  * For the complete list of changes, please refer to the
    GitHub release notes: [CHANGELOG](CHANGELOG.md)
 
-## Feeback and Support
+## Feedback and Support
+
+ * "If you encounter any issues or have suggestions, please
+   open a ticket on our GitHub repository: [issues](issues)
+
+## ROLL OUT STRATEGY
+
+ * See more details [Roll Out Strategy](ROLL-OUT-STRATEGY.md)
+   regarding approach taken.
+
+## Release 1.4.0 (2026-02-24)
+
+ * Worked on fixing tests and other issues found since beta release.
+
+## Release 1.4.0 (2026-02-18)
+
+## What's New/Changes/Fixes
+
+ * See [commit history](commits/main) for more details.
+
+ * Known issues are documented as [issues](issues).
+
+## Changelog
+
+ * For the complete list of changes, please refer to the
+   GitHub release notes: [CHANGELOG](CHANGELOG.md)
+
+## Feedback and Support
 
  * "If you encounter any issues or have suggestions, please
    open a ticket on our GitHub repository: [issues](issues)
