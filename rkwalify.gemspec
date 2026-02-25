@@ -7,8 +7,8 @@ Gem::Specification.new do |spec|
   spec.version       = Kwalify::RELEASE
   spec.authors       = ['Al Snow', 'David Crosby', 'makoto kuwata']
 
-  spec.summary       = 'rKwalify is a parser, schema validator, and data binding tool for YAML and JSON.'
-  spec.description   = 'rKwalify is a parser, schema validator, and data binding tool for YAML and JSON. rKwalify enables you to handle YAML and JSON more easily and strictly.'
+  spec.summary       = 'Rkwalify is a parser, schema validator, and data binding tool for YAML and JSON.'
+  spec.description   = 'Rkwalify is a parser, schema validator, and data binding tool for YAML and JSON. Rkwalify enables you to handle YAML and JSON more easily and strictly.'
   spec.homepage      = 'https://github.com/jasnow/rkwalify/blob/main/README.md'
   spec.license       = 'MIT'
   spec.required_ruby_version = '>= 3.4.7'
