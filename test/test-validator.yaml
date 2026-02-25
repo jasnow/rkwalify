@@ -845,68 +845,68 @@ name:  unique3
 desc:  unique constraint and '<<' (merge)
 #
 schema: |
-	type: seq
-	sequence:
-	  - type: map
-	    mapping:
-	     "name":  { type: str, required: yes, unique: yes }
-	     "value": { type: any, required: yes }
+  type: seq
+  sequence:
+    - type: map
+      mapping:
+       "name":  { type: str, required: yes, unique: yes }
+       "value": { type: any, required: yes }
 #
 valid: |
-	# no sense
-	- name: x1
-	  value: 10
-	- name: x2
-	  value: 20
+  # no sense
+  - name: x1
+    value: 10
+  - name: x2
+    value: 20
 #
 invalid: |
-	- &a1
-	  name:  x1
-	  value: 10
-	- <<: *a1
-	- <<: *a1         # wrong validation error
-	  name:  x3
+  - &a1
+    name:  x1
+    value: 10
+  - <<: *a1
+  - <<: *a1         # wrong validation error
+    name:  x3
 #
 error: |
-	:value_notunique    : (line 2)[/1/name] 'x1': is already used at '/0/name'.
+  :value_notunique    : (line 2)[/1/name] 'x1': is already used at '/0/name'.
 error2: |
-	:value_notunique    : 4:3:[/1/name] 'x1': is already used at '/0/name'.
-	:value_notunique    : 5:3:[/2/name] 'x1': is already used at '/0/name'.
+  :value_notunique    : 4:3:[/1/name] 'x1': is already used at '/0/name'.
+  :value_notunique    : 5:3:[/2/name] 'x1': is already used at '/0/name'.
 memo: |
-	* '(line 2)' is not expected line number.
+  * '(line 2)' is not expected line number.
 ##
 ---
 name:  unique4
 desc:  unique constrant and anchor
 #
 schema: |
-	type: seq
-	sequence:
-	  - type: map
-	    mapping:
-	     "name":  { type: str }
-	     "value": { type: any }
+  type: seq
+  sequence:
+    - type: map
+      mapping:
+       "name":  { type: str }
+       "value": { type: any }
 #
 valid: |
-	# no sense
-	- name: x1
-	  value: 10
-	- name: x2
-	  value: 20
+  # no sense
+  - name: x1
+    value: 10
+  - name: x2
+    value: 20
 #
 invalid: |
-	- &a1
-	  name:  x1
-	  value: 10
-	- name:  x2
-	  value: 20
-	- *a1
+  - &a1
+    name:  x1
+    value: 10
+  - name:  x2
+    value: 20
+  - *a1
 #
 error: |
-#	:value_notunique    : (line 6)[/2/name] 'x1': is already used at '/0/name'.
+# :value_notunique    : (line 6)[/2/name] 'x1': is already used at '/0/name'.
 error2: |
 memo: |
-	* validation error should be reported but not reported.
+  * validation error should be reported but not reported.
 ##
 ---
 name:  default1

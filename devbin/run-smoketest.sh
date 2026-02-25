@@ -14,4 +14,4 @@ fi
 
 rm -f /tmp/$$_RST /tmp/$$_GOLDEN
 
-#EX: 00007563d1482df8
+#HEX: 00007563d1482df8

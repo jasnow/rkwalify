@@ -1157,8 +1157,8 @@ schema: |
       mapping:
        "name":
           type: str
-	  required: true
-	  default: ''
+          required: true
+          default: ''
 meta-msg: |
   :default_conflict   : [/mapping/name] 'default:': not available when 'required:' is true.
 rule-msg: |
@@ -1172,7 +1172,7 @@ schema: |
       mapping:
        "name":
           type: str
-	  default: 123
+          default: 123
 meta-msg: |
   :default_unmatch    : [/mapping/name/default] '123': not a string.
 rule-msg: |

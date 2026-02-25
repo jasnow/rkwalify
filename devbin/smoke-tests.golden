@@ -287,6 +287,9 @@ generating ./Person.java...done.
   --basedir=path        :  base directory to locate output file
   --constructor=false   :  not print initialize() method
 
+help -v
+1.4.0
+
 DEFERRED/BROKEN/SKIPPED - BUGS - STARTS HERE ============
 + echo
 
@@ -320,6 +323,4 @@ DEFERRED: Getting: "schema filename is not specified."
 25.1: DEFERRED/BROKEN/BUG?: 'Kwalify::Util::OrderedHash#put': stack level too deep (SystemStackError)
 + echo 'Check for misspelled words'
 Check for misspelled words
-+ wc /tmp/51335_MISPELLINGS
-+ rm -f /tmp/51335_MISPELLINGS
 + unset COVERAGE

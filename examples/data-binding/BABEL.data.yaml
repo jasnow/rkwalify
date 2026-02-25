@@ -57,7 +57,7 @@ members:
     team:   *thehounds
     kind:   esper
   - &akira
-	name:   Akira Yadorigi
-	desc:   Animal Controller
-	team:   *thehounds
-	kind:   esper
+      name:   Akira Yadorigi
+      desc:   Animal Controller
+      team:   *thehounds
+      kind:   esper

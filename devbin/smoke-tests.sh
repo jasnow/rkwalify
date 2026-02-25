@@ -147,8 +147,8 @@ echo "25.1: DEFERRED/BROKEN/BUG?: 'Kwalify::Util::OrderedHash#put': stack level 
 #
 echo "Check for misspelled words"
 #HID FOR NOW: devbin/chkspelling.sh > /tmp/$$_MISPELLINGS
-wc /tmp/$$_MISPELLINGS 2> /dev/null
-rm -f /tmp/$$_MISPELLINGS
+#wc /tmp/$$_MISPELLINGS 2> /dev/null
+#rm -f /tmp/$$_MISPELLINGS
 #
 unset COVERAGE
 #EOF
