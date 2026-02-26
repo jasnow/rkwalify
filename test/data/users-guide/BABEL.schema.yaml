@@ -28,4 +28,4 @@ mapping:
          "name":  {type: str, required: yes, unique: yes}
          "desc":  {type: str}
          "team":  *team
-        "kind":  {type: str, enum: [normal, esper] }
+         "kind":  {type: str, enum: [normal, esper] }

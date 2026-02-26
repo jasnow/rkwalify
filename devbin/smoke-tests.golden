@@ -87,7 +87,6 @@ test/data/users-guide/document15b.yaml#0: INVALID
   - (line 5) [/user/name] 'toooooo-looooong-name': too long (length 21 > max 16).
 
 14.3
-14.3
 test/data/users-guide/validate08.rb:24:in 'ARGF.class#read': No such file or directory @ rb_sysopen - /document07a.yaml (Errno::ENOENT)
 	from test/data/users-guide/validate08.rb:24:in '<main>'
 
@@ -95,7 +94,7 @@ test/data/users-guide/validate08.rb:24:in 'ARGF.class#read': No such file or dir
 
 15.2 SKIPPED: schema.yaml unknown so changed to kwalify.schema.yaml
 
-16.1: SKIPPED: NOT FULL EXAMPLE - ./bin/kwalify.rb -m test/data/users-guide/schema1.yaml test/data/users-guide/schema2.yaml
+16.1: SKIPPED: NOT FULL EXAMPLE - ./bin/kwalify.rb -t -m test/data/users-guide/schema1.yaml test/data/users-guide/schema2.yaml
 
 17.1
 Valid.
@@ -289,6 +288,7 @@ generating ./Person.java...done.
 
 help -v
 1.4.0
+diff BABEL.schema files
 
 DEFERRED/BROKEN/SKIPPED - BUGS - STARTS HERE ============
 + echo
