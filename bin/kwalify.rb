@@ -2,14 +2,14 @@
 
 ###
 ### $Rev$
-### $Release 1.4.0 $
+### $Release 1.4.1 $
 ### copyright(c) 2005-2010 kuwata-lab all rights reserved.
 ###
 
 #--begin of require 'kwalify'
 ###
 ### $Rev$
-### $Release 1.4.0 $
+### $Release 1.4.1 $
 ### copyright(c) 2006 kuwata-lab.com all rights reserved.
 ###
 
@@ -17,13 +17,13 @@
 ### copyright(c) 2006 kuwata-lab.com all rights reserved.
 
 module Kwalify
-  RELEASE = '1.4.0' # Same as in the gemspec file.
+  RELEASE = '1.4.1' # Same as in the gemspec file.
 end
 #--end of require 'kwalify/version'
 #--begin of require 'kwalify/types'
 ###
 ### $Rev$
-### $Release 1.4.0 $
+### $Release 1.4.1 $
 ### copyright(c) 2005-2010 kuwata-lab all rights reserved.
 ###
 
@@ -181,7 +181,7 @@ end
 #--begin of require 'kwalify/messages'
 ###
 ### $Rev$
-### $Release 1.4.0 $
+### $Release 1.4.1 $
 ### copyright(c) 2005-2010 kuwata-lab all rights reserved.
 ###
 
@@ -356,7 +356,7 @@ end
 #--begin of require 'kwalify/errors'
 ###
 ### $Rev$
-### $Release 1.4.0 $
+### $Release 1.4.1 $
 ### copyright(c) 2005-2010 kuwata-lab all rights reserved.
 ###
 
@@ -485,7 +485,7 @@ end
 #--begin of require 'kwalify/rule'
 ###
 ### $Rev$
-### $Release 1.4.0 $
+### $Release 1.4.1 $
 ### copyright(c) 2005-2010 kuwata-lab all rights reserved.
 ###
 
@@ -1048,7 +1048,7 @@ end
 #--begin of require 'kwalify/validator'
 ###
 ### $Rev$
-### $Release 1.4.0 $
+### $Release 1.4.1 $
 ### copyright(c) 2005-2010 kuwata-lab all rights reserved.
 ###
 
@@ -1332,7 +1332,7 @@ end
 #--begin of require 'kwalify/meta-validator'
 ###
 ### $Rev$
-### $Release 1.4.0 $
+### $Release 1.4.1 $
 ### copyright(c) 2005-2010 kuwata-lab all rights reserved.
 ###
 
@@ -1342,7 +1342,7 @@ end
 #--begin of require 'kwalify/parser/yaml'
 ###
 ### $Rev$
-### $Release 1.4.0 $
+### $Release 1.4.1 $
 ### copyright(c) 2005-2010 kuwata-lab all rights reserved.
 ###
 
@@ -1351,7 +1351,7 @@ end
 #--begin of require 'kwalify/util'
 ###
 ### $Rev$
-### $Release 1.4.0 $
+### $Release 1.4.1 $
 ### copyright(c) 2005-2010 kuwata-lab all rights reserved.
 ###
 
@@ -1511,7 +1511,7 @@ end
 #--begin of require 'kwalify/parser/base'
 ###
 ### $Rev$
-### $Release 1.4.0 $
+### $Release 1.4.1 $
 ### copyright(c) 2005-2010 kuwata-lab all rights reserved.
 ###
 
@@ -2739,7 +2739,7 @@ end
 #--begin of require 'kwalify/yaml-parser'
 ###
 ### $Rev$
-### $Release 1.4.0 $
+### $Release 1.4.1 $
 ### copyright(c) 2005-2010 kuwata-lab all rights reserved.
 ###
 
@@ -3659,7 +3659,7 @@ end
 #--begin of require 'kwalify/main'
 ###
 ### $Rev$
-### $Release 1.4.0 $
+### $Release 1.4.1 $
 ### copyright(c) 2005-2010 kuwata-lab all rights reserved.
 ###
 
@@ -3670,7 +3670,7 @@ require 'erb'
 #--begin of require 'kwalify/util/ordered-hash'
 ###
 ### $Rev$
-### 1.4.0
+### 1.4.1
 ### $COPYRIGHT$
 ###
 

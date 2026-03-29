@@ -7,7 +7,8 @@
   - [Changelog](#changelog)
   - [Feedback and Support](#feedback-and-support)
   - [ROLL OUT STRATEGY](#roll-out-strategy)
-  - [Release 1.4.0 (2026-02-24)](#release-140-2026-02-24)
+  - [Release 1.4.1 (2026-03-29)](#release-141-2026-03-29)
+  - [Release 1.4.0b (2026-02-24)](#release-140b-2026-02-24)
   - [Release 1.4.0 (2026-02-18)](#release-140-2026-02-18)
   - [What's New/Changes/Fixes](#whats-newchangesfixes-1)
   - [Changelog](#changelog-1)
@@ -35,7 +36,7 @@
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 .=title:          ChangeLog
-.?release:        $Release 1.4.0 $
+.?release:        $Release 1.4.1 $
 .?lastupdate:     $Date$
 .?version:        $Rev$
 
@@ -62,7 +63,11 @@
  * See more details [Roll Out Strategy](ROLL-OUT-STRATEGY.md)
    regarding approach taken.
 
-## Release 1.4.0 (2026-02-24)
+## Release 1.4.1 (2026-03-29)
+
+ * Keep gems up-to-date.
+
+## Release 1.4.0b (2026-02-24)
 
  * Worked on fixing tests and other issues found since beta release.
 

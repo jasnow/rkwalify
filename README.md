@@ -16,7 +16,7 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
- * release::	1.4.0
+ * release::	1.4.1
  * lastupdate::	$Date$
  * copyright::	copyright(c) 2005-2010 kuwata-lab all rights reserved.
 

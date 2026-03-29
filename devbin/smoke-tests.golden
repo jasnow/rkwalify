@@ -287,7 +287,7 @@ generating ./Person.java...done.
   --constructor=false   :  not print initialize() method
 
 help -v
-1.4.0
+1.4.1
 diff BABEL.schema files
 
 DEFERRED/BROKEN/SKIPPED - BUGS - STARTS HERE ============
